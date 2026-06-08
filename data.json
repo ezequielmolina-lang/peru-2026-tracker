@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780953360263,
-    "updatedAtLabel": "08-jun, 04:16 p. m. (hora Perú)",
+    "updatedAt": 1780953720080,
+    "updatedAtLabel": "08-jun, 04:22 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.697,
-    "cont": 87847,
+    "pctActas": 94.709,
+    "cont": 87858,
     "tot": 92766,
-    "jee": 1526,
-    "pend": 3393,
-    "validos": 17673761,
-    "emitidos": 18912761,
-    "participacion": 69.213,
-    "k": 8823305,
-    "s": 8850456,
-    "kPct": 49.923,
-    "sPct": 50.077,
-    "margin": -27151
+    "jee": 1524,
+    "pend": 3384,
+    "validos": 17674918,
+    "emitidos": 18914042,
+    "participacion": 69.218,
+    "k": 8823733,
+    "s": 8851185,
+    "kPct": 49.922,
+    "sPct": 50.078,
+    "margin": -27452
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -33956,
-    "jeeNet": 44879,
-    "final": -16228
+    "pendNet": -33971,
+    "jeeNet": 44859,
+    "final": -16564
   },
   "extScen": {
     "low": 27348,
@@ -53,18 +53,18 @@
     "high": 60522
   },
   "finalScen": {
-    "low": 11120,
-    "central": 51668,
-    "high": 44294
+    "low": 10784,
+    "central": 51332,
+    "high": 43958
   },
   "seq": {
-    "domCountedMargin": -29710,
+    "domCountedMargin": -30011,
     "extCountedMargin": 2559,
-    "hito1": -63666,
+    "hito1": -63982,
     "hito2": {
-      "low": -33759,
-      "central": 6789,
-      "high": -585
+      "low": -34075,
+      "central": 6473,
+      "high": -901
     }
   },
   "reg": [
@@ -215,14 +215,14 @@
     [
       "Lambayeque",
       99.6,
-      3575,
+      3577,
       3590,
-      15,
+      13,
       0,
-      58.9,
+      58.8,
       207,
       0,
-      490
+      481
     ],
     [
       "Lima",
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      95.8,
-      1498,
+      96.4,
+      1507,
       1564,
       36,
-      30,
+      21,
       52.8,
-      176,
-      326,
-      525
+      175,
+      311,
+      514
     ]
   ],
   "history": [
@@ -569,6 +569,11 @@
       1780953360263,
       -27151,
       51668
+    ],
+    [
+      1780953720080,
+      -27452,
+      51332
     ]
   ]
 }
