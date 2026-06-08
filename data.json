@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedAt": 1780948080075,
-    "updatedAtLabel": "08-jun, 02:48 p. m. (hora Perú)",
+    "updatedAt": 1780948320072,
+    "updatedAtLabel": "08-jun, 02:52 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -42600,
-    "jeeNet": 45507,
-    "final": -12854
+    "pendNet": -43126,
+    "jeeNet": 45498,
+    "final": -13389
   },
   "extScen": {
     "low": 25413,
@@ -53,18 +53,18 @@
     "high": 44718
   },
   "finalScen": {
-    "low": 12559,
-    "central": 50199,
-    "high": 31864
+    "low": 12024,
+    "central": 49664,
+    "high": 31329
   },
   "seq": {
     "domCountedMargin": -16953,
     "extCountedMargin": 1192,
-    "hito1": -59553,
+    "hito1": -60079,
     "hito2": {
-      "low": -32948,
-      "central": 4692,
-      "high": -13643
+      "low": -33474,
+      "central": 4166,
+      "high": -14169
     }
   },
   "reg": [
@@ -77,8 +77,8 @@
       101,
       37.2,
       157,
-      -7203,
-      -610
+      -7723,
+      -615
     ],
     [
       "Áncash",
@@ -365,8 +365,8 @@
       113,
       53.2,
       180,
-      1283,
-      542
+      1277,
+      538
     ]
   ],
   "history": [
@@ -479,6 +479,11 @@
       1780948080075,
       -15761,
       50199
+    ],
+    [
+      1780948320072,
+      -15761,
+      49664
     ]
   ]
 }
