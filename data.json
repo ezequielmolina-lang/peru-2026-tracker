@@ -1,63 +1,60 @@
 {
   "meta": {
-    "updatedAt": 1780939320295,
-    "updatedAtLabel": "08-jun, 12:22 p. m. (hora Perú)",
+    "updatedAt": 1780941480363,
+    "updatedAtLabel": "08-jun, 12:58 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
+    "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 93.777,
-    "cont": 86993,
+    "pctActas": 93.92,
+    "cont": 87126,
     "tot": 92766,
-    "jee": 1516,
-    "pend": 4257,
-    "validos": 17559732,
-    "emitidos": 18790553,
-    "participacion": 68.766,
-    "k": 8781323,
-    "s": 8778409,
-    "kPct": 50.008,
-    "sPct": 49.992,
-    "margin": 2914
+    "jee": 1517,
+    "pend": 4123,
+    "validos": 17578178,
+    "emitidos": 18810020,
+    "participacion": 68.837,
+    "k": 8787618,
+    "s": 8790560,
+    "kPct": 49.992,
+    "sPct": 50.008,
+    "margin": -2942
   },
   "ext": {
     "tot": 2543,
-    "cont": 12,
-    "pend": 2531,
+    "cont": 20,
+    "pend": 2523,
     "jee": 0,
-    "k": 1164,
-    "s": 881,
-    "vv": 2045,
-    "pctActas": 0.472
+    "k": 2293,
+    "s": 1380,
+    "vv": 3673,
+    "pctActas": 0.786
   },
   "assume": {
     "extVPA": 120,
-    "extVPAcur": 170,
+    "extVPAcur": 184,
     "extShareLow": 0.57,
     "extShareCentral": 0.62,
     "extShareHigh": 0.665,
-    "extPendValid": 303720,
-    "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos, neto ~+99.5k)."
+    "extPendValid": 302760,
+    "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -47640,
-    "jeeNet": 42655,
-    "final": -2071,
-    "pendAddK": 128236,
-    "pendAddS": 175877,
-    "jeeAddK": 179617,
-    "jeeAddS": 136961
+    "pendNet": -47406,
+    "jeeNet": 47099,
+    "final": -3249
   },
   "extScen": {
-    "low": 42521,
-    "central": 72893,
-    "high": 100228
+    "low": 42386,
+    "central": 72662,
+    "high": 99911
   },
   "finalScen": {
-    "low": 40450,
-    "central": 70822,
-    "high": 98157
+    "low": 39137,
+    "central": 69413,
+    "high": 96662
   },
   "reg": [
     [
@@ -69,8 +66,8 @@
       103,
       37.2,
       157,
-      -4127,
-      -521
+      -7214,
+      -608
     ],
     [
       "Áncash",
@@ -82,7 +79,7 @@
       43.4,
       180,
       0,
-      -1116
+      -1165
     ],
     [
       "Apurímac",
@@ -93,32 +90,32 @@
       2,
       18.8,
       175,
-      -219,
-      -1093
+      -234,
+      -1114
     ],
     [
       "Arequipa",
-      99.2,
-      4182,
+      99.4,
+      4188,
       4215,
       25,
-      8,
+      2,
       36.4,
       218,
-      -474,
-      -1480
+      -164,
+      -1430
     ],
     [
       "Ayacucho",
-      89.3,
-      1696,
+      91.7,
+      1742,
       1900,
       17,
-      187,
-      20.9,
+      141,
+      20.8,
       173,
-      -18857,
-      -1714
+      -13336,
+      -1812
     ],
     [
       "Cajamarca",
@@ -130,7 +127,7 @@
       33.2,
       175,
       0,
-      -1755
+      -1417
     ],
     [
       "Cusco",
@@ -141,32 +138,32 @@
       304,
       22.2,
       194,
-      -32872,
-      -4650
+      -29886,
+      -3824
     ],
     [
       "Huancavelica",
-      98.5,
-      1254,
+      99.1,
+      1262,
       1273,
       11,
-      8,
-      18.5,
-      157,
-      -788,
-      -1084
+      0,
+      18.6,
+      156,
+      0,
+      -1085
     ],
     [
       "Huánuco",
-      96.9,
-      2268,
+      97.4,
+      2280,
       2341,
       20,
-      53,
+      41,
       35.9,
       168,
-      -2515,
-      -949
+      -2489,
+      -740
     ],
     [
       "Ica",
@@ -178,7 +175,7 @@
       51.9,
       223,
       0,
-      187
+      230
     ],
     [
       "Junín",
@@ -189,8 +186,8 @@
       60,
       45.1,
       196,
-      -1155,
-      -616
+      -1555,
+      -492
     ],
     [
       "La Libertad",
@@ -202,7 +199,7 @@
       57.5,
       198,
       0,
-      1134
+      1535
     ],
     [
       "Lambayeque",
@@ -214,7 +211,7 @@
       58.8,
       207,
       0,
-      550
+      520
     ],
     [
       "Lima",
@@ -226,19 +223,19 @@
       63.5,
       219,
       0,
-      54695
+      56521
     ],
     [
       "Loreto",
-      68.2,
-      1840,
+      70,
+      1888,
       2697,
-      26,
-      831,
-      55.5,
-      170,
-      15390,
-      482
+      27,
+      782,
+      55.4,
+      168,
+      8369,
+      606
     ],
     [
       "Madre de Dios",
@@ -249,8 +246,8 @@
       22,
       31.2,
       191,
-      -1580,
-      -287
+      -2011,
+      -281
     ],
     [
       "Moquegua",
@@ -262,7 +259,7 @@
       27.4,
       211,
       0,
-      -191
+      -187
     ],
     [
       "Pasco",
@@ -274,7 +271,7 @@
       39.2,
       164,
       0,
-      -494
+      -438
     ],
     [
       "Piura",
@@ -286,31 +283,31 @@
       57,
       196,
       0,
-      1853
+      2242
     ],
     [
       "Puno",
-      99,
-      3363,
+      99.1,
+      3367,
       3397,
       25,
-      9,
+      5,
       13.6,
       209,
-      -1370,
-      -3807
+      -685,
+      -3641
     ],
     [
       "San Martín",
-      98.5,
-      2497,
+      98.6,
+      2498,
       2534,
       13,
-      24,
+      23,
       45.4,
       191,
-      -420,
-      -227
+      457,
+      -208
     ],
     [
       "Tacna",
@@ -322,7 +319,7 @@
       28.7,
       222,
       0,
-      -1328
+      -1258
     ],
     [
       "Tumbes",
@@ -334,7 +331,7 @@
       64.3,
       202,
       0,
-      116
+      114
     ],
     [
       "Ucayali",
@@ -346,7 +343,7 @@
       65.6,
       213,
       0,
-      4577
+      4485
     ],
     [
       "Callao",
@@ -357,8 +354,8 @@
       115,
       53.2,
       180,
-      1346,
-      375
+      1342,
+      546
     ]
   ],
   "history": [
@@ -376,6 +373,11 @@
       1780939320295,
       2914,
       70822
+    ],
+    [
+      1780941480363,
+      -2942,
+      69413
     ]
   ]
 }

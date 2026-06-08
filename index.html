@@ -115,7 +115,7 @@
   </div>
 
   <h1>Perú 2026 · Segunda vuelta<br><span class="q">proyección en vivo al 100% del conteo</span></h1>
-  <p class="sub">Keiko Fujimori (Fuerza Popular) vs. Roberto Sánchez (Juntos por el Perú). El conteo ordinario se proyecta al 100% sumando, por cada región, las <b>actas pendientes</b> y las <b>actas para envío al JEE</b> con la <b>misma tendencia</b> que las ya contabilizadas en ese lugar, más el <b>voto del exterior</b> (casi todo por entrar).</p>
+  <p class="sub">Keiko Fujimori (Fuerza Popular) vs. Roberto Sánchez (Juntos por el Perú). El conteo ordinario se proyecta al 100% sumando, <b>por provincia</b>, las <b>actas pendientes</b> y las <b>actas para envío al JEE</b> con la <b>misma tendencia</b> que las ya contabilizadas ahí (con <i>shrinkage</i> hacia el departamento donde hay pocas actas), más el <b>voto del exterior</b> (casi todo por entrar).</p>
   <div class="stamp" id="stamp">Cargando datos…</div>
 
   <div class="err" id="err"></div>
@@ -248,10 +248,10 @@ function render(d){
   const dl = el('ledger');
   dl.innerHTML = `
     <div class="row"><span>Conteo actual (${n.pctActas.toFixed(1)}% actas)</span><span class="v ${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</span></div>
-    <div class="row"><span>+ Pendiente doméstico (por tendencia regional)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
-    <div class="row mid"><span>+ Actas al JEE (por tendencia regional)<span class="tag k">supuesto fuerte</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
+    <div class="row"><span>+ Pendiente doméstico (tendencia provincial)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
+    <div class="row mid"><span>+ Actas al JEE (tendencia provincial)<span class="tag k">~99% validadas '21</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
     <div class="row mid"><span>= Doméstico proyectado (100%)</span><span class="v ${dom.final>=0?'netK':'netS'}">${marginPhrase(dom.final)}</span></div>
-    <div class="row"><span>+ Exterior (2 531 actas, ~0% contado · central)</span><span class="v netK">${marginPhrase(es.central)}</span></div>
+    <div class="row"><span>+ Exterior (${fmt(e.pend)} actas, ~${e.pctActas.toFixed(1)}% contado · central)</span><span class="v netK">${marginPhrase(es.central)}</span></div>
     <div class="total"><span>Resultado final proyectado</span><span class="v ${fs.central>=0?'netK':'netS'}">${marginPhrase(fs.central)}</span></div>`;
 
   // scenarios
@@ -284,16 +284,16 @@ function render(d){
 
   // assumptions
   el('assumeList').innerHTML = [
-    `<b>Reparto dentro de cada región.</b> Las actas pendientes y las del JEE de cada región se reparten igual que las ya contadas ahí (su <b>misma tendencia</b>).`,
-    `<b>Tamaño de acta.</b> Cada acta pendiente trae los votos válidos promedio de su región (${'~'}${a.extVPA}–230 según la zona).`,
-    `<span class="flag">Supuesto fuerte · actas al JEE.</span> Se proyectan por tendencia regional. <b>924 de las ${fmt(n.jee)} actas observadas son de Lima</b> (${(d.reg.find(r=>r[0]==='Lima')[6]).toFixed(0)}% Keiko), así que casi todo el neto JEE (${sgn(dom.jeeNet)}) es de Lima. Si esas actas se anulan o resuelven distinto, el doméstico se inclina más a Sánchez.`,
+    `<b>Tendencia provincial, no departamental.</b> Cada acta pendiente o del JEE se reparte como las ya contadas en <b>su provincia</b>, no en todo el departamento (p. ej. en Loreto, Maynas ≠ Alto Amazonas). Las provincias con muy pocas actas contadas se acercan a la media de su departamento (<i>shrinkage</i>, K₀=25), para que un acta suelta no distorsione la proyección.`,
+    `<b>Tamaño de acta.</b> Cada acta pendiente trae los votos válidos promedio de su provincia (${'~'}${a.extVPA}–230 según la zona).`,
+    `<b>Actas al JEE: validadas históricamente.</b> En 2021 el JNE <b>validó casi todas</b> las observadas — solo ~12 anuladas a nivel nacional pese a cientos de pedidos de nulidad. Por eso se incluyen a tendencia provincial con un <i>haircut</i> de ~2%. <b>924 de las ${fmt(n.jee)} actas observadas son de Lima</b>; su neto (${sgn(dom.jeeNet)}) se calcula con la tendencia de Lima Metropolitana, no el promedio nacional.`,
     `<span class="flag">Mayor incertidumbre · exterior.</span> Casi todo por entrar. Tamaño y sesgo asumidos como 2021 (Keiko 66.5%), con piso en la tendencia inicial de hoy (57%). <b>Define el resultado.</b>`,
     `<b>Fuente única.</b> Todo se lee del portal oficial de la ONPE (resumen por región y vista Extranjero). No se usan agregadores de terceros.`,
     `<b>Conteo ordinario, no resultado legal.</b> El presidente electo lo proclama el JNE (mediados de julio); las actas observadas pesan en el resultado final.`
   ].map(t=>`<li>${t}</li>`).join('');
 
   // footer
-  el('foot').innerHTML = `<b>Procedencia.</b> Cifras leídas en vivo del portal oficial de la ONPE — <a href="https://resultadosegundavuelta.onpe.gob.pe/main/resumen" target="_blank" rel="noopener">resultadosegundavuelta.onpe.gob.pe</a> (backend de presentación, por región y por ámbito). &nbsp;|&nbsp; <b>Método.</b> Votos por acta calculados por separado para cada región (válidos ÷ actas contadas), aplicados a sus actas pendientes y al JEE con la tendencia local; el exterior se estima con referencia a 2021. &nbsp;|&nbsp; <b>Salvedad.</b> Proyección del conteo ordinario; no es pronóstico de la proclamación oficial del JNE. &nbsp;|&nbsp; Última actualización de datos: <b>${d.meta.updatedAtLabel}</b>.`;
+  el('foot').innerHTML = `<b>Procedencia.</b> Cifras leídas en vivo del portal oficial de la ONPE — <a href="https://resultadosegundavuelta.onpe.gob.pe/main/resumen" target="_blank" rel="noopener">resultadosegundavuelta.onpe.gob.pe</a> (backend de presentación, por región y por ámbito). &nbsp;|&nbsp; <b>Método.</b> Votos por acta y tendencia calculados por <b>provincia</b> (válidos ÷ actas contadas), aplicados a sus pendientes y actas al JEE, con <i>shrinkage</i> (K₀=25) hacia el departamento donde hay pocas actas y un <i>haircut</i> de ~2% al JEE; el exterior se estima con referencia a 2021. &nbsp;|&nbsp; <b>Salvedad.</b> Proyección del conteo ordinario; no es pronóstico de la proclamación oficial del JNE. &nbsp;|&nbsp; Última actualización de datos: <b>${d.meta.updatedAtLabel}</b>.`;
 
   lastFetch = Date.now();
 }

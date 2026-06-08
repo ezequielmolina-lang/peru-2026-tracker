@@ -10,10 +10,12 @@ Project dir: `C:\Users\cosmo\Downloads\peru-2026-tracker`
    - `tabs_context_mcp` → if no ONPE tab, `tabs_create_mcp` + `navigate` there, wait ~5 s.
 
 2. **Run the engine.** Paste the entire body of `engine.js` into `javascript_tool` on that tab.
-   It returns `{"len":…, "payload":"{…numbers…}"}`. The payload is **numbers only** (~900 chars,
-   fits one view). Copy the `payload` value (the `{"nat":…,"ext":…,"reg":…}` string).
-   - If it throws `dept fail N` or returns HTML, ONPE is overloaded — wait ~20 s and re-run. The
-     engine already retries each call 8×.
+   It computes province-level nets with shrinkage (~480 calls, ~5 s) and returns
+   `{"len":~1004, "sec":…, "s0":"<first 540 chars>"}` and stores the full payload in
+   `window.PAYLOAD`. Then make a **2nd** tiny call: `window.PAYLOAD.slice(540)` to get the tail.
+   Concatenate `s0 + tail` → the full payload `{"nat":…,"ext":…,"reg":…}` (numbers only, ASCII-safe).
+   - If a value is null / it returns HTML, ONPE is overloaded — wait ~20 s and re-run. The engine
+     retries each call and uses a 40 s budget + concurrency pool.
 
 3. **Build.** In the project dir:
    ```

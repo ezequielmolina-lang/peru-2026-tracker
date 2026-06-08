@@ -1,34 +1,56 @@
-// engine.js — paste into Claude-in-Chrome (javascript_tool) on a tab open at
+// engine.js v2 — paste into Claude-in-Chrome (javascript_tool) on a tab at
 // https://resultadosegundavuelta.onpe.gob.pe/main/resumen
-// Returns a COMPACT, numbers-only payload (~900 chars, fits one tool view).
-// Department-id order 1..25 maps to names in build.mjs (Callao is id 25).
+//
+// Computes per-region nets at PROVINCE level with shrinkage toward the department
+// mean (K0=25) so sparse provinces (e.g. 1 counted acta) don't distort the projection,
+// and applies a ~2% JEE validation haircut. ~480 calls, ~5s, concurrency-pooled.
+//
+// Returns {len, payload}. payload (numbers only) =
+//   { nat:[ts,cont,tot,jee,pend,validos,emitidos,partic,k,s],
+//     ext:[tot,cont,pend,jee,k,s],
+//     reg:[[cont,tot,jee,pend,kSharePct,vpa,netPend,netJee] x25 in dept-id order 1..25] }
+// Also stored in window.PAYLOAD. If the returned payload is display-truncated (len>~1100),
+// grab the tail with a 2nd call: window.PAYLOAD.slice(1000)
 (async () => {
   const base='https://resultadosegundavuelta.onpe.gob.pe/presentacion-backend';
+  const t0=performance.now(), BUDGET=40000, K0=25, JEE_VAL=0.98;
   const sleep=ms=>new Promise(z=>setTimeout(z,ms));
-  // robust JSON GET: ONPE is overloaded on election night and intermittently
-  // returns 503 or the SPA HTML shell (starts with '<'); retry past both.
-  const jget=async(u,tries=8)=>{for(let i=0;i<tries;i++){try{const r=await fetch(u,{cache:'no-store'});
-    if(r.status===200){const t=await r.text();if(t&&t[0]!=='<'){try{return JSON.parse(t);}catch(e){}}}}catch(e){}
-    await sleep(250+i*200);}return null;};
-  const V=(arr,code)=>((arr||[]).find(x=>x.codigoAgrupacionPolitica===code)||{}).totalVotosValidos||0; // 8=Keiko 10=Sánchez
-  const dep=async(n)=>{const id=String(n).padStart(2,'0')+'0000';
-    const f=`tipoFiltro=ubigeo_nivel_01&idAmbitoGeografico=1&idUbigeoDepartamento=${id}`;
-    const [t,p]=await Promise.all([jget(`${base}/resumen-general/totales?idEleccion=10&${f}`),
-                                   jget(`${base}/resumen-general/participantes?idEleccion=10&${f}`)]);
-    if(!t||!p||!t.data||!p.data)return null;const d=t.data;
-    return [d.contabilizadas,d.totalActas,d.enviadasJee,d.pendientesJee,V(p.data,8),V(p.data,10)];};
+  const jget=async(u,tr=4)=>{for(let i=0;i<tr;i++){try{const r=await fetch(u,{cache:'no-store'});
+    if(r.status===204)return{__e:1};
+    if(r.status===200){const t=await r.text();if(t&&t[0]!=='<'){try{return JSON.parse(t);}catch(e){}}}}catch(e){}await sleep(140+i*110);}return null;};
+  const V=(a,c)=>((a||[]).find(x=>x.codigoAgrupacionPolitica===c)||{}).totalVotosValidos||0; // 8=Keiko 10=Sánchez
+  const pool=async(th,L)=>{const R=new Array(th.length);let i=0;await Promise.all(Array.from({length:L},async()=>{while(i<th.length){const k=i++;if(performance.now()-t0>BUDGET){R[k]=null;continue;}try{R[k]=await th[k]();}catch(e){R[k]=null;}}}));return R;};
+  // 1) departments (trend + fallback)
+  const dT=n=>async()=>{const id=String(n).padStart(2,'0')+'0000',f=`tipoFiltro=ubigeo_nivel_01&idAmbitoGeografico=1&idUbigeoDepartamento=${id}`;
+    const[a,b]=await Promise.all([jget(`${base}/resumen-general/totales?idEleccion=10&${f}`),jget(`${base}/resumen-general/participantes?idEleccion=10&${f}`)]);
+    const d=a.data;return{n,id,cont:d.contabilizadas,tot:d.totalActas,jee:d.enviadasJee,pend:d.pendientesJee,k:V(b.data,8),s:V(b.data,10)};};
+  const deps=await pool(Array.from({length:25},(_,i)=>dT(i+1)),16);
+  // 2) provinces (nivel_02) for departments with remaining >= 8
+  const tg=deps.filter(d=>d&&d.jee+d.pend>=8), pT=[];
+  for(const d of tg)for(let pp=1;pp<=13;pp++)pT.push((function(id,pp){return async()=>{
+    const pid=id.slice(0,2)+String(pp).padStart(2,'0')+'00',f=`tipoFiltro=ubigeo_nivel_02&idAmbitoGeografico=1&idUbigeoDepartamento=${id}&idUbigeoProvincia=${pid}`;
+    const t=await jget(`${base}/resumen-general/totales?idEleccion=10&${f}`);if(!t||t.__e||!t.data||t.data.totalActas===0)return null;const d=t.data;
+    let k=0,s=0,got=0;if(d.enviadasJee+d.pendientesJee>0){const q=await jget(`${base}/resumen-general/participantes?idEleccion=10&${f}`);if(q&&q.data){k=V(q.data,8);s=V(q.data,10);got=1;}}
+    return{id,cont:d.contabilizadas,jee:d.enviadasJee,pend:d.pendientesJee,k,s,got};};})(d.id,pp));
+  const provs=(await pool(pT,16)).filter(Boolean);
+  const byId={};for(const p of provs)(byId[p.id]=byId[p.id]||[]).push(p);
+  // 3) shrinkage net per department
   const reg=[];
-  for(let st=1;st<=25;st+=5){const c=[];for(let n=st;n<Math.min(st+5,26);n++)c.push(dep(n));reg.push(...await Promise.all(c));}
-  for(let i=0;i<25;i++){if(!reg[i]){reg[i]=await dep(i+1);}if(!reg[i])throw new Error('dept fail '+(i+1));}
-  const nt=await jget(`${base}/resumen-general/totales?idEleccion=10&tipoFiltro=eleccion`);
-  const np=await jget(`${base}/resumen-general/participantes?idEleccion=10&tipoFiltro=eleccion`);
-  const et=await jget(`${base}/resumen-general/totales?idEleccion=10&tipoFiltro=ambito_geografico&idAmbitoGeografico=2`);
-  const ep=await jget(`${base}/resumen-general/participantes?idEleccion=10&tipoFiltro=ambito_geografico&idAmbitoGeografico=2`);
-  const nd=nt.data, ed=et.data;
-  const nat=[nd.fechaActualizacion,nd.contabilizadas,nd.totalActas,nd.enviadasJee,nd.pendientesJee,
-             nd.totalVotosValidos,nd.totalVotosEmitidos,nd.participacionCiudadana,V(np.data,8),V(np.data,10)];
+  for(const d of deps){const vv=d.k+d.s,dks=vv>0?d.k/vv:.5,dvp=d.cont>0?vv/d.cont:0;
+    let sp=0,sj=0,acc=0,accj=0;const ps=byId[d.id]||[];
+    for(const p of ps){const pv=p.k+p.s;
+      if(p.got&&pv>0){const w=p.cont/(p.cont+K0),ks=w*(p.k/pv)+(1-w)*dks,vp=w*(p.cont>0?pv/p.cont:dvp)+(1-w)*dvp,u=vp*(2*ks-1);sp+=p.pend*u;sj+=p.jee*u;}
+      else{const u=dvp*(2*dks-1);sp+=p.pend*u;sj+=p.jee*u;}
+      acc+=p.pend;accj+=p.jee;}
+    const u=dvp*(2*dks-1);sp+=(d.pend-acc)*u;sj+=(d.jee-accj)*u; // remainder at dept trend
+    reg.push([d.cont,d.tot,d.jee,d.pend,+(100*dks).toFixed(1),Math.round(dvp),Math.round(sp),Math.round(sj*JEE_VAL)]);}
+  // 4) national + exterior
+  const nt=await jget(`${base}/resumen-general/totales?idEleccion=10&tipoFiltro=eleccion`),np=await jget(`${base}/resumen-general/participantes?idEleccion=10&tipoFiltro=eleccion`);
+  const et=await jget(`${base}/resumen-general/totales?idEleccion=10&tipoFiltro=ambito_geografico&idAmbitoGeografico=2`),ep=await jget(`${base}/resumen-general/participantes?idEleccion=10&tipoFiltro=ambito_geografico&idAmbitoGeografico=2`);
+  const nd=nt.data,ed=et.data;
+  const nat=[nd.fechaActualizacion,nd.contabilizadas,nd.totalActas,nd.enviadasJee,nd.pendientesJee,nd.totalVotosValidos,nd.totalVotosEmitidos,nd.participacionCiudadana,V(np.data,8),V(np.data,10)];
   const ext=[ed.totalActas,ed.contabilizadas,ed.pendientesJee,ed.enviadasJee,V(ep.data,8),V(ep.data,10)];
   const payload=JSON.stringify({nat,ext,reg});
   window.PAYLOAD=payload;
-  return JSON.stringify({len:payload.length, payload});
+  return JSON.stringify({len:payload.length, sec:+((performance.now()-t0)/1000).toFixed(1), payload});
 })();
