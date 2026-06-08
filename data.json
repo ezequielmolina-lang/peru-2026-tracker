@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780945320427,
-    "updatedAtLabel": "08-jun, 02:02 p. m. (hora Perú)",
+    "updatedAt": 1780945560268,
+    "updatedAtLabel": "08-jun, 02:06 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.208,
-    "cont": 87393,
+    "pctActas": 94.244,
+    "cont": 87426,
     "tot": 92766,
     "jee": 1518,
-    "pend": 3855,
-    "validos": 17614090,
-    "emitidos": 18848249,
-    "participacion": 68.977,
-    "k": 8799290,
-    "s": 8814800,
-    "kPct": 49.956,
-    "sPct": 50.044,
-    "margin": -15510
+    "pend": 3822,
+    "validos": 17618988,
+    "emitidos": 18853553,
+    "participacion": 68.996,
+    "k": 8801992,
+    "s": 8816996,
+    "kPct": 49.957,
+    "sPct": 50.043,
+    "margin": -15004
   },
   "ext": {
     "tot": 2543,
-    "cont": 26,
-    "pend": 2517,
+    "cont": 51,
+    "pend": 2492,
     "jee": 0,
-    "k": 2880,
-    "s": 1710,
-    "vv": 4590,
-    "pctActas": 1.022
+    "k": 5346,
+    "s": 3498,
+    "vv": 8844,
+    "pctActas": 2.006
   },
   "assume": {
-    "extLiveKs": 62.7,
-    "extLiveVpa": 177,
-    "extSampleActas": 26,
-    "extShrunkKs": 62.2,
-    "extShrunkVpa": 137,
+    "extLiveKs": 60.4,
+    "extLiveVpa": 173,
+    "extSampleActas": 51,
+    "extShrunkKs": 61.3,
+    "extShrunkVpa": 145,
     "extPriorVpa": 120,
-    "extPendValid": 345063,
+    "extPendValid": 360195,
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -40910,
-    "jeeNet": 46180,
-    "final": -10240
+    "pendNet": -41816,
+    "jeeNet": 46177,
+    "final": -10643
   },
   "extScen": {
-    "low": 49687,
-    "central": 84370,
-    "high": 113265
+    "low": 43581,
+    "central": 81309,
+    "high": 90298
   },
   "finalScen": {
-    "low": 39447,
-    "central": 74130,
-    "high": 103025
+    "low": 32938,
+    "central": 70666,
+    "high": 79655
   },
   "seq": {
-    "domCountedMargin": -16680,
-    "extCountedMargin": 1170,
-    "hito1": -57590,
+    "domCountedMargin": -16852,
+    "extCountedMargin": 1848,
+    "hito1": -58668,
     "hito2": {
-      "low": -6733,
-      "central": 27950,
-      "high": 56845
+      "low": -13239,
+      "central": 24489,
+      "high": 33478
     }
   },
   "reg": [
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      75.5,
-      2035,
+      75.8,
+      2043,
       2697,
       28,
-      634,
-      54.8,
+      626,
+      54.7,
       164,
-      5538,
-      503
+      4632,
+      500
     ],
     [
       "Madre de Dios",
@@ -434,6 +434,11 @@
       1780945320427,
       -15510,
       74130
+    ],
+    [
+      1780945560268,
+      -15004,
+      70666
     ]
   ]
 }
