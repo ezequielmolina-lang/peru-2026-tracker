@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perú 2026 · Segunda Vuelta — Proyección en vivo</title>
+<meta name="description" content="Proyección en vivo al 100% del conteo ONPE — Keiko Fujimori vs Roberto Sánchez. Pendientes y actas al JEE proyectadas por tendencia regional. Se actualiza cada ~10 min.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1b19; --paper:#f7f3ea; --paper2:#fffdf8; --muted:#6f6a60; --line:#d9d2c4;
+    --keiko:#e0611f; --keiko-soft:#fbe9dc; --sanchez:#16695a; --sanchez-soft:#dcebe6; --warn:#8a6d1f;
+    --live:#cf3b2f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:15px;scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--ink);font-family:"Hanken Grotesk",sans-serif;line-height:1.42;padding:24px 14px;display:flex;justify-content:center}
+  .sheet{width:1040px;max-width:100%;background:radial-gradient(120% 80% at 0% 0%, #fffdf8 0%, var(--paper) 55%);border:1px solid var(--line);box-shadow:0 30px 70px -30px rgba(0,0,0,.6);padding:30px 38px 26px;position:relative;overflow:hidden}
+  .sheet::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.025) 1px, transparent 1px);background-size:4px 4px;pointer-events:none}
+
+  .kicker{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:9px;flex-wrap:wrap}
+  .live{display:inline-flex;align-items:center;gap:7px;color:var(--live);font-weight:600}
+  .pulse{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 rgba(207,59,47,.6);animation:p 2s infinite}
+  @keyframes p{0%{box-shadow:0 0 0 0 rgba(207,59,47,.55)}70%{box-shadow:0 0 0 9px rgba(207,59,47,0)}100%{box-shadow:0 0 0 0 rgba(207,59,47,0)}}
+
+  h1{font-family:"Fraunces",serif;font-weight:900;font-size:2.5rem;line-height:.98;letter-spacing:-.02em;margin:15px 0 5px}
+  h1 .q{font-style:italic;font-weight:400;color:var(--sanchez)}
+  .sub{font-size:.9rem;color:var(--muted);max-width:78ch;margin-bottom:8px}
+  .stamp{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--muted);margin-bottom:18px}
+  .stamp b{color:var(--ink)}
+
+  /* headline */
+  .head{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;margin-bottom:22px;background:var(--paper2)}
+  .head .now,.head .proj{padding:16px 20px}
+  .head .now{border-right:1.5px solid var(--ink)}
+  .lab{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+  .vs{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .cand{display:flex;flex-direction:column}
+  .cand .nm{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .cand .pct{font-family:"Fraunces",serif;font-weight:900;font-size:2.1rem;line-height:1}
+  .cand.k .pct{color:var(--keiko)} .cand.s .pct{color:var(--sanchez)}
+  .cand .vot{font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--muted);margin-top:2px}
+  .midbar{height:7px;border-radius:4px;margin:12px 0 8px;display:flex;overflow:hidden;border:1px solid var(--line)}
+  .midbar i{display:block;height:100%}
+  .marg{font-size:.82rem}
+  .marg b{font-family:"IBM Plex Mono",monospace}
+  .proj{background:linear-gradient(180deg,#fff 0%,var(--keiko-soft) 220%)}
+  .proj .big{font-family:"Fraunces",serif;font-weight:900;font-size:2.05rem;line-height:1.02;letter-spacing:-.01em}
+  .proj .big small{font-weight:600;font-size:1rem}
+  .proj .rng{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--muted);margin-top:5px}
+  .winflag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.05em;padding:3px 8px;border-radius:3px;margin-top:8px;text-transform:uppercase}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+  section{margin-bottom:20px}
+  h2{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sanchez);display:flex;align-items:center;gap:8px;margin-bottom:11px}
+  h2::before{content:"";width:16px;height:2px;background:var(--sanchez)}
+  p{font-size:.85rem;margin-bottom:7px}
+  .small{font-size:.77rem;color:var(--muted)}
+
+  .chips{display:flex;gap:7px;flex-wrap:wrap}
+  .chip{flex:1;min-width:90px;border:1px solid var(--line);border-radius:3px;padding:8px 10px;background:var(--paper2)}
+  .chip .n{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:1.05rem}
+  .chip.k .n{color:var(--keiko)} .chip.s .n{color:var(--sanchez)}
+  .chip .l{font-size:.6rem;letter-spacing:.03em;color:var(--muted);text-transform:uppercase;margin-top:1px}
+
+  .ledger{border:1px solid var(--line);border-radius:4px;background:var(--paper2);padding:12px 15px}
+  .ledger .row{display:flex;justify-content:space-between;gap:10px;font-size:.82rem;padding:5px 0;border-bottom:1px dashed var(--line)}
+  .ledger .row .v{font-family:"IBM Plex Mono",monospace;font-weight:600;white-space:nowrap}
+  .ledger .row.mid{border-bottom:1.5px solid var(--ink);font-weight:700}
+  .ledger .total{margin-top:7px;padding-top:9px;border-top:1.5px solid var(--ink);display:flex;justify-content:space-between;font-weight:800}
+  .ledger .total .v{font-size:1.06rem}
+  .netK{color:var(--keiko)} .netS{color:var(--sanchez)}
+  .scen{display:flex;gap:7px;margin-top:11px}
+  .scen .s{flex:1;border:1px solid var(--line);border-radius:3px;padding:8px 6px;background:var(--paper2);text-align:center}
+  .scen .s .h{font-size:.58rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .scen .s .r{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:.94rem;margin-top:3px}
+
+  table{width:100%;border-collapse:collapse;font-size:.74rem}
+  th,td{text-align:right;padding:3.4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  thead th{position:sticky;top:0;background:var(--paper);font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--ink)}
+  td.num{font-family:"IBM Plex Mono",monospace}
+  tr.done td{color:#a59e90}
+  tr.hl td{background:rgba(224,97,31,.06)}
+  tr.hlS td{background:rgba(22,105,90,.06)}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;vertical-align:middle;margin-right:5px}
+  .tbl-wrap{max-height:none;border:1px solid var(--line);border-radius:4px;background:var(--paper2);padding:4px 10px 8px}
+  .tag{display:inline-block;font-size:.56rem;font-family:"IBM Plex Mono",monospace;letter-spacing:.04em;padding:1px 5px;border-radius:3px;text-transform:uppercase;vertical-align:middle;margin-left:5px}
+  .tag.k{background:var(--keiko-soft);color:var(--keiko)} .tag.s{background:var(--sanchez-soft);color:var(--sanchez)}
+
+  .assume{background:var(--sanchez-soft);border-left:3px solid var(--sanchez);border-radius:0 4px 4px 0;padding:12px 15px}
+  .assume ol{margin:0;padding-left:18px}
+  .assume li{font-size:.77rem;margin-bottom:6px}
+  .assume li b{font-weight:700}
+  .flag{color:var(--warn);font-weight:700}
+
+  .ext{border:1.5px solid var(--keiko);border-radius:4px;background:linear-gradient(180deg,#fff, var(--keiko-soft) 280%);padding:13px 16px}
+  .ext .big{font-family:"Fraunces",serif;font-weight:900;font-size:1.5rem;color:var(--keiko)}
+
+  footer{margin-top:16px;border-top:1px solid var(--line);padding-top:10px;font-size:.66rem;color:var(--muted);line-height:1.55}
+  footer b{color:var(--ink)}
+  a{color:var(--sanchez)}
+  .err{display:none;background:#fff3f1;border:1px solid var(--live);color:#a12;border-radius:4px;padding:8px 12px;font-size:.76rem;margin-bottom:14px}
+  @media (max-width:780px){.grid{grid-template-columns:1fr}.head{grid-template-columns:1fr}.head .now{border-right:none;border-bottom:1.5px solid var(--ink)}h1{font-size:1.9rem}.cand .pct{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="kicker">
+    <span>Análisis electoral · datos oficiales ONPE</span>
+    <span class="live"><span class="pulse"></span><span id="liveTxt">en vivo · cada ~10 min</span></span>
+  </div>
+
+  <h1>Perú 2026 · Segunda vuelta<br><span class="q">proyección en vivo al 100% del conteo</span></h1>
+  <p class="sub">Keiko Fujimori (Fuerza Popular) vs. Roberto Sánchez (Juntos por el Perú). El conteo ordinario se proyecta al 100% sumando, por cada región, las <b>actas pendientes</b> y las <b>actas para envío al JEE</b> con la <b>misma tendencia</b> que las ya contabilizadas en ese lugar, más el <b>voto del exterior</b> (casi todo por entrar).</p>
+  <div class="stamp" id="stamp">Cargando datos…</div>
+
+  <div class="err" id="err"></div>
+
+  <div class="head">
+    <div class="now">
+      <div class="lab">Conteo actual · ONPE (<span id="pctActas">—</span>% de actas)</div>
+      <div class="vs">
+        <div class="cand k"><span class="nm">Keiko Fujimori</span><span class="pct" id="kPct">—</span><span class="vot" id="kVot">—</span></div>
+        <div class="cand s" style="text-align:right"><span class="nm">Roberto Sánchez</span><span class="pct" id="sPct">—</span><span class="vot" id="sVot">—</span></div>
+      </div>
+      <div class="midbar" id="midbar"><i style="width:50%;background:var(--keiko)"></i><i style="width:50%;background:var(--sanchez)"></i></div>
+      <div class="marg" id="margNow">—</div>
+    </div>
+    <div class="proj">
+      <div class="lab">Proyección final (conteo ordinario)</div>
+      <div class="big" id="projBig">—</div>
+      <div class="rng" id="projRng">—</div>
+      <div><span class="winflag" id="winflag">—</span></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <section>
+        <h2>Conteo actual (oficial ONPE)</h2>
+        <div class="chips">
+          <div class="chip"><div class="n" id="cActas">—</div><div class="l">Actas contabilizadas</div></div>
+          <div class="chip"><div class="n" id="cJee">—</div><div class="l">Para envío al JEE</div></div>
+          <div class="chip"><div class="n" id="cPend">—</div><div class="l">Pendientes</div></div>
+          <div class="chip"><div class="n" id="cPart">—</div><div class="l">Participación</div></div>
+        </div>
+        <p class="small" id="natLine" style="margin-top:9px"></p>
+      </section>
+
+      <section>
+        <h2>Balance neto (conteo ordinario)</h2>
+        <div class="ledger" id="ledger"></div>
+        <div class="scen" id="scen"></div>
+        <p class="small" id="scenNote" style="margin-top:8px"></p>
+      </section>
+
+      <section>
+        <h2>El factor decisivo · voto del exterior</h2>
+        <div class="ext" id="extBox"></div>
+      </section>
+    </div>
+
+    <div>
+      <section>
+        <h2>Pendientes y actas al JEE — de dónde vienen</h2>
+        <p class="small" style="margin-bottom:9px">Cada región aporta sus actas que faltan con <b>su propia tendencia</b>. Naranja = neto a favor de Keiko, verde = a favor de Sánchez. Ordenado por actas que faltan.</p>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Región</th><th>% act.</th><th>K / S</th><th>JEE</th><th>Pend.</th><th>Neto P.</th><th>Neto JEE</th></tr></thead>
+            <tbody id="regBody"></tbody>
+          </table>
+        </div>
+        <p class="small" id="regNote" style="margin-top:7px"></p>
+      </section>
+    </div>
+  </div>
+
+  <section>
+    <h2>Supuestos (dichos con claridad)</h2>
+    <div class="assume">
+      <ol id="assumeList"></ol>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+
+</div>
+
+<script>
+const NF = new Intl.NumberFormat('es-PE');
+const fmt = n => NF.format(Math.round(n));
+const sgn = n => (n>0?'+':(n<0?'−':'')) + fmt(Math.abs(n));
+const el = id => document.getElementById(id);
+let lastFetch = 0;
+
+function leanWord(n){ return n>0 ? 'Keiko' : (n<0 ? 'Sánchez' : '—'); }
+function netHtml(n, who){ // who optional override
+  const cls = n>0?'netK':(n<0?'netS':'');
+  const w = who || (n>0?'Keiko':(n<0?'Sánchez':''));
+  return `<span class="${cls}">${w} ${sgn(n).replace('+','+').replace('−','+')}</span>`;
+}
+function marginPhrase(n){
+  if(n===0) return 'empate técnico';
+  return `${n>0?'Keiko':'Sánchez'} +${fmt(Math.abs(n))}`;
+}
+
+function render(d){
+  const n=d.nat, e=d.ext, a=d.assume, dom=d.dom, fs=d.finalScen, es=d.extScen;
+
+  // stamp
+  let lima='';
+  try{ lima = new Date(n && d.meta.updatedAt).toLocaleString('es-PE',{timeZone:'America/Lima',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',hour12:true}); }catch(_){ lima=d.meta.updatedAtLabel; }
+  el('stamp').innerHTML = `Última lectura ONPE: <b>${d.meta.updatedAtLabel||lima}</b> · fuente: portal oficial ONPE · esta página se recarga sola.`;
+
+  // headline now
+  el('pctActas').textContent = n.pctActas.toFixed(1);
+  el('kPct').textContent = n.kPct.toFixed(2)+'%';
+  el('sPct').textContent = n.sPct.toFixed(2)+'%';
+  el('kVot').textContent = fmt(n.k)+' votos';
+  el('sVot').textContent = fmt(n.s)+' votos';
+  const kw = n.kPct, sw=n.sPct;
+  el('midbar').innerHTML = `<i style="width:${kw}%;background:var(--keiko)"></i><i style="width:${sw}%;background:var(--sanchez)"></i>`;
+  el('margNow').innerHTML = `Ahora mismo: <b class="${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</b> con ${n.pctActas.toFixed(1)}% de actas. Falta el exterior (${e.pctActas.toFixed(1)}% contado).`;
+
+  // projection headline
+  const win = fs.central>0?'Keiko':'Sánchez';
+  el('projBig').innerHTML = `${win} <small>gana por</small> ${fmt(Math.abs(fs.central))}<small> votos</small>`;
+  const lo=fs.low, hi=fs.high;
+  el('projRng').textContent = `Rango ${marginPhrase(lo)} … ${marginPhrase(hi)} (según el exterior)`;
+  const wf=el('winflag');
+  const crosses = (fs.low>0)!==(fs.high>0);
+  wf.textContent = crosses ? 'final reñido · escenarios cruzan el 0' : `favorito: ${win} · margen fino`;
+  wf.style.background = win==='Keiko'?'var(--keiko-soft)':'var(--sanchez-soft)';
+  wf.style.color = win==='Keiko'?'var(--keiko)':'var(--sanchez)';
+
+  // chips
+  el('cActas').textContent = fmt(n.cont)+' / '+fmt(n.tot);
+  el('cJee').textContent = fmt(n.jee);
+  el('cPend').textContent = fmt(n.pend);
+  el('cPart').textContent = n.participacion.toFixed(1)+'%';
+  el('natLine').innerHTML = `Válidos contados: <b>${fmt(n.validos)}</b>. De las pendientes nacionales, <b>${fmt(e.pend)}</b> son del exterior y ~${fmt(n.pend-e.pend)} domésticas; además <b>${fmt(n.jee)}</b> actas observadas van al JEE.`;
+
+  // ledger
+  const dl = el('ledger');
+  dl.innerHTML = `
+    <div class="row"><span>Conteo actual (${n.pctActas.toFixed(1)}% actas)</span><span class="v ${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</span></div>
+    <div class="row"><span>+ Pendiente doméstico (por tendencia regional)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
+    <div class="row mid"><span>+ Actas al JEE (por tendencia regional)<span class="tag k">supuesto fuerte</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
+    <div class="row mid"><span>= Doméstico proyectado (100%)</span><span class="v ${dom.final>=0?'netK':'netS'}">${marginPhrase(dom.final)}</span></div>
+    <div class="row"><span>+ Exterior (2 531 actas, ~0% contado · central)</span><span class="v netK">${marginPhrase(es.central)}</span></div>
+    <div class="total"><span>Resultado final proyectado</span><span class="v ${fs.central>=0?'netK':'netS'}">${marginPhrase(fs.central)}</span></div>`;
+
+  // scenarios
+  el('scen').innerHTML = ['low','central','high'].map((k,i)=>{
+    const v=fs[k]; const lbl=['Exterior bajo (57% K)','Central (62% K)','Exterior alto (66.5% K)'][i];
+    return `<div class="s"><div class="h">${lbl}</div><div class="r ${v>=0?'netK':'netS'}">${marginPhrase(v)}</div></div>`;
+  }).join('');
+  el('scenNote').innerHTML = `Punto de equilibrio: Sánchez gana si el neto del exterior para Keiko cae por debajo de ~${fmt(Math.abs(dom.final))} votos (es decir, si el exterior rinde mucho menos pro-Keiko que en 2021).`;
+
+  // exterior box
+  el('extBox').innerHTML = `
+    <div class="big">${marginPhrase(es.central)}</div>
+    <p class="small" style="margin-top:4px">Estimación central del neto del exterior para Keiko. <b>${fmt(e.tot)} actas</b>, hoy <b>${e.pctActas.toFixed(1)}%</b> contadas (${fmt(e.cont)} actas): Keiko ${fmt(e.k)} – Sánchez ${fmt(e.s)} (≈${(100*e.k/Math.max(e.k+e.s,1)).toFixed(0)}% Keiko en esa muestra inicial).</p>
+    <p class="small"><b>Supuesto:</b> ~${a.extVPA} válidos por acta (turnout tipo 2021) ⇒ ~${fmt(a.extPendValid)} válidos por entrar. Keiko entre 57% (tendencia inicial) y 66.5% (2021). La muestra de hoy corre a ~${a.extVPAcur}/acta: si se sostiene, el aporte del exterior sería aún mayor.</p>`;
+
+  // regional table
+  const reg = d.reg.slice().sort((x,y)=>(y[4]+y[5])-(x[4]+x[5]));
+  let totRemActas=0, movers=0;
+  el('regBody').innerHTML = reg.map(r=>{
+    const [name,pct,cont,tot,jee,pend,kSh,vpa,nP,nJ]=r;
+    const rem=jee+pend; totRemActas+=rem; if(pend>0) movers++;
+    const net=nP+nJ;
+    const done = rem<=2 && pend===0;
+    const cls = done?'done':(net>0?'hl':(net<0?'hlS':''));
+    const split = `<span class="dot" style="background:${kSh>=50?'var(--keiko)':'var(--sanchez)'}"></span>${kSh.toFixed(0)}/${(100-kSh).toFixed(0)}`;
+    const nPc = nP>0?'netK':(nP<0?'netS':''); const nJc = nJ>0?'netK':(nJ<0?'netS':'');
+    return `<tr class="${cls}"><td>${name}</td><td class="num">${pct.toFixed(1)}</td><td class="num">${split}</td><td class="num">${jee}</td><td class="num">${pend?fmt(pend):'—'}</td><td class="num ${nPc}">${nP?sgn(nP):'—'}</td><td class="num ${nJc}">${nJ?sgn(nJ):'—'}</td></tr>`;
+  }).join('');
+  el('regNote').innerHTML = `Quedan ~${fmt(n.pend - e.pend)} actas domésticas pendientes (sobre todo Loreto, Cusco, Ayacucho, Amazonas) y ${fmt(n.jee)} actas al JEE — de ellas <b>924 en Lima</b>, que por sí solas mueven ${sgn(d.reg.find(r=>r[0]==='Lima')[9])} a Keiko si se resuelven con la tendencia limeña.`;
+
+  // assumptions
+  el('assumeList').innerHTML = [
+    `<b>Reparto dentro de cada región.</b> Las actas pendientes y las del JEE de cada región se reparten igual que las ya contadas ahí (su <b>misma tendencia</b>).`,
+    `<b>Tamaño de acta.</b> Cada acta pendiente trae los votos válidos promedio de su región (${'~'}${a.extVPA}–230 según la zona).`,
+    `<span class="flag">Supuesto fuerte · actas al JEE.</span> Se proyectan por tendencia regional. <b>924 de las ${fmt(n.jee)} actas observadas son de Lima</b> (${(d.reg.find(r=>r[0]==='Lima')[6]).toFixed(0)}% Keiko), así que casi todo el neto JEE (${sgn(dom.jeeNet)}) es de Lima. Si esas actas se anulan o resuelven distinto, el doméstico se inclina más a Sánchez.`,
+    `<span class="flag">Mayor incertidumbre · exterior.</span> Casi todo por entrar. Tamaño y sesgo asumidos como 2021 (Keiko 66.5%), con piso en la tendencia inicial de hoy (57%). <b>Define el resultado.</b>`,
+    `<b>Fuente única.</b> Todo se lee del portal oficial de la ONPE (resumen por región y vista Extranjero). No se usan agregadores de terceros.`,
+    `<b>Conteo ordinario, no resultado legal.</b> El presidente electo lo proclama el JNE (mediados de julio); las actas observadas pesan en el resultado final.`
+  ].map(t=>`<li>${t}</li>`).join('');
+
+  // footer
+  el('foot').innerHTML = `<b>Procedencia.</b> Cifras leídas en vivo del portal oficial de la ONPE — <a href="https://resultadosegundavuelta.onpe.gob.pe/main/resumen" target="_blank" rel="noopener">resultadosegundavuelta.onpe.gob.pe</a> (backend de presentación, por región y por ámbito). &nbsp;|&nbsp; <b>Método.</b> Votos por acta calculados por separado para cada región (válidos ÷ actas contadas), aplicados a sus actas pendientes y al JEE con la tendencia local; el exterior se estima con referencia a 2021. &nbsp;|&nbsp; <b>Salvedad.</b> Proyección del conteo ordinario; no es pronóstico de la proclamación oficial del JNE. &nbsp;|&nbsp; Última actualización de datos: <b>${d.meta.updatedAtLabel}</b>.`;
+
+  lastFetch = Date.now();
+}
+
+async function load(){
+  try{
+    const r = await fetch('data.json?cb='+Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const d = await r.json();
+    el('err').style.display='none';
+    render(d);
+  }catch(err){
+    const e=el('err'); e.style.display='block';
+    e.textContent = 'No se pudo cargar data.json ('+err.message+'). Reintentando…';
+  }
+}
+
+// "hace X" ticker
+setInterval(()=>{
+  if(!lastFetch) return;
+  const s = Math.round((Date.now()-lastFetch)/1000);
+  const t = s<60 ? `hace ${s}s` : `hace ${Math.floor(s/60)} min`;
+  el('liveTxt').textContent = `en vivo · datos ${t} · cada ~10 min`;
+}, 1000);
+
+load();
+setInterval(load, 90000); // re-fetch data.json every 90s
+</script>
+</body>
+</html>
