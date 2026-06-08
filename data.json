@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780945560268,
-    "updatedAtLabel": "08-jun, 02:06 p. m. (hora Perú)",
+    "updatedAt": 1780945920337,
+    "updatedAtLabel": "08-jun, 02:12 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.244,
-    "cont": 87426,
+    "pctActas": 94.272,
+    "cont": 87452,
     "tot": 92766,
-    "jee": 1518,
-    "pend": 3822,
-    "validos": 17618988,
-    "emitidos": 18853553,
-    "participacion": 68.996,
-    "k": 8801992,
-    "s": 8816996,
-    "kPct": 49.957,
-    "sPct": 50.043,
-    "margin": -15004
+    "jee": 1513,
+    "pend": 3801,
+    "validos": 17621877,
+    "emitidos": 18856673,
+    "participacion": 69.008,
+    "k": 8803542,
+    "s": 8818335,
+    "kPct": 49.958,
+    "sPct": 50.042,
+    "margin": -14793
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -41816,
-    "jeeNet": 46177,
-    "final": -10643
+    "pendNet": -42573,
+    "jeeNet": 46168,
+    "final": -11198
   },
   "extScen": {
     "low": 43581,
@@ -53,18 +53,18 @@
     "high": 90298
   },
   "finalScen": {
-    "low": 32938,
-    "central": 70666,
-    "high": 79655
+    "low": 32383,
+    "central": 70111,
+    "high": 79100
   },
   "seq": {
-    "domCountedMargin": -16852,
+    "domCountedMargin": -16641,
     "extCountedMargin": 1848,
-    "hito1": -58668,
+    "hito1": -59214,
     "hito2": {
-      "low": -13239,
-      "central": 24489,
-      "high": 33478
+      "low": -13785,
+      "central": 23943,
+      "high": 32932
     }
   },
   "reg": [
@@ -226,10 +226,10 @@
     ],
     [
       "Lima",
-      96.8,
-      28323,
+      96.9,
+      28328,
       29247,
-      924,
+      919,
       0,
       63.5,
       219,
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      75.8,
-      2043,
+      76.5,
+      2064,
       2697,
       28,
-      626,
+      605,
       54.7,
-      164,
-      4632,
-      500
+      163,
+      3875,
+      491
     ],
     [
       "Madre de Dios",
@@ -439,6 +439,11 @@
       1780945560268,
       -15004,
       70666
+    ],
+    [
+      1780945920337,
+      -14793,
+      70111
     ]
   ]
 }
