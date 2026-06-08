@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780952760281,
-    "updatedAtLabel": "08-jun, 04:06 p. m. (hora Perú)",
+    "updatedAt": 1780953120163,
+    "updatedAtLabel": "08-jun, 04:12 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.67,
-    "cont": 87822,
+    "pctActas": 94.681,
+    "cont": 87832,
     "tot": 92766,
     "jee": 1527,
-    "pend": 3417,
-    "validos": 17670728,
-    "emitidos": 18909364,
-    "participacion": 69.201,
-    "k": 8821929,
-    "s": 8848799,
+    "pend": 3407,
+    "validos": 17672033,
+    "emitidos": 18910841,
+    "participacion": 69.206,
+    "k": 8822513,
+    "s": 8849520,
     "kPct": 49.924,
     "sPct": 50.076,
-    "margin": -26870
+    "margin": -27007
   },
   "ext": {
     "tot": 2543,
-    "cont": 99,
-    "pend": 2440,
+    "cont": 102,
+    "pend": 2437,
     "jee": 4,
-    "k": 10361,
-    "s": 7887,
-    "vv": 18248,
-    "pctActas": 3.893
+    "k": 10632,
+    "s": 8144,
+    "vv": 18776,
+    "pctActas": 4.011
   },
   "assume": {
-    "extLiveKs": 56.8,
+    "extLiveKs": 56.6,
     "extLiveVpa": 184,
-    "extSampleActas": 99,
-    "extShrunkKs": 58.7,
+    "extSampleActas": 102,
+    "extShrunkKs": 58.6,
     "extShrunkVpa": 160,
     "extPriorVpa": 120,
-    "extPendValid": 390523,
+    "extPendValid": 390762,
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -33899,
-    "jeeNet": 44935,
-    "final": -15834
+    "pendNet": -33940,
+    "jeeNet": 44927,
+    "final": -16020
   },
   "extScen": {
-    "low": 27811,
-    "central": 68334,
-    "high": 60975
+    "low": 26998,
+    "central": 67337,
+    "high": 59444
   },
   "finalScen": {
-    "low": 11977,
-    "central": 52500,
-    "high": 45141
+    "low": 10978,
+    "central": 51317,
+    "high": 43424
   },
   "seq": {
-    "domCountedMargin": -29344,
-    "extCountedMargin": 2474,
-    "hito1": -63243,
+    "domCountedMargin": -29495,
+    "extCountedMargin": 2488,
+    "hito1": -63435,
     "hito2": {
-      "low": -32958,
-      "central": 7565,
-      "high": 206
+      "low": -33949,
+      "central": 6390,
+      "high": -1503
     }
   },
   "reg": [
@@ -238,14 +238,14 @@
     ],
     [
       "Loreto",
-      81,
-      2185,
+      81.1,
+      2186,
       2697,
       28,
-      484,
+      483,
       54.7,
       160,
-      1948,
+      1941,
       473
     ],
     [
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      94.6,
-      1480,
+      95,
+      1486,
       1564,
       36,
-      48,
+      42,
       52.9,
       177,
-      387,
-      547
+      353,
+      539
     ]
   ],
   "history": [
@@ -559,6 +559,11 @@
       1780952760281,
       -26870,
       52500
+    ],
+    [
+      1780953120163,
+      -27007,
+      51317
     ]
   ]
 }
