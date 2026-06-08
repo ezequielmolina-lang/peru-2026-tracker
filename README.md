@@ -12,11 +12,14 @@ re-generated every ~10 minutes from a fresh ONPE reading.
 
 For every region, the actas still to come are added with **that region's own current trend**:
 
-- **Pendientes** (actas not yet counted) → split like the region's counted actas.
-- **Actas para envío al JEE** (observed actas sent to the electoral jury) → also projected at the
-  region's trend. ⚠️ This is a *strong* assumption: **924 of the ~1,516 observed actas are Lima's**
-  (~63% Keiko), so almost the entire JEE net is Lima. If those resolve differently, the domestic
-  picture tilts back toward Sánchez.
+- **Pendientes** (actas not yet counted) → split like the counted actas **in their own province**
+  (not the whole department). Provinces with very few counted actas are **shrunk** toward the
+  department mean (K₀=25) so a 1-acta province can't swing the projection.
+- **Actas para envío al JEE** (observed actas sent to the electoral jury) → projected at the same
+  province trend. In **2021 the JNE validated essentially all** observed actas (only ~12 annulled
+  nationwide despite hundreds of nullification requests), so they're included with a small ~2%
+  haircut. **924 of the ~1,516 observed actas are Lima's** (~63% Keiko); their net uses the Lima-Metro
+  trend, not the national average.
 - **Voto del exterior** — almost entirely uncounted and historically Fujimorista. Estimated with a
   2021 anchor (Keiko 66.5%) and a floor at today's early trend (~57%). This block **decides the race**.
 
