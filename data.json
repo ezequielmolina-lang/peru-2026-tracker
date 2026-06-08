@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780948680261,
-    "updatedAtLabel": "08-jun, 02:58 p. m. (hora Perú)",
+    "updatedAt": 1780948920202,
+    "updatedAtLabel": "08-jun, 03:02 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.392,
-    "cont": 87564,
+    "pctActas": 94.42,
+    "cont": 87590,
     "tot": 92766,
-    "jee": 1514,
-    "pend": 3688,
-    "validos": 17635929,
-    "emitidos": 18871865,
-    "participacion": 69.063,
-    "k": 8809665,
-    "s": 8826264,
-    "kPct": 49.953,
-    "sPct": 50.047,
-    "margin": -16599
+    "jee": 1516,
+    "pend": 3660,
+    "validos": 17640802,
+    "emitidos": 18877115,
+    "participacion": 69.083,
+    "k": 8812534,
+    "s": 8828268,
+    "kPct": 49.955,
+    "sPct": 50.045,
+    "margin": -15734
   },
   "ext": {
     "tot": 2543,
-    "cont": 66,
-    "pend": 2476,
-    "jee": 1,
-    "k": 6688,
-    "s": 5496,
-    "vv": 12184,
-    "pctActas": 2.595
+    "cont": 91,
+    "pend": 2449,
+    "jee": 3,
+    "k": 9532,
+    "s": 7434,
+    "vv": 16966,
+    "pctActas": 3.578
   },
   "assume": {
-    "extLiveKs": 54.9,
-    "extLiveVpa": 185,
-    "extSampleActas": 66,
-    "extShrunkKs": 58.3,
-    "extShrunkVpa": 154,
+    "extLiveKs": 56.2,
+    "extLiveVpa": 186,
+    "extSampleActas": 91,
+    "extShrunkKs": 58.5,
+    "extShrunkVpa": 160,
     "extPriorVpa": 120,
-    "extPendValid": 380911,
+    "extPendValid": 391937,
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -42566,
-    "jeeNet": 45498,
-    "final": -13667
+    "pendNet": -42593,
+    "jeeNet": 45497,
+    "final": -12830
   },
   "extScen": {
-    "low": 25413,
-    "central": 63053,
-    "high": 44718
+    "low": 26416,
+    "central": 66585,
+    "high": 56462
   },
   "finalScen": {
-    "low": 11746,
-    "central": 49386,
-    "high": 31051
+    "low": 13586,
+    "central": 53755,
+    "high": 43632
   },
   "seq": {
-    "domCountedMargin": -17791,
-    "extCountedMargin": 1192,
-    "hito1": -60357,
+    "domCountedMargin": -17832,
+    "extCountedMargin": 2098,
+    "hito1": -60425,
     "hito2": {
-      "low": -33752,
-      "central": 3888,
-      "high": -14447
+      "low": -31911,
+      "central": 8258,
+      "high": -1865
     }
   },
   "reg": [
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      90.9,
-      1422,
+      91,
+      1423,
       1564,
       32,
-      110,
+      109,
       53.2,
       180,
-      1194,
-      536
+      1167,
+      535
     ]
   ],
   "history": [
@@ -489,6 +489,11 @@
       1780948680261,
       -16599,
       49386
+    ],
+    [
+      1780948920202,
+      -15734,
+      53755
     ]
   ]
 }
