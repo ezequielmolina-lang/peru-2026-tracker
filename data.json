@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780944120426,
-    "updatedAtLabel": "08-jun, 01:42 p. m. (hora Perú)",
+    "updatedAt": 1780944480554,
+    "updatedAtLabel": "08-jun, 01:48 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.113,
-    "cont": 87305,
+    "pctActas": 94.141,
+    "cont": 87331,
     "tot": 92766,
     "jee": 1517,
-    "pend": 3944,
-    "validos": 17601764,
-    "emitidos": 18835162,
-    "participacion": 68.929,
-    "k": 8795045,
-    "s": 8806719,
-    "kPct": 49.967,
-    "sPct": 50.033,
-    "margin": -11674
+    "pend": 3918,
+    "validos": 17605706,
+    "emitidos": 18839387,
+    "participacion": 68.945,
+    "k": 8796397,
+    "s": 8809309,
+    "kPct": 49.963,
+    "sPct": 50.037,
+    "margin": -12912
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -43676,
-    "jeeNet": 46233,
-    "final": -9117
+    "pendNet": -42784,
+    "jeeNet": 46236,
+    "final": -9460
   },
   "extScen": {
     "low": 49670,
@@ -53,18 +53,18 @@
     "high": 118534
   },
   "finalScen": {
-    "low": 40553,
-    "central": 74926,
-    "high": 109417
+    "low": 40210,
+    "central": 74583,
+    "high": 109074
   },
   "seq": {
-    "domCountedMargin": -12661,
+    "domCountedMargin": -13899,
     "extCountedMargin": 987,
-    "hito1": -56337,
+    "hito1": -56683,
     "hito2": {
-      "low": -5680,
-      "central": 28693,
-      "high": 63184
+      "low": -6026,
+      "central": 28347,
+      "high": 62838
     }
   },
   "reg": [
@@ -118,15 +118,15 @@
     ],
     [
       "Ayacucho",
-      94.3,
-      1792,
+      94.5,
+      1796,
       1900,
       18,
-      90,
-      20.9,
+      86,
+      20.8,
       173,
-      -8416,
-      -1909
+      -7991,
+      -1907
     ],
     [
       "Cajamarca",
@@ -142,15 +142,15 @@
     ],
     [
       "Cusco",
-      91.4,
-      3639,
+      91.5,
+      3644,
       3983,
       43,
-      301,
+      296,
       22.2,
       194,
-      -29520,
-      -3829
+      -28733,
+      -3824
     ],
     [
       "Huancavelica",
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      73.6,
-      1984,
+      74.2,
+      2001,
       2697,
       27,
-      686,
+      669,
       54.9,
       165,
-      6242,
-      560
+      5922,
+      556
     ],
     [
       "Madre de Dios",
@@ -414,6 +414,11 @@
       1780944120426,
       -11674,
       74926
+    ],
+    [
+      1780944480554,
+      -12912,
+      74583
     ]
   ]
 }
