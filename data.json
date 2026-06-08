@@ -1,84 +1,84 @@
 {
   "meta": {
-    "updatedAt": 1780956480081,
-    "updatedAtLabel": "08-jun, 05:08 p. m. (hora Perú)",
+    "updatedAt": 1780960920076,
+    "updatedAtLabel": "08-jun, 06:22 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.783,
-    "cont": 87926,
+    "pctActas": 94.905,
+    "cont": 88040,
     "tot": 92766,
-    "jee": 1523,
-    "pend": 3317,
-    "validos": 17679654,
-    "emitidos": 18919013,
-    "participacion": 69.236,
-    "k": 8824577,
-    "s": 8855077,
-    "kPct": 49.914,
-    "sPct": 50.086,
-    "margin": -30500
+    "jee": 1525,
+    "pend": 3201,
+    "validos": 17691921,
+    "emitidos": 18932016,
+    "participacion": 69.284,
+    "k": 8828096,
+    "s": 8863825,
+    "kPct": 49.899,
+    "sPct": 50.101,
+    "margin": -35729
   },
   "ext": {
     "tot": 2543,
-    "cont": 140,
-    "pend": 2399,
-    "jee": 4,
-    "k": 10768,
-    "s": 8209,
-    "vv": 18977,
-    "pctActas": 5.505
+    "cont": 154,
+    "pend": 2381,
+    "jee": 8,
+    "k": 11571,
+    "s": 8694,
+    "vv": 20265,
+    "pctActas": 6.056
   },
   "assume": {
-    "extLiveKs": 56.7,
-    "extLiveVpa": 136,
-    "extSampleActas": 140,
-    "extShrunkKs": 56.8,
-    "extShrunkVpa": 135,
-    "extBand": 4.2,
-    "extPendValid": 324133,
+    "extLiveKs": 57.1,
+    "extLiveVpa": 132,
+    "extSampleActas": 154,
+    "extShrunkKs": 57.2,
+    "extShrunkVpa": 131,
+    "extBand": 4,
+    "extPendValid": 313044,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -32711,
-    "jeeNet": 44867,
-    "final": -18344
+    "pendNet": -29605,
+    "jeeNet": 45251,
+    "final": -20083
   },
   "extScen": {
-    "low": 16958,
-    "central": 44352,
-    "high": 71746
+    "low": 19625,
+    "central": 44851,
+    "high": 70076
   },
   "finalScen": {
-    "low": -1386,
-    "central": 26008,
-    "high": 53402
+    "low": -458,
+    "central": 24768,
+    "high": 49993
   },
   "seq": {
-    "domCountedMargin": -33059,
-    "extCountedMargin": 2559,
-    "hito1": -65770,
+    "domCountedMargin": -38606,
+    "extCountedMargin": 2877,
+    "hito1": -68211,
     "hito2": {
-      "low": -46253,
-      "central": -18859,
-      "high": 8535
+      "low": -45709,
+      "central": -20483,
+      "high": 4742
     }
   },
   "reg": [
     [
       "Amazonas",
-      92.1,
-      1177,
+      94.4,
+      1206,
       1278,
       12,
-      89,
-      36.9,
-      157,
-      -6821,
-      -594
+      60,
+      36.4,
+      155,
+      -4541,
+      -596
     ],
     [
       "Áncash",
@@ -118,15 +118,15 @@
     ],
     [
       "Ayacucho",
-      97.7,
-      1857,
+      98,
+      1862,
       1900,
-      20,
+      15,
       23,
       20.8,
       172,
       -2175,
-      -2091
+      -1559
     ],
     [
       "Cajamarca",
@@ -166,14 +166,14 @@
     ],
     [
       "Huánuco",
-      99,
-      2317,
+      99.1,
+      2320,
       2341,
       20,
-      4,
+      1,
       35.9,
       168,
-      -180,
+      -46,
       -739
     ],
     [
@@ -238,27 +238,27 @@
     ],
     [
       "Loreto",
-      81.4,
-      2196,
+      83.2,
+      2243,
       2697,
-      28,
-      473,
-      54.6,
-      160,
-      1654,
-      468
+      29,
+      425,
+      54.4,
+      159,
+      2266,
+      465
     ],
     [
       "Madre de Dios",
-      94.9,
-      481,
+      95.5,
+      484,
       507,
-      4,
-      22,
-      31.2,
-      191,
-      -2011,
-      -281
+      5,
+      18,
+      31.1,
+      190,
+      -1639,
+      -371
     ],
     [
       "Moquegua",
@@ -313,12 +313,12 @@
       99.4,
       2520,
       2534,
-      13,
-      1,
+      14,
+      0,
       45.4,
       191,
-      -22,
-      -216
+      0,
+      -237
     ],
     [
       "Tacna",
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      96.4,
-      1507,
+      97.2,
+      1520,
       1564,
       36,
-      21,
-      52.8,
+      8,
+      52.5,
       175,
-      311,
-      514
+      -3,
+      482
     ]
   ],
   "history": [
@@ -604,6 +604,11 @@
       1780956480081,
       -30500,
       33902
+    ],
+    [
+      1780960920076,
+      -35729,
+      24768
     ]
   ]
 }
