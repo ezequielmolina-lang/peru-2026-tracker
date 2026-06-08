@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780953720080,
-    "updatedAtLabel": "08-jun, 04:22 p. m. (hora Perú)",
+    "updatedAt": 1780953960076,
+    "updatedAtLabel": "08-jun, 04:26 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.709,
-    "cont": 87858,
+    "pctActas": 94.714,
+    "cont": 87862,
     "tot": 92766,
     "jee": 1524,
-    "pend": 3384,
-    "validos": 17674918,
-    "emitidos": 18914042,
-    "participacion": 69.218,
-    "k": 8823733,
-    "s": 8851185,
+    "pend": 3380,
+    "validos": 17675419,
+    "emitidos": 18914594,
+    "participacion": 69.22,
+    "k": 8823951,
+    "s": 8851468,
     "kPct": 49.922,
     "sPct": 50.078,
-    "margin": -27452
+    "margin": -27517
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -33971,
+    "pendNet": -33926,
     "jeeNet": 44859,
-    "final": -16564
+    "final": -16584
   },
   "extScen": {
     "low": 27348,
@@ -53,18 +53,18 @@
     "high": 60522
   },
   "finalScen": {
-    "low": 10784,
-    "central": 51332,
-    "high": 43958
+    "low": 10764,
+    "central": 51312,
+    "high": 43938
   },
   "seq": {
-    "domCountedMargin": -30011,
+    "domCountedMargin": -30076,
     "extCountedMargin": 2559,
-    "hito1": -63982,
+    "hito1": -64002,
     "hito2": {
-      "low": -34075,
-      "central": 6473,
-      "high": -901
+      "low": -34095,
+      "central": 6453,
+      "high": -921
     }
   },
   "reg": [
@@ -107,13 +107,13 @@
     [
       "Arequipa",
       99.4,
-      4189,
+      4190,
       4215,
       25,
-      1,
+      0,
       36.4,
       218,
-      -73,
+      0,
       -1430
     ],
     [
@@ -238,14 +238,14 @@
     ],
     [
       "Loreto",
-      81.1,
-      2187,
+      81.2,
+      2190,
       2697,
       28,
-      482,
+      479,
       54.7,
       160,
-      1952,
+      1924,
       473
     ],
     [
@@ -574,6 +574,11 @@
       1780953720080,
       -27452,
       51332
+    ],
+    [
+      1780953960076,
+      -27517,
+      51312
     ]
   ]
 }
