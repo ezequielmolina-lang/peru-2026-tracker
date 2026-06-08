@@ -256,16 +256,16 @@ function render(d){
 
   // scenarios
   el('scen').innerHTML = ['low','central','high'].map((k,i)=>{
-    const v=fs[k]; const lbl=['Exterior bajo (57% K)','Central (62% K)','Exterior alto (66.5% K)'][i];
+    const v=fs[k]; const lbl=['Conservador · turnout 2021',`Central · vivo (${a.extShrunkKs}% K)`,`Si se sostiene (${a.extLiveKs}% K)`][i];
     return `<div class="s"><div class="h">${lbl}</div><div class="r ${v>=0?'netK':'netS'}">${marginPhrase(v)}</div></div>`;
   }).join('');
-  el('scenNote').innerHTML = `Punto de equilibrio: Sánchez gana si el neto del exterior para Keiko cae por debajo de ~${fmt(Math.abs(dom.final))} votos (es decir, si el exterior rinde mucho menos pro-Keiko que en 2021).`;
+  el('scenNote').innerHTML = `Punto de equilibrio: Sánchez gana si el neto del exterior para Keiko cae por debajo de ~${fmt(Math.abs(dom.final))} votos. Hoy el exterior va ${a.extLiveKs}% Keiko sobre ${fmt(e.cont)} actas — muestra chica, por eso el rango es amplio.`;
 
-  // exterior box
+  // exterior box — driven by the LIVE exterior trend, shrunk to the 2021 prior
   el('extBox').innerHTML = `
     <div class="big">${marginPhrase(es.central)}</div>
-    <p class="small" style="margin-top:4px">Estimación central del neto del exterior para Keiko. <b>${fmt(e.tot)} actas</b>, hoy <b>${e.pctActas.toFixed(1)}%</b> contadas (${fmt(e.cont)} actas): Keiko ${fmt(e.k)} – Sánchez ${fmt(e.s)} (≈${(100*e.k/Math.max(e.k+e.s,1)).toFixed(0)}% Keiko en esa muestra inicial).</p>
-    <p class="small"><b>Supuesto:</b> ~${a.extVPA} válidos por acta (turnout tipo 2021) ⇒ ~${fmt(a.extPendValid)} válidos por entrar. Keiko entre 57% (tendencia inicial) y 66.5% (2021). La muestra de hoy corre a ~${a.extVPAcur}/acta: si se sostiene, el aporte del exterior sería aún mayor.</p>`;
+    <p class="small" style="margin-top:4px">Neto central del exterior para Keiko. <b>${fmt(e.tot)} actas</b>, hoy <b>${e.pctActas.toFixed(1)}%</b> contadas (${fmt(e.cont)} actas): Keiko ${fmt(e.k)} – Sánchez ${fmt(e.s)} (<b>${a.extLiveKs}% Keiko</b>, ${a.extLiveVpa} válidos/acta en esa muestra).</p>
+    <p class="small"><b>Tendencia viva, suavizada.</b> Como ${fmt(e.cont)} actas es muestra chica, el dato vivo se reduce (<i>shrinkage</i>) hacia el patrón 2021 → central <b>${a.extShrunkKs}% Keiko</b> a ${a.extShrunkVpa} válidos/acta ⇒ ~${fmt(a.extPendValid)} válidos por entrar. El rango va de "vuelve al turnout 2021" a "se sostiene la tendencia de hoy". Se afina solo a medida que entran más países.</p>`;
 
   // regional table
   const reg = d.reg.slice().sort((x,y)=>(y[4]+y[5])-(x[4]+x[5]));
@@ -287,13 +287,13 @@ function render(d){
     `<b>Tendencia provincial, no departamental.</b> Cada acta pendiente o del JEE se reparte como las ya contadas en <b>su provincia</b>, no en todo el departamento (p. ej. en Loreto, Maynas ≠ Alto Amazonas). Las provincias con muy pocas actas contadas se acercan a la media de su departamento (<i>shrinkage</i>, K₀=25), para que un acta suelta no distorsione la proyección.`,
     `<b>Tamaño de acta.</b> Cada acta pendiente trae los votos válidos promedio de su provincia (${'~'}${a.extVPA}–230 según la zona).`,
     `<b>Actas al JEE: validadas históricamente.</b> En 2021 el JNE <b>validó casi todas</b> las observadas — solo ~12 anuladas a nivel nacional pese a cientos de pedidos de nulidad. Por eso se incluyen a tendencia provincial con un <i>haircut</i> de ~2%. <b>924 de las ${fmt(n.jee)} actas observadas son de Lima</b>; su neto (${sgn(dom.jeeNet)}) se calcula con la tendencia de Lima Metropolitana, no el promedio nacional.`,
-    `<span class="flag">Mayor incertidumbre · exterior.</span> Casi todo por entrar. Tamaño y sesgo asumidos como 2021 (Keiko 66.5%), con piso en la tendencia inicial de hoy (57%). <b>Define el resultado.</b>`,
+    `<span class="flag">Mayor incertidumbre · exterior.</span> Casi todo por entrar; se proyecta con la <b>tendencia viva</b> del exterior (hoy ${a.extLiveKs}% Keiko, ${a.extLiveVpa} válidos/acta sobre ${fmt(e.cont)} actas), suavizada hacia el patrón 2021 por ser muestra chica (shrinkage, pseudoconteo 60 actas). A 0.8% contado el detalle por país es ruido, así que se usa el promedio global vivo; se afina solo cuando entren más países. <b>Define el resultado.</b>`,
     `<b>Fuente única.</b> Todo se lee del portal oficial de la ONPE (resumen por región y vista Extranjero). No se usan agregadores de terceros.`,
     `<b>Conteo ordinario, no resultado legal.</b> El presidente electo lo proclama el JNE (mediados de julio); las actas observadas pesan en el resultado final.`
   ].map(t=>`<li>${t}</li>`).join('');
 
   // footer
-  el('foot').innerHTML = `<b>Procedencia.</b> Cifras leídas en vivo del portal oficial de la ONPE — <a href="https://resultadosegundavuelta.onpe.gob.pe/main/resumen" target="_blank" rel="noopener">resultadosegundavuelta.onpe.gob.pe</a> (backend de presentación, por región y por ámbito). &nbsp;|&nbsp; <b>Método.</b> Votos por acta y tendencia calculados por <b>provincia</b> (válidos ÷ actas contadas), aplicados a sus pendientes y actas al JEE, con <i>shrinkage</i> (K₀=25) hacia el departamento donde hay pocas actas y un <i>haircut</i> de ~2% al JEE; el exterior se estima con referencia a 2021. &nbsp;|&nbsp; <b>Salvedad.</b> Proyección del conteo ordinario; no es pronóstico de la proclamación oficial del JNE. &nbsp;|&nbsp; Última actualización de datos: <b>${d.meta.updatedAtLabel}</b>.`;
+  el('foot').innerHTML = `<b>Procedencia.</b> Cifras leídas en vivo del portal oficial de la ONPE — <a href="https://resultadosegundavuelta.onpe.gob.pe/main/resumen" target="_blank" rel="noopener">resultadosegundavuelta.onpe.gob.pe</a> (backend de presentación, por región y por ámbito). &nbsp;|&nbsp; <b>Método.</b> Votos por acta y tendencia calculados por <b>provincia</b> (válidos ÷ actas contadas), aplicados a sus pendientes y actas al JEE, con <i>shrinkage</i> (K₀=25) hacia el departamento donde hay pocas actas y un <i>haircut</i> de ~2% al JEE; Lima Metro al JEE se resuelve por distrito. El exterior usa su tendencia viva, suavizada hacia un prior 2021. &nbsp;|&nbsp; <b>Salvedad.</b> Proyección del conteo ordinario; no es pronóstico de la proclamación oficial del JNE. &nbsp;|&nbsp; Última actualización de datos: <b>${d.meta.updatedAtLabel}</b>.`;
 
   lastFetch = Date.now();
 }

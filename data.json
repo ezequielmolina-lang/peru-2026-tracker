@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780942080505,
-    "updatedAtLabel": "08-jun, 01:08 p. m. (hora Perú)",
+    "updatedAt": 1780942920460,
+    "updatedAtLabel": "08-jun, 01:22 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 93.945,
-    "cont": 87149,
+    "pctActas": 94.061,
+    "cont": 87257,
     "tot": 92766,
-    "jee": 1517,
-    "pend": 4100,
-    "validos": 17581573,
-    "emitidos": 18813623,
-    "participacion": 68.85,
-    "k": 8788594,
-    "s": 8792979,
-    "kPct": 49.988,
-    "sPct": 50.012,
-    "margin": -4385
+    "jee": 1516,
+    "pend": 3993,
+    "validos": 17595459,
+    "emitidos": 18828500,
+    "participacion": 68.905,
+    "k": 8792919,
+    "s": 8802540,
+    "kPct": 49.973,
+    "sPct": 50.027,
+    "margin": -9621
   },
   "ext": {
     "tot": 2543,
@@ -33,28 +33,29 @@
     "pctActas": 0.826
   },
   "assume": {
-    "extVPA": 120,
-    "extVPAcur": 184,
-    "extShareLow": 0.57,
-    "extShareCentral": 0.62,
-    "extShareHigh": 0.665,
-    "extPendValid": 302640,
+    "extLiveKs": 62.8,
+    "extLiveVpa": 184,
+    "extSampleActas": 21,
+    "extShrunkKs": 62.2,
+    "extShrunkVpa": 137,
+    "extPriorVpa": 120,
+    "extPendValid": 344269,
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -46573,
-    "jeeNet": 45734,
-    "final": -5224
+    "pendNet": -44841,
+    "jeeNet": 46344,
+    "final": -8118
   },
   "extScen": {
-    "low": 42370,
-    "central": 72634,
-    "high": 99871
+    "low": 49670,
+    "central": 84043,
+    "high": 118534
   },
   "finalScen": {
-    "low": 37146,
-    "central": 67410,
-    "high": 94647
+    "low": 41552,
+    "central": 75925,
+    "high": 110416
   },
   "reg": [
     [
@@ -83,14 +84,14 @@
     ],
     [
       "Apurímac",
-      99.1,
-      1305,
+      99.2,
+      1307,
       1317,
       10,
-      2,
+      0,
       18.8,
       175,
-      -234,
+      0,
       -1114
     ],
     [
@@ -107,14 +108,14 @@
     ],
     [
       "Ayacucho",
-      91.9,
-      1747,
+      93.7,
+      1781,
       1900,
       17,
-      136,
-      20.8,
+      102,
+      20.9,
       173,
-      -12850,
+      -9513,
       -1812
     ],
     [
@@ -223,19 +224,19 @@
       63.5,
       219,
       0,
-      55165
+      55671
     ],
     [
       "Loreto",
-      70.4,
-      1899,
+      72.4,
+      1952,
       2697,
       27,
-      771,
-      55.3,
-      168,
-      7940,
-      597
+      718,
+      55,
+      166,
+      6499,
+      568
     ],
     [
       "Madre de Dios",
@@ -288,26 +289,26 @@
     [
       "Puno",
       99.3,
-      3372,
+      3373,
       3397,
-      25,
+      24,
       0,
       13.6,
       209,
       0,
-      -3641
+      -3502
     ],
     [
       "San Martín",
-      98.6,
-      2498,
+      99.3,
+      2516,
       2534,
       13,
-      23,
+      5,
       45.4,
       191,
-      457,
-      -208
+      59,
+      -214
     ],
     [
       "Tacna",
@@ -383,6 +384,11 @@
       1780942080505,
       -4385,
       67410
+    ],
+    [
+      1780942920460,
+      -9621,
+      75925
     ]
   ]
 }

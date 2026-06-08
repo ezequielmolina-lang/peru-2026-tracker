@@ -17,11 +17,16 @@ const NAME = ['Amazonas','Áncash','Apurímac','Arequipa','Ayacucho','Cajamarca'
   'Huancavelica','Huánuco','Ica','Junín','La Libertad','Lambayeque','Lima','Loreto',
   'Madre de Dios','Moquegua','Pasco','Piura','Puno','San Martín','Tacna','Tumbes','Ucayali','Callao'];
 
-// ---- Exterior assumptions (explicit & tweakable) -------------------------
-const EXT_VPA = 120;                 // valid votes per acta abroad (2021-like turnout)
-const EXT_SHARE = { low:0.57, central:0.62, high:0.665 }; // Keiko share: today's early trend -> 2021
-// Province-trend shrinkage (K0) and JEE validation haircut are applied upstream in engine.js.
-// --------------------------------------------------------------------------
+// ---- Exterior model (driven by the LIVE exterior trend, shrunk to a 2021 prior) ----
+// The exterior is the decisive block but starts ~0% counted. We use its OWN live trend
+// (Keiko share + votes/acta) shrunk toward a 2021-based prior with pseudocount EXT_K0,
+// so a handful of early actas don't blow up the estimate; it trends fully to live as
+// actas arrive. (Per-country granularity isn't informative until far more actas count.)
+const EXT_PRIOR_KS  = 0.62;   // 2021-anchored Keiko share prior
+const EXT_PRIOR_VPA = 120;    // 2021-like valid votes per acta abroad
+const EXT_K0        = 60;     // pseudocount (actas) — live weight = cont/(cont+60)
+// Province-trend shrinkage (K0=25) and JEE validation haircut are applied upstream in engine.js.
+// ------------------------------------------------------------------------------------
 
 const raw = process.argv[2];
 if (!raw) { console.error('Usage: node build.mjs \'<payload json>\''); process.exit(1); }
@@ -41,9 +46,19 @@ pendNet = Math.round(pendNet); jeeNet = Math.round(jeeNet);
 
 const margin   = nk - ns;
 const domFinal = margin + pendNet + jeeNet;
-const extPendValid = Math.round(epend * EXT_VPA);
-const extScen = {};
-for (const k in EXT_SHARE) extScen[k] = Math.round(extPendValid * (2*EXT_SHARE[k] - 1));
+
+// Exterior: live trend (ek/es/econt) shrunk toward the 2021 prior.
+const gKs  = (ek+es) > 0 ? ek/(ek+es) : EXT_PRIOR_KS;       // live Keiko share abroad
+const gVpa = econt   > 0 ? (ek+es)/econt : EXT_PRIOR_VPA;   // live votes/acta abroad
+const w    = econt/(econt + EXT_K0);                        // weight on live data
+const shKs  = w*gKs  + (1-w)*EXT_PRIOR_KS;
+const shVpa = w*gVpa + (1-w)*EXT_PRIOR_VPA;
+const extPendValid = Math.round(epend * shVpa);
+const extScen = {
+  low:     Math.round(epend * EXT_PRIOR_VPA * (2*(shKs-0.04) - 1)), // reverts toward 2021 turnout & a bit less Keiko
+  central: Math.round(epend * shVpa         * (2* shKs       - 1)), // shrunk live trend
+  high:    Math.round(epend * gVpa          * (2* gKs        - 1)), // current strong reading holds (full live)
+};
 const finalScen = { low: domFinal+extScen.low, central: domFinal+extScen.central, high: domFinal+extScen.high };
 
 const pctActas = ntot>0 ? +(ncont/ntot*100).toFixed(3) : 0;
@@ -70,8 +85,8 @@ const out = {
     participacion: +partic.toFixed(3), k:nk, s:ns, kPct, sPct, margin },
   ext: { tot:etot, cont:econt, pend:epend, jee:ejee, k:ek, s:es, vv:ek+es,
     pctActas: etot>0 ? +(econt/etot*100).toFixed(3) : 0 },
-  assume: { extVPA: EXT_VPA, extVPAcur: econt>0 ? Math.round((ek+es)/econt) : null,
-    extShareLow: EXT_SHARE.low, extShareCentral: EXT_SHARE.central, extShareHigh: EXT_SHARE.high,
+  assume: { extLiveKs: +(gKs*100).toFixed(1), extLiveVpa: Math.round(gVpa), extSampleActas: econt,
+    extShrunkKs: +(shKs*100).toFixed(1), extShrunkVpa: Math.round(shVpa), extPriorVpa: EXT_PRIOR_VPA,
     extPendValid,
     ref2021: 'Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional.' },
   dom: { pendNet, jeeNet, final: domFinal },
