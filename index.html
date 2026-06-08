@@ -46,11 +46,20 @@
   .midbar i{display:block;height:100%}
   .marg{font-size:.82rem}
   .marg b{font-family:"IBM Plex Mono",monospace}
-  .proj{background:linear-gradient(180deg,#fff 0%,var(--keiko-soft) 220%)}
-  .proj .big{font-family:"Fraunces",serif;font-weight:900;font-size:2.05rem;line-height:1.02;letter-spacing:-.01em}
-  .proj .big small{font-weight:600;font-size:1rem}
-  .proj .rng{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--muted);margin-top:5px}
-  .winflag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.05em;padding:3px 8px;border-radius:3px;margin-top:8px;text-transform:uppercase}
+  .proj{background:linear-gradient(180deg,#fff 0%,var(--keiko-soft) 260%);display:flex;flex-direction:column}
+  .proj .big{font-family:"Fraunces",serif;font-weight:900;font-size:1.72rem;line-height:1.04;letter-spacing:-.01em}
+  .proj .big small{font-weight:600;font-size:.86rem;color:var(--muted);letter-spacing:0}
+  .proj .central{font-family:"IBM Plex Mono",monospace;font-size:.71rem;color:var(--muted);margin-top:7px;line-height:1.5}
+  .proj .central b{font-size:.8rem}
+  .rbar{margin:11px 0 1px}
+  .rbar .track{position:relative;height:24px;border-radius:5px;overflow:hidden;border:1px solid var(--line)}
+  .rbar .track i{position:absolute;top:0;bottom:0;display:block}
+  .rbar .sSide{background:var(--sanchez-soft)} .rbar .kSide{background:var(--keiko-soft)}
+  .rbar .zero{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink);z-index:3}
+  .rbar .cdot{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);z-index:4}
+  .rbar .ends{display:flex;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:.63rem;margin-top:5px;font-weight:600}
+  .rbar .ends .lo{color:var(--sanchez)} .rbar .ends .hi{color:var(--keiko)}
+  .winflag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.05em;padding:3px 8px;border-radius:3px;margin-top:9px;text-transform:uppercase}
 
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
   section{margin-bottom:20px}
@@ -98,12 +107,45 @@
 
   .ext{border:1.5px solid var(--keiko);border-radius:4px;background:linear-gradient(180deg,#fff, var(--keiko-soft) 280%);padding:13px 16px}
   .ext .big{font-family:"Fraunces",serif;font-weight:900;font-size:1.5rem;color:var(--keiko)}
+  .jee{border:1.5px solid var(--sanchez);border-radius:4px;background:linear-gradient(180deg,#fff, var(--sanchez-soft) 320%);padding:13px 16px}
+  .jee .big{font-family:"Fraunces",serif;font-weight:900;font-size:1.5rem;color:var(--keiko)}
+  .jsens{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+  .jsens .c{flex:1;min-width:62px;border:1px solid var(--line);border-radius:3px;padding:7px 4px;background:var(--paper2);text-align:center}
+  .jsens .c .h{font-size:.55rem;text-transform:uppercase;letter-spacing:.02em;color:var(--muted)}
+  .jsens .c .v{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:.84rem;margin-top:3px}
+  .jsens .c.flip{border-color:var(--live);background:#fff3f1}
+  .jsens .c.flip .v{color:var(--live)}
 
   footer{margin-top:16px;border-top:1px solid var(--line);padding-top:10px;font-size:.66rem;color:var(--muted);line-height:1.55}
   footer b{color:var(--ink)}
   a{color:var(--sanchez)}
   .err{display:none;background:#fff3f1;border:1px solid var(--live);color:#a12;border-radius:4px;padding:8px 12px;font-size:.76rem;margin-bottom:14px}
-  @media (max-width:780px){.grid{grid-template-columns:1fr}.head{grid-template-columns:1fr}.head .now{border-right:none;border-bottom:1.5px solid var(--ink)}h1{font-size:1.9rem}.cand .pct{font-size:1.7rem}}
+  @media (max-width:820px){
+    .grid{grid-template-columns:1fr;gap:0}
+    .head{grid-template-columns:1fr}
+    .head .now{border-right:none;border-bottom:1.5px solid var(--ink)}
+  }
+  @media (max-width:560px){
+    html{font-size:14px}
+    body{padding:10px 0}
+    .sheet{padding:20px 15px;border-left:none;border-right:none;box-shadow:none}
+    h1{font-size:1.7rem}
+    .sub{font-size:.84rem}
+    .stamp{font-size:.64rem}
+    .head .now,.head .proj{padding:13px 14px}
+    .cand .pct{font-size:1.6rem}
+    .proj .big{font-size:1.4rem}
+    .chip{min-width:calc(50% - 4px)}
+    .scen .s{min-width:calc(33.33% - 5px)}
+    .jsens .c{min-width:calc(33.33% - 5px)}
+    .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    table{font-size:.72rem}
+  }
+  @media (max-width:380px){
+    .cand .pct{font-size:1.4rem}
+    .chip{min-width:100%}
+    .scen{flex-wrap:wrap}
+  }
 </style>
 </head>
 <body>
@@ -131,9 +173,10 @@
       <div class="marg" id="margNow">—</div>
     </div>
     <div class="proj">
-      <div class="lab">Proyección final (conteo ordinario)</div>
+      <div class="lab">Proyección final (conteo ordinario) · rango</div>
       <div class="big" id="projBig">—</div>
-      <div class="rng" id="projRng">—</div>
+      <div class="rbar" id="rbar"></div>
+      <div class="central" id="projCentral">—</div>
       <div><span class="winflag" id="winflag">—</span></div>
     </div>
   </div>
@@ -159,8 +202,13 @@
       </section>
 
       <section>
-        <h2>El factor decisivo · voto del exterior</h2>
+        <h2>Un factor decisivo · voto del exterior</h2>
         <div class="ext" id="extBox"></div>
+      </section>
+
+      <section>
+        <h2>El otro factor decisivo · actas al JEE</h2>
+        <div class="jee" id="jeeBox"></div>
       </section>
     </div>
 
@@ -230,18 +278,28 @@ function render(d){
   el('midbar').innerHTML = `<i style="width:${kw}%;background:var(--keiko)"></i><i style="width:${sw}%;background:var(--sanchez)"></i>`;
   el('margNow').innerHTML = `Ahora mismo: <b class="${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</b> con ${n.pctActas.toFixed(1)}% de actas. Falta el exterior (${e.pctActas.toFixed(1)}% contado).`;
 
-  // projection headline
-  const win = fs.central>0?'Keiko':'Sánchez';
-  el('projBig').innerHTML = `${win} <small>gana por</small> ${fmt(Math.abs(fs.central))}<small> votos</small>`;
-  const lo=fs.low, hi=fs.high;
-  el('projRng').textContent = `Rango ${marginPhrase(lo)} … ${marginPhrase(hi)} (según el exterior)`;
+  // projection headline — LEAD WITH THE RANGE (the lead is knife-edge)
+  const lo=fs.low, hi=fs.high, cen=fs.central;
+  const crosses = (lo>0)!==(hi>0);
+  el('projBig').innerHTML = crosses
+    ? `En el filo <small>— puede ganar cualquiera</small>`
+    : `${cen>0?'Keiko':'Sánchez'} favorito <small>· margen fino</small>`;
+  const range = (hi-lo)||1;
+  const zP = Math.max(0,Math.min(100,(0-lo)/range*100));
+  const cP = Math.max(0,Math.min(100,(cen-lo)/range*100));
+  el('rbar').innerHTML =
+    `<div class="track"><i class="sSide" style="left:0;width:${zP.toFixed(1)}%"></i>`+
+    `<i class="kSide" style="left:${zP.toFixed(1)}%;right:0"></i>`+
+    `<div class="zero" style="left:${zP.toFixed(1)}%"></div>`+
+    `<div class="cdot" style="left:${cP.toFixed(1)}%;background:${cen>0?'var(--keiko)':'var(--sanchez)'}"></div></div>`+
+    `<div class="ends"><span class="lo">${marginPhrase(lo)}</span><span class="hi">${marginPhrase(hi)}</span></div>`;
+  el('projCentral').innerHTML = `Punto central: <b class="${cen>=0?'netK':'netS'}">${marginPhrase(cen)}</b> — si el exterior y el JEE entran con su tendencia viva. El <b>rango</b> es la incertidumbre del <b>exterior</b>; el <b>JEE</b> lo puede mover aparte (ver abajo).`;
   const wf=el('winflag');
-  const crosses = (fs.low>0)!==(fs.high>0);
-  wf.textContent = (sq.hito1<0 && fs.central>0)
-    ? `doméstico: Sánchez · lo dan vuelta exterior${dom.jeeNet>0?' + JEE':''}`
-    : (crosses ? 'final reñido · cruza el 0' : `favorito: ${win} · margen fino`);
-  wf.style.background = win==='Keiko'?'var(--keiko-soft)':'var(--sanchez-soft)';
-  wf.style.color = win==='Keiko'?'var(--keiko)':'var(--sanchez)';
+  wf.textContent = (sq.hito2.central<0 && cen>0)
+    ? 'doméstico+exterior: Sánchez · lo da vuelta el JEE'
+    : (crosses ? 'cruza el 0 · demasiado reñido' : `favorito: ${cen>0?'Keiko':'Sánchez'} · margen fino`);
+  wf.style.background = cen>0?'var(--keiko-soft)':'var(--sanchez-soft)';
+  wf.style.color = cen>0?'var(--keiko)':'var(--sanchez)';
 
   // chips
   el('cActas').textContent = fmt(n.cont)+' / '+fmt(n.tot);
@@ -274,6 +332,23 @@ function render(d){
     <div class="big">${marginPhrase(es.central)}</div>
     <p class="small" style="margin-top:4px">Neto central del exterior para Keiko, según su <b>tendencia viva</b>. <b>${fmt(e.tot)} actas</b>, hoy <b>${e.pctActas.toFixed(1)}%</b> contadas (${fmt(e.cont)} actas): Keiko ${fmt(e.k)} – Sánchez ${fmt(e.s)} (<b>${a.extLiveKs}% Keiko</b>, ${a.extLiveVpa} válidos/acta).</p>
     <p class="small"><b>Anclado a los datos vivos</b> (ya no al patrón 2021): central <b>${a.extShrunkKs}% Keiko</b> a ${a.extShrunkVpa} válidos/acta ⇒ ~${fmt(a.extPendValid)} válidos por entrar. La banda de escenarios es ±${(a.extBand||4)}pp sobre esa cuota (error de muestreo) y se angosta solita conforme reportan más países.</p>`;
+
+  // JEE box + sensitivity — el JEE es ahora el tramo decisivo que aún no se resuelve
+  const jn = dom.jeeNet;                  // neto del JEE (Keiko si >0)
+  const beforeJee = sq.hito2.central;     // doméstico 100% + exterior central, ANTES del JEE
+  const jsens = [0,10,20,40].map(pp=>({pp, v: cen - jn*(pp/100)}));
+  const flipPct = (jn>0 && cen>0) ? Math.min(100, Math.round(cen/jn*100)) : null;
+  el('jeeBox').innerHTML =
+    `<div class="big">${marginPhrase(jn)}</div>`+
+    `<p class="small" style="margin-top:4px">Neto de las <b>${fmt(n.jee)} actas observadas</b> (al JEE) para Keiko — tendencia provincial, Lima por distrito, con <i>haircut</i> de ~2%. <b>Sin el JEE</b>, tras conteo + exterior el resultado sería <b class="${beforeJee>=0?'netK':'netS'}">${marginPhrase(beforeJee)}</b>: ${beforeJee<0&&cen>0?'el JEE es lo que <b>da vuelta el resultado</b>.':'el JEE amplía el margen.'}</p>`+
+    `<p class="small" style="margin:8px 0 2px"><b>¿Y si el JNE anula parte de esas actas?</b> Resultado central si se cae el…</p>`+
+    `<div class="jsens">`+
+      jsens.map(s=>`<div class="c"><div class="h">${s.pp}% anulado</div><div class="v ${s.v>=0?'netK':'netS'}">${marginPhrase(s.v)}</div></div>`).join('')+
+      (flipPct!=null?`<div class="c flip"><div class="h">punto de quiebre</div><div class="v">~${flipPct}%</div></div>`:'')+
+    `</div>`+
+    (flipPct!=null
+      ? `<p class="small" style="margin-top:7px">Habría que anular <b>~${flipPct}%</b> del neto JEE para que ${cen>0?'Keiko no alcance':'cambie el resultado'}. En <b>2021</b> el JNE anuló el <b>0.86%</b> (~12 de ~1,400 observadas) — ${flipPct>=40?'por eso el central se sostiene':'<b>margen frágil</b>'}. <span style="opacity:.8">Supone que las actas anuladas se reparten como el promedio del JEE.</span></p>`
+      : `<p class="small" style="margin-top:7px">En <b>2021</b> el JNE validó casi todas las actas observadas (solo ~0.86% anuladas a nivel nacional).</p>`);
 
   // regional table
   const reg = d.reg.slice().sort((x,y)=>(y[4]+y[5])-(x[4]+x[5]));
