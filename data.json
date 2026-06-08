@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780960920076,
-    "updatedAtLabel": "08-jun, 06:22 p. m. (hora Perú)",
+    "updatedAt": 1780961160305,
+    "updatedAtLabel": "08-jun, 06:26 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.905,
-    "cont": 88040,
+    "pctActas": 94.927,
+    "cont": 88060,
     "tot": 92766,
     "jee": 1525,
-    "pend": 3201,
-    "validos": 17691921,
-    "emitidos": 18932016,
-    "participacion": 69.284,
-    "k": 8828096,
-    "s": 8863825,
+    "pend": 3181,
+    "validos": 17693725,
+    "emitidos": 18933912,
+    "participacion": 69.29,
+    "k": 8828977,
+    "s": 8864748,
     "kPct": 49.899,
     "sPct": 50.101,
-    "margin": -35729
+    "margin": -35771
   },
   "ext": {
     "tot": 2543,
-    "cont": 154,
-    "pend": 2381,
+    "cont": 158,
+    "pend": 2377,
     "jee": 8,
-    "k": 11571,
-    "s": 8694,
-    "vv": 20265,
-    "pctActas": 6.056
+    "k": 11823,
+    "s": 8876,
+    "vv": 20699,
+    "pctActas": 6.213
   },
   "assume": {
     "extLiveKs": 57.1,
-    "extLiveVpa": 132,
-    "extSampleActas": 154,
+    "extLiveVpa": 131,
+    "extSampleActas": 158,
     "extShrunkKs": 57.2,
     "extShrunkVpa": 131,
     "extBand": 4,
-    "extPendValid": 313044,
+    "extPendValid": 311233,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -29605,
-    "jeeNet": 45251,
-    "final": -20083
+    "pendNet": -30266,
+    "jeeNet": 45248,
+    "final": -20789
   },
   "extScen": {
-    "low": 19625,
-    "central": 44851,
-    "high": 70076
+    "low": 19938,
+    "central": 44699,
+    "high": 69459
   },
   "finalScen": {
-    "low": -458,
-    "central": 24768,
-    "high": 49993
+    "low": -851,
+    "central": 23910,
+    "high": 48670
   },
   "seq": {
-    "domCountedMargin": -38606,
-    "extCountedMargin": 2877,
-    "hito1": -68211,
+    "domCountedMargin": -38718,
+    "extCountedMargin": 2947,
+    "hito1": -68984,
     "hito2": {
-      "low": -45709,
-      "central": -20483,
-      "high": 4742
+      "low": -46099,
+      "central": -21338,
+      "high": 3422
     }
   },
   "reg": [
@@ -167,13 +167,13 @@
     [
       "Huánuco",
       99.1,
-      2320,
+      2321,
       2341,
       20,
-      1,
+      0,
       35.9,
       168,
-      -46,
+      0,
       -739
     ],
     [
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      83.2,
-      2243,
+      83.7,
+      2258,
       2697,
       29,
-      425,
+      410,
       54.4,
-      159,
-      2266,
-      465
+      158,
+      1559,
+      462
     ],
     [
       "Madre de Dios",
@@ -609,6 +609,11 @@
       1780960920076,
       -35729,
       24768
+    ],
+    [
+      1780961160305,
+      -35771,
+      23910
     ]
   ]
 }
