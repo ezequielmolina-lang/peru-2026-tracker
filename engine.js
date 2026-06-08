@@ -64,5 +64,7 @@
   const ext=[ed.totalActas,ed.contabilizadas,ed.pendientesJee,ed.enviadasJee,V(ep.data,8),V(ep.data,10)];
   const payload=JSON.stringify({nat,ext,reg});
   window.PAYLOAD=payload;
-  return JSON.stringify({len:payload.length, sec:+((performance.now()-t0)/1000).toFixed(1), payload});
+  // Return only the first slice (full payload truncates in the tool view). Get the tail
+  // with a 2nd call: window.PAYLOAD.slice(540), then concatenate s0 + tail.
+  return JSON.stringify({len:payload.length, sec:+((performance.now()-t0)/1000).toFixed(1), s0:payload.slice(0,540)});
 })();
