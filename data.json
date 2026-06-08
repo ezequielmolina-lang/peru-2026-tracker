@@ -1,84 +1,84 @@
 {
   "meta": {
-    "updatedAt": 1780955280385,
-    "updatedAtLabel": "08-jun, 04:48 p. m. (hora Perú)",
+    "updatedAt": 1780956480081,
+    "updatedAtLabel": "08-jun, 05:08 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.741,
-    "cont": 87887,
+    "pctActas": 94.783,
+    "cont": 87926,
     "tot": 92766,
     "jee": 1523,
-    "pend": 3356,
-    "validos": 17679435,
-    "emitidos": 18918785,
-    "participacion": 69.235,
-    "k": 8824568,
-    "s": 8854867,
+    "pend": 3317,
+    "validos": 17679654,
+    "emitidos": 18919013,
+    "participacion": 69.236,
+    "k": 8824577,
+    "s": 8855077,
     "kPct": 49.914,
     "sPct": 50.086,
-    "margin": -30299
+    "margin": -30500
   },
   "ext": {
     "tot": 2543,
-    "cont": 103,
-    "pend": 2436,
+    "cont": 140,
+    "pend": 2399,
     "jee": 4,
     "k": 10768,
     "s": 8209,
     "vv": 18977,
-    "pctActas": 4.05
+    "pctActas": 5.505
   },
   "assume": {
     "extLiveKs": 56.7,
-    "extLiveVpa": 184,
-    "extSampleActas": 103,
-    "extShrunkKs": 58.7,
-    "extShrunkVpa": 161,
+    "extLiveVpa": 136,
+    "extSampleActas": 140,
+    "extShrunkKs": 58.3,
+    "extShrunkVpa": 131,
     "extPriorVpa": 120,
-    "extPendValid": 391210,
+    "extPendValid": 313993,
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -32814,
-    "jeeNet": 44869,
-    "final": -18244
+    "pendNet": -32711,
+    "jeeNet": 44867,
+    "final": -18344
   },
   "extScen": {
-    "low": 27348,
-    "central": 67896,
-    "high": 60522
+    "low": 24871,
+    "central": 52246,
+    "high": 43850
   },
   "finalScen": {
-    "low": 9104,
-    "central": 49652,
-    "high": 42278
+    "low": 6527,
+    "central": 33902,
+    "high": 25506
   },
   "seq": {
-    "domCountedMargin": -32858,
+    "domCountedMargin": -33059,
     "extCountedMargin": 2559,
-    "hito1": -65672,
+    "hito1": -65770,
     "hito2": {
-      "low": -35765,
-      "central": 4783,
-      "high": -2591
+      "low": -38340,
+      "central": -10965,
+      "high": -19361
     }
   },
   "reg": [
     [
       "Amazonas",
-      91.9,
-      1175,
+      92.1,
+      1177,
       1278,
       12,
-      91,
+      89,
       36.9,
       157,
-      -6952,
-      -593
+      -6821,
+      -594
     ],
     [
       "Áncash",
@@ -245,8 +245,8 @@
       473,
       54.6,
       160,
-      1682,
-      469
+      1654,
+      468
     ],
     [
       "Madre de Dios",
@@ -599,6 +599,11 @@
       1780955280385,
       -30299,
       49652
+    ],
+    [
+      1780956480081,
+      -30500,
+      33902
     ]
   ]
 }
