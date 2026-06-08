@@ -3,9 +3,9 @@
 //
 // Computes per-region nets at PROVINCE level with shrinkage toward the department
 // mean (K0=25) so sparse provinces (e.g. 1 counted acta) don't distort the projection,
-// and applies a ~2% JEE validation haircut. Lima Metropolitana's ~924 JEE actas (the biggest
-// single bucket) were resolved at DISTRICT level once and are now CACHED (they're frozen
-// today), so the loop doesn't re-drill them. ~480 calls, ~5s, concurrency-pooled.
+// and applies a ~2% JEE validation haircut. Lima Metropolitana's JEE actas (the biggest single
+// bucket) are resolved at DISTRICT level LIVE every cycle — observed actas keep changing, so
+// they're not cached. ~570 calls, ~6s, concurrency-pooled.
 //
 // Returns {len, payload}. payload (numbers only) =
 //   { nat:[ts,cont,tot,jee,pend,validos,emitidos,partic,k,s],
@@ -37,12 +37,26 @@
   const provs=(await pool(pT,16)).filter(Boolean);
   const byId={};for(const p of provs)(byId[p.dep]=byId[p.dep]||[]).push(p);
 
-  // 2b) Lima Metropolitana JEE — CACHED district-level value, refreshed periodically. Its
-  // observed actas are mostly frozen but the JNE resolves a trickle (924 → 886 by ~14:20),
-  // so re-drill the 43 districts (Keiko 53%–84%, shrinkage K0=25) and update this when the
-  // count drifts >~1k. Last refresh 08-jun ~14:20 Lima: 886 actas → +55,631 raw.
-  const LIMA_MET_JEE_RAW = 55631;   // raw (pre-haircut) district-level JEE net for Lima Metro
-  const limaDist = [0, LIMA_MET_JEE_RAW];  // [pendNet, jeeNet]; ~2% JEE haircut applied at reg.push
+  // 2b) Lima Metropolitana (prov 140100): drill to DISTRICT level LIVE every cycle — it is
+  // the biggest JEE bucket and observed actas keep changing (new ones appear, the JNE
+  // resolves others), so it must stay current, not cached. 43 districts (Keiko 53%–84%),
+  // shrinkage K0=25. ~86 calls. Returns district-level [pendNet, jeeNet] override.
+  let limaDist=null;
+  const lm=(byId['140000']||[]).find(p=>p.pid==='140100'&&p.got&&p.k+p.s>0);
+  if(lm){const lks=lm.k/(lm.k+lm.s),lvp=(lm.k+lm.s)/lm.cont;
+    const dThunks=[];for(let dd=1;dd<=43;dd++)dThunks.push((function(dd){return async()=>{
+      const id='1401'+String(dd).padStart(2,'0'),f=`tipoFiltro=ubigeo_nivel_03&idAmbitoGeografico=1&idUbigeoDepartamento=140000&idUbigeoProvincia=140100&idUbigeoDistrito=${id}`;
+      const t=await jget(`${base}/resumen-general/totales?idEleccion=10&${f}`,3);if(!t||t.__e||!t.data||t.data.totalActas===0)return null;const d=t.data;
+      let k=0,s=0,got=0;if(d.enviadasJee+d.pendientesJee>0){const q=await jget(`${base}/resumen-general/participantes?idEleccion=10&${f}`,3);if(q&&q.data){k=V(q.data,8);s=V(q.data,10);got=1;}}
+      return{cont:d.contabilizadas,jee:d.enviadasJee,pend:d.pendientesJee,k,s,got};};})(dd));
+    const ds=(await pool(dThunks,16)).filter(Boolean);
+    let sp=0,sj=0,acc=0,accj=0;
+    for(const x of ds){const vv=x.k+x.s;
+      if(x.got&&vv>0){const w=x.cont/(x.cont+K0),ks=w*(x.k/vv)+(1-w)*lks,vp=w*(vv/x.cont)+(1-w)*lvp,u=vp*(2*ks-1);sp+=x.pend*u;sj+=x.jee*u;}
+      else{const u=lvp*(2*lks-1);sp+=x.pend*u;sj+=x.jee*u;}
+      acc+=x.pend;accj+=x.jee;}
+    const u=lvp*(2*lks-1);sp+=(lm.pend-acc)*u;sj+=(lm.jee-accj)*u; // remainder at province trend
+    limaDist=[sp,sj];}
 
   // 3) shrinkage net per department (Lima-Metro province uses its district-level override)
   const reg=[];
