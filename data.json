@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780951320274,
-    "updatedAtLabel": "08-jun, 03:42 p. m. (hora Perú)",
+    "updatedAt": 1780951680234,
+    "updatedAtLabel": "08-jun, 03:48 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.595,
-    "cont": 87752,
+    "pctActas": 94.599,
+    "cont": 87756,
     "tot": 92766,
-    "jee": 1520,
-    "pend": 3494,
-    "validos": 17661130,
-    "emitidos": 18899016,
-    "participacion": 69.163,
-    "k": 8819091,
-    "s": 8842039,
+    "jee": 1521,
+    "pend": 3489,
+    "validos": 17661526,
+    "emitidos": 18899435,
+    "participacion": 69.164,
+    "k": 8819269,
+    "s": 8842257,
     "kPct": 49.935,
     "sPct": 50.065,
-    "margin": -22948
+    "margin": -22988
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -36486,
-    "jeeNet": 45428,
-    "final": -14006
+    "pendNet": -36453,
+    "jeeNet": 45334,
+    "final": -14107
   },
   "extScen": {
     "low": 26534,
@@ -53,18 +53,18 @@
     "high": 56946
   },
   "finalScen": {
-    "low": 12528,
-    "central": 52736,
-    "high": 42940
+    "low": 12427,
+    "central": 52635,
+    "high": 42839
   },
   "seq": {
-    "domCountedMargin": -25089,
+    "domCountedMargin": -25129,
     "extCountedMargin": 2141,
-    "hito1": -61575,
+    "hito1": -61582,
     "hito2": {
-      "low": -32900,
-      "central": 7308,
-      "high": -2488
+      "low": -32907,
+      "central": 7301,
+      "high": -2495
     }
   },
   "reg": [
@@ -121,12 +121,12 @@
       97.7,
       1857,
       1900,
-      19,
-      24,
+      20,
+      23,
       20.8,
       172,
-      -2270,
-      -1999
+      -2175,
+      -2091
     ],
     [
       "Cajamarca",
@@ -238,14 +238,14 @@
     ],
     [
       "Loreto",
-      80.2,
-      2164,
+      80.3,
+      2167,
       2697,
       28,
-      505,
+      502,
       54.8,
       160,
-      2436,
+      2400,
       478
     ],
     [
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      94,
-      1470,
+      94.1,
+      1471,
       1564,
       35,
-      59,
+      58,
       53,
       177,
-      451,
-      552
+      425,
+      550
     ]
   ],
   "history": [
@@ -534,6 +534,11 @@
       1780951320274,
       -22948,
       52736
+    ],
+    [
+      1780951680234,
+      -22988,
+      52635
     ]
   ]
 }
