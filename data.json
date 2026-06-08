@@ -36,11 +36,11 @@
     "extLiveKs": 56.7,
     "extLiveVpa": 136,
     "extSampleActas": 140,
-    "extShrunkKs": 58.3,
-    "extShrunkVpa": 131,
-    "extPriorVpa": 120,
-    "extPendValid": 313993,
-    "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
+    "extShrunkKs": 56.8,
+    "extShrunkVpa": 135,
+    "extBand": 4.2,
+    "extPendValid": 324133,
+    "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
     "pendNet": -32711,
@@ -48,23 +48,23 @@
     "final": -18344
   },
   "extScen": {
-    "low": 24871,
-    "central": 52246,
-    "high": 43850
+    "low": 16958,
+    "central": 44352,
+    "high": 71746
   },
   "finalScen": {
-    "low": 6527,
-    "central": 33902,
-    "high": 25506
+    "low": -1386,
+    "central": 26008,
+    "high": 53402
   },
   "seq": {
     "domCountedMargin": -33059,
     "extCountedMargin": 2559,
     "hito1": -65770,
     "hito2": {
-      "low": -38340,
-      "central": -10965,
-      "high": -19361
+      "low": -46253,
+      "central": -18859,
+      "high": 8535
     }
   },
   "reg": [

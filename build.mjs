@@ -17,14 +17,15 @@ const NAME = ['Amazonas','Áncash','Apurímac','Arequipa','Ayacucho','Cajamarca'
   'Huancavelica','Huánuco','Ica','Junín','La Libertad','Lambayeque','Lima','Loreto',
   'Madre de Dios','Moquegua','Pasco','Piura','Puno','San Martín','Tacna','Tumbes','Ucayali','Callao'];
 
-// ---- Exterior model (driven by the LIVE exterior trend, shrunk to a 2021 prior) ----
-// The exterior is the decisive block but starts ~0% counted. We use its OWN live trend
-// (Keiko share + votes/acta) shrunk toward a 2021-based prior with pseudocount EXT_K0,
-// so a handful of early actas don't blow up the estimate; it trends fully to live as
-// actas arrive. (Per-country granularity isn't informative until far more actas count.)
-const EXT_PRIOR_KS  = 0.62;   // 2021-anchored Keiko share prior
-const EXT_PRIOR_VPA = 120;    // 2021-like valid votes per acta abroad
-const EXT_K0        = 60;     // pseudocount (actas) — live weight = cont/(cont+60)
+// ---- Exterior model (LIVE-anchored) -------------------------------------------------
+// Centered on the exterior's OWN live trend (Keiko share + votes/acta). Once enough actas
+// are counted the 2021 prior is no longer used as a pull — only a light pseudocount (EXT_K0)
+// stabilizes the very-sparse phase (<~12 actas). The scenario band is a SAMPLING-ERROR band
+// around the live share that narrows as more actas report. (Re-anchored from the 2021 prior
+// once ~140 abroad actas consistently showed ~56-57% Keiko, below the 62% historical prior.)
+const EXT_PRIOR_KS  = 0.58;   // mild fallback share, only matters when exterior is near-empty
+const EXT_PRIOR_VPA = 130;    // mild fallback votes/acta for the near-empty phase
+const EXT_K0        = 12;      // small pseudocount — live dominates past ~12 counted actas
 // Province-trend shrinkage (K0=25) and JEE validation haircut are applied upstream in engine.js.
 // ------------------------------------------------------------------------------------
 
@@ -47,17 +48,19 @@ pendNet = Math.round(pendNet); jeeNet = Math.round(jeeNet);
 const margin   = nk - ns;
 const domFinal = margin + pendNet + jeeNet;
 
-// Exterior: live trend (ek/es/econt) shrunk toward the 2021 prior.
+// Exterior: live trend (ek/es/econt), only lightly stabilized for the near-empty phase.
 const gKs  = (ek+es) > 0 ? ek/(ek+es) : EXT_PRIOR_KS;       // live Keiko share abroad
 const gVpa = econt   > 0 ? (ek+es)/econt : EXT_PRIOR_VPA;   // live votes/acta abroad
 const w    = econt/(econt + EXT_K0);                        // weight on live data
-const shKs  = w*gKs  + (1-w)*EXT_PRIOR_KS;
+const shKs  = w*gKs  + (1-w)*EXT_PRIOR_KS;                  // ≈ live once econt ≫ 12
 const shVpa = w*gVpa + (1-w)*EXT_PRIOR_VPA;
 const extPendValid = Math.round(epend * shVpa);
+// Sampling-error band on the Keiko share: ~±1 s.e., narrows as more actas report.
+const extBand = Math.max(0.012, Math.min(0.06, 0.5/Math.sqrt(Math.max(econt,1))));
 const extScen = {
-  low:     Math.round(epend * EXT_PRIOR_VPA * (2*(shKs-0.04) - 1)), // reverts toward 2021 turnout & a bit less Keiko
-  central: Math.round(epend * shVpa         * (2* shKs       - 1)), // shrunk live trend
-  high:    Math.round(epend * gVpa          * (2* gKs        - 1)), // current strong reading holds (full live)
+  low:     Math.round(epend * shVpa * (2*(shKs - extBand) - 1)),
+  central: Math.round(epend * shVpa * (2* shKs            - 1)),
+  high:    Math.round(epend * shVpa * (2*(shKs + extBand) - 1)),
 };
 const finalScen = { low: domFinal+extScen.low, central: domFinal+extScen.central, high: domFinal+extScen.high };
 
@@ -98,9 +101,9 @@ const out = {
   ext: { tot:etot, cont:econt, pend:epend, jee:ejee, k:ek, s:es, vv:ek+es,
     pctActas: etot>0 ? +(econt/etot*100).toFixed(3) : 0 },
   assume: { extLiveKs: +(gKs*100).toFixed(1), extLiveVpa: Math.round(gVpa), extSampleActas: econt,
-    extShrunkKs: +(shKs*100).toFixed(1), extShrunkVpa: Math.round(shVpa), extPriorVpa: EXT_PRIOR_VPA,
+    extShrunkKs: +(shKs*100).toFixed(1), extShrunkVpa: Math.round(shVpa), extBand: +(extBand*100).toFixed(1),
     extPendValid,
-    ref2021: 'Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional.' },
+    ref2021: 'El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional.' },
   dom: { pendNet, jeeNet, final: domFinal },
   extScen, finalScen, seq,
   reg,
