@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780953960076,
-    "updatedAtLabel": "08-jun, 04:26 p. m. (hora Perú)",
+    "updatedAt": 1780954320073,
+    "updatedAtLabel": "08-jun, 04:32 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.714,
-    "cont": 87862,
+    "pctActas": 94.717,
+    "cont": 87865,
     "tot": 92766,
-    "jee": 1524,
-    "pend": 3380,
-    "validos": 17675419,
-    "emitidos": 18914594,
-    "participacion": 69.22,
-    "k": 8823951,
-    "s": 8851468,
-    "kPct": 49.922,
-    "sPct": 50.078,
-    "margin": -27517
+    "jee": 1523,
+    "pend": 3378,
+    "validos": 17675975,
+    "emitidos": 18915162,
+    "participacion": 69.222,
+    "k": 8824034,
+    "s": 8851941,
+    "kPct": 49.921,
+    "sPct": 50.079,
+    "margin": -27907
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -33926,
-    "jeeNet": 44859,
-    "final": -16584
+    "pendNet": -33935,
+    "jeeNet": 44880,
+    "final": -16962
   },
   "extScen": {
     "low": 27348,
@@ -53,32 +53,32 @@
     "high": 60522
   },
   "finalScen": {
-    "low": 10764,
-    "central": 51312,
-    "high": 43938
+    "low": 10386,
+    "central": 50934,
+    "high": 43560
   },
   "seq": {
-    "domCountedMargin": -30076,
+    "domCountedMargin": -30466,
     "extCountedMargin": 2559,
-    "hito1": -64002,
+    "hito1": -64401,
     "hito2": {
-      "low": -34095,
-      "central": 6453,
-      "high": -921
+      "low": -34494,
+      "central": 6054,
+      "high": -1320
     }
   },
   "reg": [
     [
       "Amazonas",
-      91.6,
-      1171,
+      91.9,
+      1174,
       1278,
-      13,
-      94,
-      37,
+      12,
+      92,
+      36.9,
       157,
-      -6990,
-      -614
+      -6999,
+      -593
     ],
     [
       "Áncash",
@@ -579,6 +579,11 @@
       1780953960076,
       -27517,
       51312
+    ],
+    [
+      1780954320073,
+      -27907,
+      50934
     ]
   ]
 }
