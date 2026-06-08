@@ -37,12 +37,11 @@
   const provs=(await pool(pT,16)).filter(Boolean);
   const byId={};for(const p of provs)(byId[p.dep]=byId[p.dep]||[]).push(p);
 
-  // 2b) Lima Metropolitana JEE — CACHED district-level value. Its ~924 observed actas are
-  // FROZEN today (the JEE won't resolve them today) and Lima is ~97% counted, so the
-  // district-level net does not move. Computed once by drilling all 43 districts
-  // (Keiko 53%–84% across them, shrinkage K0=25) → +56,292 raw. Re-run the district drill
-  // (git history has it) only if Lima counting resumes meaningfully.
-  const LIMA_MET_JEE_RAW = 56292;   // raw (pre-haircut) district-level JEE net for Lima Metro
+  // 2b) Lima Metropolitana JEE — CACHED district-level value, refreshed periodically. Its
+  // observed actas are mostly frozen but the JNE resolves a trickle (924 → 886 by ~14:20),
+  // so re-drill the 43 districts (Keiko 53%–84%, shrinkage K0=25) and update this when the
+  // count drifts >~1k. Last refresh 08-jun ~14:20 Lima: 886 actas → +55,631 raw.
+  const LIMA_MET_JEE_RAW = 55631;   // raw (pre-haircut) district-level JEE net for Lima Metro
   const limaDist = [0, LIMA_MET_JEE_RAW];  // [pendNet, jeeNet]; ~2% JEE haircut applied at reg.push
 
   // 3) shrinkage net per department (Lima-Metro province uses its district-level override)
