@@ -61,6 +61,18 @@ const extScen = {
 };
 const finalScen = { low: domFinal+extScen.low, central: domFinal+extScen.central, high: domFinal+extScen.high };
 
+// Milestones in the order certainty actually arrives:
+//   1) doméstico SIN JEE al 100%  (known today)
+//   2) + voto del exterior        (next hours/days)
+//   3) + actas observadas / JEE   (resolved last, weeks, by the JNE) = the final
+const extCountedMargin = ek - es;                 // exterior already counted (tiny)
+const domCountedMargin = margin - extCountedMargin; // domestic counted only
+const hito1 = domCountedMargin + pendNet;          // doméstico 100%, sin JEE, sin exterior
+const hito2 = { low:     hito1 + extCountedMargin + extScen.low,
+                central: hito1 + extCountedMargin + extScen.central,
+                high:    hito1 + extCountedMargin + extScen.high };  // + exterior (hito3 = hito2 + jeeNet = finalScen)
+const seq = { domCountedMargin, extCountedMargin, hito1, hito2 };
+
 const pctActas = ntot>0 ? +(ncont/ntot*100).toFixed(3) : 0;
 const kPct = validos>0 ? +(nk/validos*100).toFixed(3) : 0;
 const sPct = validos>0 ? +(ns/validos*100).toFixed(3) : 0;
@@ -90,7 +102,7 @@ const out = {
     extPendValid,
     ref2021: 'Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional.' },
   dom: { pendNet, jeeNet, final: domFinal },
-  extScen, finalScen,
+  extScen, finalScen, seq,
   reg,
   history
 };

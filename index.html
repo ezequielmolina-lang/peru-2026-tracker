@@ -152,7 +152,7 @@
       </section>
 
       <section>
-        <h2>Balance neto (conteo ordinario)</h2>
+        <h2>Cómo se sabrá el resultado · en orden</h2>
         <div class="ledger" id="ledger"></div>
         <div class="scen" id="scen"></div>
         <p class="small" id="scenNote" style="margin-top:8px"></p>
@@ -210,6 +210,10 @@ function marginPhrase(n){
 
 function render(d){
   const n=d.nat, e=d.ext, a=d.assume, dom=d.dom, fs=d.finalScen, es=d.extScen;
+  const sq = d.seq || (()=>{ const ecm=e.k-e.s, dcm=n.margin-ecm, h1=dcm+dom.pendNet;
+    return {domCountedMargin:dcm, extCountedMargin:ecm, hito1:h1,
+      hito2:{low:h1+ecm+es.low, central:h1+ecm+es.central, high:h1+ecm+es.high}}; })();
+  const wn = t => `<span style="font-family:'IBM Plex Mono',monospace;font-size:.55rem;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:1px 5px;margin-left:7px;white-space:nowrap">${t}</span>`;
 
   // stamp
   let lima='';
@@ -233,7 +237,9 @@ function render(d){
   el('projRng').textContent = `Rango ${marginPhrase(lo)} … ${marginPhrase(hi)} (según el exterior)`;
   const wf=el('winflag');
   const crosses = (fs.low>0)!==(fs.high>0);
-  wf.textContent = crosses ? 'final reñido · escenarios cruzan el 0' : `favorito: ${win} · margen fino`;
+  wf.textContent = (sq.hito1<0 && fs.central>0)
+    ? `doméstico: Sánchez · lo dan vuelta exterior${dom.jeeNet>0?' + JEE':''}`
+    : (crosses ? 'final reñido · cruza el 0' : `favorito: ${win} · margen fino`);
   wf.style.background = win==='Keiko'?'var(--keiko-soft)':'var(--sanchez-soft)';
   wf.style.color = win==='Keiko'?'var(--keiko)':'var(--sanchez)';
 
@@ -247,19 +253,20 @@ function render(d){
   // ledger
   const dl = el('ledger');
   dl.innerHTML = `
-    <div class="row"><span>Conteo actual (${n.pctActas.toFixed(1)}% actas)</span><span class="v ${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</span></div>
-    <div class="row"><span>+ Pendiente doméstico (tendencia provincial)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
-    <div class="row mid"><span>+ Actas al JEE (tendencia provincial)<span class="tag k">~99% validadas '21</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
-    <div class="row mid"><span>= Doméstico proyectado (100%)</span><span class="v ${dom.final>=0?'netK':'netS'}">${marginPhrase(dom.final)}</span></div>
-    <div class="row"><span>+ Exterior (${fmt(e.pend)} actas, ~${e.pctActas.toFixed(1)}% contado · central)</span><span class="v netK">${marginPhrase(es.central)}</span></div>
-    <div class="total"><span>Resultado final proyectado</span><span class="v ${fs.central>=0?'netK':'netS'}">${marginPhrase(fs.central)}</span></div>`;
+    <div class="row"><span>Doméstico contado · ${n.pctActas.toFixed(1)}% (sin JEE, sin exterior)</span><span class="v ${sq.domCountedMargin>=0?'netK':'netS'}">${marginPhrase(sq.domCountedMargin)}</span></div>
+    <div class="row"><span>+ Pendiente doméstico (provincial)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
+    <div class="row mid"><span>① Doméstico 100% · <b>sin JEE</b>${wn('se sabrá hoy')}</span><span class="v ${sq.hito1>=0?'netK':'netS'}">${marginPhrase(sq.hito1)}</span></div>
+    <div class="row"><span>+ Voto del exterior (vivo · central)</span><span class="v netK">${marginPhrase(sq.extCountedMargin + es.central)}</span></div>
+    <div class="row mid"><span>② Con <b>extranjeros</b>${wn('horas–días')}</span><span class="v ${sq.hito2.central>=0?'netK':'netS'}">${marginPhrase(sq.hito2.central)}</span></div>
+    <div class="row"><span>+ Actas observadas · <b>JEE</b><span class="tag k">~99% validadas '21</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
+    <div class="total"><span>③ Final · <b>con JEE</b>${wn('semanas · JNE')}</span><span class="v ${fs.central>=0?'netK':'netS'}">${marginPhrase(fs.central)}</span></div>`;
 
   // scenarios
   el('scen').innerHTML = ['low','central','high'].map((k,i)=>{
     const v=fs[k]; const lbl=['Conservador · turnout 2021',`Central · vivo (${a.extShrunkKs}% K)`,`Si se sostiene (${a.extLiveKs}% K)`][i];
     return `<div class="s"><div class="h">${lbl}</div><div class="r ${v>=0?'netK':'netS'}">${marginPhrase(v)}</div></div>`;
   }).join('');
-  el('scenNote').innerHTML = `Punto de equilibrio: Sánchez gana si el neto del exterior para Keiko cae por debajo de ~${fmt(Math.abs(dom.final))} votos. Hoy el exterior va ${a.extLiveKs}% Keiko sobre ${fmt(e.cont)} actas — muestra chica, por eso el rango es amplio.`;
+  el('scenNote').innerHTML = `El rango de arriba es por el exterior (decisivo y casi sin contar). Clave del <b>orden</b>: en el escenario <b>bajo</b>, tras los extranjeros aún ${sq.hito2.low>=0?'gana Keiko apenas':'<b>seguiría Sánchez</b>'} (${marginPhrase(sq.hito2.low)}); recién las actas del JEE —que el JNE resuelve en semanas— ${sq.hito2.low<0?'darían vuelta el resultado a Keiko':'amplían su ventaja'}. Hoy el exterior va ${a.extLiveKs}% Keiko sobre ${fmt(e.cont)} actas.`;
 
   // exterior box — driven by the LIVE exterior trend, shrunk to the 2021 prior
   el('extBox').innerHTML = `

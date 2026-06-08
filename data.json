@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780942920460,
-    "updatedAtLabel": "08-jun, 01:22 p. m. (hora Perú)",
+    "updatedAt": 1780943520458,
+    "updatedAtLabel": "08-jun, 01:32 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.061,
-    "cont": 87257,
+    "pctActas": 94.102,
+    "cont": 87295,
     "tot": 92766,
-    "jee": 1516,
-    "pend": 3993,
-    "validos": 17595459,
-    "emitidos": 18828500,
-    "participacion": 68.905,
-    "k": 8792919,
-    "s": 8802540,
-    "kPct": 49.973,
-    "sPct": 50.027,
-    "margin": -9621
+    "jee": 1517,
+    "pend": 3954,
+    "validos": 17600398,
+    "emitidos": 18833725,
+    "participacion": 68.924,
+    "k": 8794685,
+    "s": 8805713,
+    "kPct": 49.969,
+    "sPct": 50.031,
+    "margin": -11028
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -44841,
-    "jeeNet": 46344,
-    "final": -8118
+    "pendNet": -44051,
+    "jeeNet": 46242,
+    "final": -8837
   },
   "extScen": {
     "low": 49670,
@@ -53,9 +53,19 @@
     "high": 118534
   },
   "finalScen": {
-    "low": 41552,
-    "central": 75925,
-    "high": 110416
+    "low": 40833,
+    "central": 75206,
+    "high": 109697
+  },
+  "seq": {
+    "domCountedMargin": -12015,
+    "extCountedMargin": 987,
+    "hito1": -56066,
+    "hito2": {
+      "low": -5409,
+      "central": 28964,
+      "high": 63455
+    }
   },
   "reg": [
     [
@@ -108,15 +118,15 @@
     ],
     [
       "Ayacucho",
-      93.7,
-      1781,
+      94.2,
+      1790,
       1900,
-      17,
-      102,
+      18,
+      92,
       20.9,
       173,
-      -9513,
-      -1812
+      -8555,
+      -1907
     ],
     [
       "Cajamarca",
@@ -228,15 +238,15 @@
     ],
     [
       "Loreto",
-      72.4,
-      1952,
+      73.5,
+      1981,
       2697,
       27,
-      718,
-      55,
+      689,
+      54.9,
       166,
-      6499,
-      568
+      6331,
+      561
     ],
     [
       "Madre de Dios",
@@ -389,6 +399,11 @@
       1780942920460,
       -9621,
       75925
+    ],
+    [
+      1780943520458,
+      -11028,
+      75206
     ]
   ]
 }
