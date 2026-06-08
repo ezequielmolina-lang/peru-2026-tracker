@@ -1,25 +1,25 @@
 {
   "meta": {
-    "updatedAt": 1780938617694,
-    "updatedAtLabel": "08-jun, 12:10 p. m. (hora Perú)",
+    "updatedAt": 1780939320295,
+    "updatedAtLabel": "08-jun, 12:22 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 93.767,
-    "cont": 86984,
+    "pctActas": 93.777,
+    "cont": 86993,
     "tot": 92766,
     "jee": 1516,
-    "pend": 4266,
-    "validos": 17558628,
-    "emitidos": 18789388,
-    "participacion": 68.762,
-    "k": 8781196,
-    "s": 8777432,
-    "kPct": 50.011,
-    "sPct": 49.989,
-    "margin": 3764
+    "pend": 4257,
+    "validos": 17559732,
+    "emitidos": 18790553,
+    "participacion": 68.766,
+    "k": 8781323,
+    "s": 8778409,
+    "kPct": 50.008,
+    "sPct": 49.992,
+    "margin": 2914
   },
   "ext": {
     "tot": 2543,
@@ -41,13 +41,13 @@
     "ref2021": "Fujimori ganó el exterior 66.5% a 33.5% sobre Castillo (~302k válidos, neto ~+99.5k)."
   },
   "dom": {
-    "pendNet": -48434,
-    "jeeNet": 42658,
-    "final": -2012,
-    "pendAddK": 128648,
-    "pendAddS": 177082,
-    "jeeAddK": 179620,
-    "jeeAddS": 136963
+    "pendNet": -47640,
+    "jeeNet": 42655,
+    "final": -2071,
+    "pendAddK": 128236,
+    "pendAddS": 175877,
+    "jeeAddK": 179617,
+    "jeeAddS": 136961
   },
   "extScen": {
     "low": 42521,
@@ -55,9 +55,9 @@
     "high": 100228
   },
   "finalScen": {
-    "low": 40509,
-    "central": 70881,
-    "high": 98216
+    "low": 40450,
+    "central": 70822,
+    "high": 98157
   },
   "reg": [
     [
@@ -110,15 +110,15 @@
     ],
     [
       "Ayacucho",
-      88.8,
-      1688,
+      89.3,
+      1696,
       1900,
       17,
-      195,
+      187,
       20.9,
       173,
-      -19675,
-      -1715
+      -18857,
+      -1714
     ],
     [
       "Cajamarca",
@@ -350,15 +350,15 @@
     ],
     [
       "Callao",
-      90.5,
-      1416,
+      90.6,
+      1417,
       1564,
       32,
-      116,
-      53.3,
+      115,
+      53.2,
       180,
-      1370,
-      378
+      1346,
+      375
     ]
   ],
   "history": [
@@ -371,6 +371,11 @@
       1780938617694,
       3764,
       70881
+    ],
+    [
+      1780939320295,
+      2914,
+      70822
     ]
   ]
 }
