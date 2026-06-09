@@ -1,84 +1,84 @@
 {
   "meta": {
-    "updatedAt": 1780963920245,
-    "updatedAtLabel": "08-jun, 07:12 p. m. (hora Perú)",
+    "updatedAt": 1780964280227,
+    "updatedAtLabel": "08-jun, 07:18 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.952,
-    "cont": 88083,
+    "pctActas": 94.976,
+    "cont": 88105,
     "tot": 92766,
-    "jee": 1522,
-    "pend": 3161,
-    "validos": 17696677,
-    "emitidos": 18937101,
-    "participacion": 69.302,
-    "k": 8830184,
-    "s": 8866493,
-    "kPct": 49.897,
-    "sPct": 50.103,
-    "margin": -36309
+    "jee": 1523,
+    "pend": 3138,
+    "validos": 17700398,
+    "emitidos": 18941016,
+    "participacion": 69.316,
+    "k": 8831682,
+    "s": 8868716,
+    "kPct": 49.895,
+    "sPct": 50.105,
+    "margin": -37034
   },
   "ext": {
     "tot": 2543,
-    "cont": 166,
-    "pend": 2368,
-    "jee": 9,
-    "k": 12369,
-    "s": 9471,
-    "vv": 21840,
-    "pctActas": 6.528
+    "cont": 182,
+    "pend": 2349,
+    "jee": 12,
+    "k": 13652,
+    "s": 10890,
+    "vv": 24542,
+    "pctActas": 7.157
   },
   "assume": {
-    "extLiveKs": 56.6,
-    "extLiveVpa": 132,
-    "extSampleActas": 166,
-    "extShrunkKs": 56.7,
-    "extShrunkVpa": 131,
-    "extBand": 3.9,
-    "extPendValid": 311299,
+    "extLiveKs": 55.6,
+    "extLiveVpa": 135,
+    "extSampleActas": 182,
+    "extShrunkKs": 55.8,
+    "extShrunkVpa": 135,
+    "extBand": 3.7,
+    "extPendValid": 316049,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -30583,
-    "jeeNet": 45458,
-    "final": -21434
+    "pendNet": -30322,
+    "jeeNet": 45552,
+    "final": -21804
   },
   "extScen": {
-    "low": 17719,
-    "central": 41880,
-    "high": 66042
+    "low": 13069,
+    "central": 36497,
+    "high": 59924
   },
   "finalScen": {
-    "low": -3715,
-    "central": 20446,
-    "high": 44608
+    "low": -8735,
+    "central": 14693,
+    "high": 38120
   },
   "seq": {
-    "domCountedMargin": -39207,
-    "extCountedMargin": 2898,
-    "hito1": -69790,
+    "domCountedMargin": -39796,
+    "extCountedMargin": 2762,
+    "hito1": -70118,
     "hito2": {
-      "low": -49173,
-      "central": -25012,
-      "high": -850
+      "low": -54287,
+      "central": -30859,
+      "high": -7432
     }
   },
   "reg": [
     [
       "Amazonas",
-      94.8,
-      1212,
+      95,
+      1214,
       1278,
-      8,
+      6,
       58,
       36.4,
       155,
       -4391,
-      -385
+      -288
     ],
     [
       "Áncash",
@@ -118,14 +118,14 @@
     ],
     [
       "Ayacucho",
-      98,
-      1862,
+      98.1,
+      1864,
       1900,
       15,
-      23,
+      21,
       20.8,
       172,
-      -2175,
+      -1985,
       -1559
     ],
     [
@@ -239,14 +239,14 @@
     [
       "Loreto",
       84.1,
-      2267,
+      2269,
       2697,
       29,
-      401,
+      399,
       54.3,
       158,
-      1092,
-      461
+      1163,
+      458
     ],
     [
       "Madre de Dios",
@@ -639,6 +639,11 @@
       1780963920245,
       -36309,
       20446
+    ],
+    [
+      1780964280227,
+      -37034,
+      14693
     ]
   ]
 }
