@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781008920316,
-    "updatedAtLabel": "09-jun, 07:42 a. m. (hora Perú)",
+    "updatedAt": 1781009280209,
+    "updatedAtLabel": "09-jun, 07:48 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.762,
-    "cont": 88835,
+    "pctActas": 95.779,
+    "cont": 88850,
     "tot": 92766,
     "jee": 1534,
-    "pend": 2397,
-    "validos": 17781630,
-    "emitidos": 19027097,
-    "participacion": 69.631,
-    "k": 8878572,
-    "s": 8903058,
-    "kPct": 49.931,
-    "sPct": 50.069,
-    "margin": -24486
+    "pend": 2382,
+    "validos": 17783060,
+    "emitidos": 19028602,
+    "participacion": 69.637,
+    "k": 8879682,
+    "s": 8903378,
+    "kPct": 49.933,
+    "sPct": 50.067,
+    "margin": -23696
   },
   "ext": {
     "tot": 2543,
-    "cont": 586,
-    "pend": 1924,
+    "cont": 601,
+    "pend": 1909,
     "jee": 33,
-    "k": 46001,
-    "s": 23303,
-    "vv": 69304,
-    "pctActas": 23.044
+    "k": 47111,
+    "s": 23623,
+    "vv": 70734,
+    "pctActas": 23.634
   },
   "assume": {
-    "extLiveKs": 66.4,
+    "extLiveKs": 66.6,
     "extLiveVpa": 118,
-    "extSampleActas": 586,
-    "extShrunkKs": 61,
+    "extSampleActas": 601,
+    "extShrunkKs": 60.9,
     "extShrunkVpa": 132,
     "extBand": 3.6,
-    "extPendValid": 253896,
+    "extPendValid": 252707,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
     "pendNet": -25520,
     "jeeNet": 45458,
-    "final": -4548
+    "final": -3758
   },
   "extScen": {
-    "low": 37597,
-    "central": 55767,
-    "high": 73938
+    "low": 36937,
+    "central": 55086,
+    "high": 73235
   },
   "finalScen": {
-    "low": 33049,
-    "central": 51219,
-    "high": 69390
+    "low": 33179,
+    "central": 51328,
+    "high": 69477
   },
   "seq": {
     "domCountedMargin": -47184,
-    "extCountedMargin": 22698,
+    "extCountedMargin": 23488,
     "hito1": -72704,
     "hito2": {
-      "low": -12409,
-      "central": 5761,
-      "high": 23932
+      "low": -12279,
+      "central": 5870,
+      "high": 24019
     }
   },
   "reg": [
@@ -899,6 +899,11 @@
       1781008920316,
       -24486,
       51219
+    ],
+    [
+      1781009280209,
+      -23696,
+      51328
     ]
   ]
 }
