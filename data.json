@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781037026369,
-    "updatedAtLabel": "09-jun, 03:30 p. m. (hora Perú)",
+    "updatedAt": 1781038680276,
+    "updatedAtLabel": "09-jun, 03:58 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 96.025,
-    "cont": 89079,
+    "pctActas": 96.076,
+    "cont": 89126,
     "tot": 92766,
-    "jee": 1548,
-    "pend": 2139,
-    "validos": 17807893,
-    "emitidos": 19054755,
-    "participacion": 69.733,
-    "k": 8893765,
-    "s": 8914128,
-    "kPct": 49.943,
-    "sPct": 50.057,
-    "margin": -20363
+    "jee": 1545,
+    "pend": 2095,
+    "validos": 17815355,
+    "emitidos": 19062550,
+    "participacion": 69.761,
+    "k": 8895933,
+    "s": 8919422,
+    "kPct": 49.934,
+    "sPct": 50.066,
+    "margin": -23489
   },
   "ext": {
     "tot": 2543,
-    "cont": 799,
+    "cont": 802,
     "pend": 1695,
-    "jee": 49,
-    "k": 59981,
-    "s": 32248,
-    "vv": 92229,
-    "pctActas": 31.42
+    "jee": 46,
+    "k": 60164,
+    "s": 32332,
+    "vv": 92496,
+    "pctActas": 31.538
   },
   "assume": {
     "extLiveKs": 65,
     "extLiveVpa": 115,
-    "extSampleActas": 799,
+    "extSampleActas": 802,
     "extShrunkKs": 59.6,
     "extShrunkVpa": 137,
     "extBand": 3.8,
-    "extPendValid": 232811,
+    "extPendValid": 232808,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
-    "pendNet": -29038,
-    "jeeNet": 45387,
-    "final": -4014
+    "pendNet": -27111,
+    "jeeNet": 45377,
+    "final": -5223
   },
   "extScen": {
-    "low": 26860,
-    "central": 44551,
-    "high": 62242
+    "low": 26825,
+    "central": 44515,
+    "high": 62205
   },
   "finalScen": {
-    "low": 22846,
-    "central": 40537,
-    "high": 58228
+    "low": 21602,
+    "central": 39292,
+    "high": 56982
   },
   "seq": {
-    "domCountedMargin": -48096,
-    "extCountedMargin": 27733,
-    "hito1": -77134,
+    "domCountedMargin": -51321,
+    "extCountedMargin": 27832,
+    "hito1": -78432,
     "hito2": {
-      "low": -22541,
-      "central": -4850,
-      "high": 12841
+      "low": -23775,
+      "central": -6085,
+      "high": 11605
     }
   },
   "reg": [
@@ -142,15 +142,15 @@
     ],
     [
       "Cusco",
-      93.2,
-      3711,
+      93.5,
+      3726,
       3983,
       47,
-      225,
+      210,
       22,
       194,
-      -21912,
-      -4225
+      -20600,
+      -4234
     ],
     [
       "Huancavelica",
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      91,
-      2455,
+      92.1,
+      2484,
       2697,
       31,
-      211,
-      54.2,
+      182,
+      53.9,
       154,
-      -7123,
-      431
+      -6508,
+      430
     ],
     [
       "Madre de Dios",
@@ -949,6 +949,11 @@
       1781037026369,
       -20363,
       40537
+    ],
+    [
+      1781038680276,
+      -23489,
+      39292
     ]
   ]
 }
