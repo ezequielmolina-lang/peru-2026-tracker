@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780991160263,
-    "updatedAtLabel": "09-jun, 02:46 a. m. (hora Perú)",
+    "updatedAt": 1780992960073,
+    "updatedAtLabel": "09-jun, 03:16 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.594,
-    "cont": 88679,
+    "pctActas": 95.606,
+    "cont": 88690,
     "tot": 92766,
     "jee": 1523,
-    "pend": 2564,
-    "validos": 17768013,
-    "emitidos": 19012850,
-    "participacion": 69.579,
-    "k": 8869315,
-    "s": 8898698,
+    "pend": 2553,
+    "validos": 17769006,
+    "emitidos": 19013935,
+    "participacion": 69.583,
+    "k": 8869728,
+    "s": 8899278,
     "kPct": 49.917,
     "sPct": 50.083,
-    "margin": -29383
+    "margin": -29550
   },
   "ext": {
     "tot": 2543,
-    "cont": 438,
-    "pend": 2083,
+    "cont": 441,
+    "pend": 2080,
     "jee": 22,
-    "k": 36910,
-    "s": 19502,
-    "vv": 56412,
-    "pctActas": 17.224
+    "k": 37157,
+    "s": 19523,
+    "vv": 56680,
+    "pctActas": 17.342
   },
   "assume": {
-    "extLiveKs": 65.4,
+    "extLiveKs": 65.6,
     "extLiveVpa": 129,
-    "extSampleActas": 438,
-    "extShrunkKs": 65.2,
+    "extSampleActas": 441,
+    "extShrunkKs": 65.4,
     "extShrunkVpa": 129,
     "extBand": 2.4,
-    "extPendValid": 268346,
+    "extPendValid": 267415,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -22852,
-    "jeeNet": 45465,
-    "final": -6770
+    "pendNet": -23063,
+    "jeeNet": 45458,
+    "final": -7155
   },
   "extScen": {
-    "low": 68923,
-    "central": 81745,
-    "high": 94567
+    "low": 69392,
+    "central": 82126,
+    "high": 94861
   },
   "finalScen": {
-    "low": 62153,
-    "central": 74975,
-    "high": 87797
+    "low": 62237,
+    "central": 74971,
+    "high": 87706
   },
   "seq": {
-    "domCountedMargin": -46791,
-    "extCountedMargin": 17408,
-    "hito1": -69643,
+    "domCountedMargin": -47184,
+    "extCountedMargin": 17634,
+    "hito1": -70247,
     "hito2": {
-      "low": 16688,
-      "central": 29510,
-      "high": 42332
+      "low": 16779,
+      "central": 29513,
+      "high": 42248
     }
   },
   "reg": [
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      89.8,
-      2421,
+      90.1,
+      2429,
       2697,
       32,
-      244,
+      236,
       54.3,
-      155,
-      -571,
-      484
+      154,
+      -782,
+      477
     ],
     [
       "Madre de Dios",
@@ -255,7 +255,7 @@
       507,
       5,
       3,
-      30.9,
+      31,
       189,
       -271,
       -370
@@ -839,6 +839,11 @@
       1780991160263,
       -29383,
       74975
+    ],
+    [
+      1780992960073,
+      -29550,
+      74971
     ]
   ]
 }
