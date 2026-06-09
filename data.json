@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780969320273,
-    "updatedAtLabel": "08-jun, 08:42 p. m. (hora Perú)",
+    "updatedAt": 1780969560076,
+    "updatedAtLabel": "08-jun, 08:46 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.084,
-    "cont": 88206,
+    "pctActas": 95.12,
+    "cont": 88239,
     "tot": 92766,
-    "jee": 1518,
-    "pend": 3042,
-    "validos": 17712220,
-    "emitidos": 18953444,
-    "participacion": 69.362,
-    "k": 8833849,
-    "s": 8878371,
-    "kPct": 49.874,
-    "sPct": 50.126,
-    "margin": -44522
+    "jee": 1515,
+    "pend": 3012,
+    "validos": 17716415,
+    "emitidos": 18957868,
+    "participacion": 69.378,
+    "k": 8836470,
+    "s": 8879945,
+    "kPct": 49.877,
+    "sPct": 50.123,
+    "margin": -43475
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -24185,
-    "jeeNet": 45605,
-    "final": -23102
+    "pendNet": -23990,
+    "jeeNet": 45341,
+    "final": -22124
   },
   "extScen": {
     "low": 10990,
@@ -53,31 +53,31 @@
     "high": 57477
   },
   "finalScen": {
-    "low": -12112,
-    "central": 11131,
-    "high": 34375
+    "low": -11134,
+    "central": 12109,
+    "high": 35353
   },
   "seq": {
-    "domCountedMargin": -47175,
+    "domCountedMargin": -46128,
     "extCountedMargin": 2653,
-    "hito1": -71360,
+    "hito1": -70118,
     "hito2": {
-      "low": -57717,
-      "central": -34474,
-      "high": -11230
+      "low": -56475,
+      "central": -33232,
+      "high": -9988
     }
   },
   "reg": [
     [
       "Amazonas",
       98.7,
-      1261,
+      1262,
       1278,
       4,
-      13,
+      12,
       35.8,
       153,
-      -747,
+      -730,
       -182
     ],
     [
@@ -191,13 +191,13 @@
     [
       "Junín",
       98.2,
-      3624,
+      3626,
       3691,
       32,
-      35,
+      33,
       45,
       195,
-      -980,
+      -924,
       -527
     ],
     [
@@ -227,26 +227,26 @@
     [
       "Lima",
       96.9,
-      28330,
+      28333,
       29247,
-      917,
+      914,
       0,
       63.5,
       219,
       0,
-      54983
+      54711
     ],
     [
       "Loreto",
-      84.2,
-      2270,
+      85.2,
+      2297,
       2697,
       29,
-      398,
-      54.3,
+      371,
+      54.4,
       158,
-      1191,
-      459
+      1313,
+      467
     ],
     [
       "Madre de Dios",
@@ -679,6 +679,11 @@
       1780969320273,
       -44522,
       11131
+    ],
+    [
+      1780969560076,
+      -43475,
+      12109
     ]
   ]
 }
