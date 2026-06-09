@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780985880094,
-    "updatedAtLabel": "09-jun, 01:18 a. m. (hora Perú)",
+    "updatedAt": 1780986480076,
+    "updatedAtLabel": "09-jun, 01:28 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.382,
-    "cont": 88482,
+    "pctActas": 95.389,
+    "cont": 88489,
     "tot": 92766,
     "jee": 1519,
-    "pend": 2765,
-    "validos": 17745388,
-    "emitidos": 18989113,
-    "participacion": 69.492,
-    "k": 8853404,
-    "s": 8891984,
-    "kPct": 49.891,
-    "sPct": 50.109,
-    "margin": -38580
+    "pend": 2758,
+    "validos": 17746077,
+    "emitidos": 18989825,
+    "participacion": 69.495,
+    "k": 8853967,
+    "s": 8892110,
+    "kPct": 49.893,
+    "sPct": 50.107,
+    "margin": -38143
   },
   "ext": {
     "tot": 2543,
-    "cont": 267,
-    "pend": 2258,
+    "cont": 274,
+    "pend": 2251,
     "jee": 18,
-    "k": 21570,
-    "s": 15202,
-    "vv": 36772,
-    "pctActas": 10.499
+    "k": 22133,
+    "s": 15328,
+    "vv": 37461,
+    "pctActas": 10.775
   },
   "assume": {
-    "extLiveKs": 58.7,
-    "extLiveVpa": 138,
-    "extSampleActas": 267,
-    "extShrunkKs": 58.6,
-    "extShrunkVpa": 137,
-    "extBand": 3.1,
-    "extPendValid": 310228,
+    "extLiveKs": 59.1,
+    "extLiveVpa": 137,
+    "extSampleActas": 274,
+    "extShrunkKs": 59,
+    "extShrunkVpa": 136,
+    "extBand": 3,
+    "extPendValid": 307120,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
     "pendNet": -23894,
     "jeeNet": 45476,
-    "final": -16998
+    "final": -16561
   },
   "extScen": {
-    "low": 34562,
-    "central": 53548,
-    "high": 72534
+    "low": 36957,
+    "central": 55511,
+    "high": 74065
   },
   "finalScen": {
-    "low": 17564,
-    "central": 36550,
-    "high": 55536
+    "low": 20396,
+    "central": 38950,
+    "high": 57504
   },
   "seq": {
     "domCountedMargin": -44948,
-    "extCountedMargin": 6368,
+    "extCountedMargin": 6805,
     "hito1": -68842,
     "hito2": {
-      "low": -27912,
-      "central": -8926,
-      "high": 10060
+      "low": -25080,
+      "central": -6526,
+      "high": 12028
     }
   },
   "reg": [
@@ -779,6 +779,11 @@
       1780985880094,
       -38580,
       36550
+    ],
+    [
+      1780986480076,
+      -38143,
+      38950
     ]
   ]
 }
