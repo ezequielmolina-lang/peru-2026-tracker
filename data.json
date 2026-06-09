@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781048160274,
-    "updatedAtLabel": "09-jun, 06:36 p. m. (hora Perú)",
+    "updatedAt": 1781048760092,
+    "updatedAtLabel": "09-jun, 06:46 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 96.326,
-    "cont": 89358,
+    "pctActas": 96.335,
+    "cont": 89366,
     "tot": 92766,
     "jee": 1549,
-    "pend": 1859,
-    "validos": 17850513,
-    "emitidos": 19099359,
-    "participacion": 69.896,
-    "k": 8903625,
-    "s": 8946888,
+    "pend": 1851,
+    "validos": 17851368,
+    "emitidos": 19100267,
+    "participacion": 69.899,
+    "k": 8904155,
+    "s": 8947213,
     "kPct": 49.879,
     "sPct": 50.121,
-    "margin": -43263
+    "margin": -43058
   },
   "ext": {
     "tot": 2543,
-    "cont": 821,
-    "pend": 1674,
+    "cont": 829,
+    "pend": 1666,
     "jee": 48,
-    "k": 61413,
-    "s": 33262,
-    "vv": 94675,
-    "pctActas": 32.285
+    "k": 61943,
+    "s": 33587,
+    "vv": 95530,
+    "pctActas": 32.599
   },
   "assume": {
-    "extLiveKs": 64.9,
+    "extLiveKs": 64.8,
     "extLiveVpa": 115,
-    "extSampleActas": 821,
-    "extShrunkKs": 59.7,
+    "extSampleActas": 829,
+    "extShrunkKs": 59.8,
     "extShrunkVpa": 137,
-    "extBand": 3.8,
-    "extPendValid": 228962,
+    "extBand": 3.9,
+    "extPendValid": 227557,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
     "pendNet": -8687,
     "jeeNet": 45262,
-    "final": -6688
+    "final": -6483
   },
   "extScen": {
-    "low": 26994,
-    "central": 44589,
-    "high": 62185
+    "low": 27047,
+    "central": 44601,
+    "high": 62154
   },
   "finalScen": {
-    "low": 20306,
-    "central": 37901,
-    "high": 55497
+    "low": 20564,
+    "central": 38118,
+    "high": 55671
   },
   "seq": {
     "domCountedMargin": -71414,
-    "extCountedMargin": 28151,
+    "extCountedMargin": 28356,
     "hito1": -80101,
     "hito2": {
-      "low": -24956,
-      "central": -7361,
-      "high": 10235
+      "low": -24698,
+      "central": -7144,
+      "high": 10409
     }
   },
   "reg": [
@@ -999,6 +999,11 @@
       1781048160274,
       -43263,
       37901
+    ],
+    [
+      1781048760092,
+      -43058,
+      38118
     ]
   ]
 }
