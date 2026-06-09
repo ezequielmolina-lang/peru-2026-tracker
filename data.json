@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781048760092,
-    "updatedAtLabel": "09-jun, 06:46 p. m. (hora Perú)",
+    "updatedAt": 1781049120189,
+    "updatedAtLabel": "09-jun, 06:52 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 96.335,
-    "cont": 89366,
+    "pctActas": 96.35,
+    "cont": 89380,
     "tot": 92766,
-    "jee": 1549,
-    "pend": 1851,
-    "validos": 17851368,
-    "emitidos": 19100267,
-    "participacion": 69.899,
-    "k": 8904155,
-    "s": 8947213,
-    "kPct": 49.879,
-    "sPct": 50.121,
-    "margin": -43058
+    "jee": 1544,
+    "pend": 1842,
+    "validos": 17853549,
+    "emitidos": 19102549,
+    "participacion": 69.908,
+    "k": 8905444,
+    "s": 8948105,
+    "kPct": 49.881,
+    "sPct": 50.119,
+    "margin": -42661
   },
   "ext": {
     "tot": 2543,
-    "cont": 829,
-    "pend": 1666,
-    "jee": 48,
-    "k": 61943,
-    "s": 33587,
-    "vv": 95530,
-    "pctActas": 32.599
+    "cont": 837,
+    "pend": 1657,
+    "jee": 49,
+    "k": 62361,
+    "s": 34085,
+    "vv": 96446,
+    "pctActas": 32.914
   },
   "assume": {
-    "extLiveKs": 64.8,
+    "extLiveKs": 64.7,
     "extLiveVpa": 115,
-    "extSampleActas": 829,
+    "extSampleActas": 837,
     "extShrunkKs": 59.8,
-    "extShrunkVpa": 137,
+    "extShrunkVpa": 136,
     "extBand": 3.9,
-    "extPendValid": 227557,
+    "extPendValid": 226063,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
     "pendNet": -8687,
-    "jeeNet": 45262,
-    "final": -6483
+    "jeeNet": 45021,
+    "final": -6327
   },
   "extScen": {
-    "low": 27047,
-    "central": 44601,
-    "high": 62154
+    "low": 26788,
+    "central": 44312,
+    "high": 61836
   },
   "finalScen": {
-    "low": 20564,
-    "central": 38118,
-    "high": 55671
+    "low": 20461,
+    "central": 37985,
+    "high": 55509
   },
   "seq": {
-    "domCountedMargin": -71414,
-    "extCountedMargin": 28356,
-    "hito1": -80101,
+    "domCountedMargin": -70937,
+    "extCountedMargin": 28276,
+    "hito1": -79624,
     "hito2": {
-      "low": -24698,
-      "central": -7144,
-      "high": 10409
+      "low": -24560,
+      "central": -7036,
+      "high": 10488
     }
   },
   "reg": [
@@ -286,15 +286,15 @@
     ],
     [
       "Piura",
-      98.8,
-      5217,
+      98.9,
+      5223,
       5281,
-      64,
+      58,
       0,
       57,
       196,
       0,
-      2090
+      1849
     ],
     [
       "Puno",
@@ -1004,6 +1004,11 @@
       1781048760092,
       -43058,
       38118
+    ],
+    [
+      1781049120189,
+      -42661,
+      37985
     ]
   ]
 }
