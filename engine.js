@@ -3,9 +3,12 @@
 //
 // Computes per-region nets at PROVINCE level with shrinkage toward the department
 // mean (K0=25) so sparse provinces (e.g. 1 counted acta) don't distort the projection,
-// and applies a ~2% JEE validation haircut. Lima Metropolitana's JEE actas (the biggest single
-// bucket) are resolved at DISTRICT level LIVE every cycle — observed actas keep changing, so
-// they're not cached. ~570 calls, ~6s, concurrency-pooled.
+// and applies a ~2% JEE validation haircut. Two provinces are resolved at DISTRICT level LIVE
+// every cycle because their province mean misrepresents what's pending: Lima Metropolitana (the
+// biggest JEE bucket, observed actas keep changing) and Loreto·Datem del Marañón (pending actas
+// sit in heavily-Sánchez indigenous districts while the counted bulk is the urban seat). Cusco
+// is intentionally left at province level (its pending is one homogeneous province — district
+// drill doesn't move it). ~580 calls, ~6s, concurrency-pooled.
 //
 // Returns {len, payload}. payload (numbers only) =
 //   { nat:[ts,cont,tot,jee,pend,validos,emitidos,partic,k,s],
@@ -60,12 +63,35 @@
     const u=lvp*(2*lks-1);sp+=(lm.pend-acc)*u;sj+=(lm.jee-accj)*u; // remainder at province trend
     limaDist=[sp,sj];}
 
-  // 3) shrinkage net per department (Lima-Metro province uses its district-level override)
+  // 2c) Loreto · Datem del Marañón (prov 150700): drill to DISTRICT level LIVE. Its pending actas
+  // sit in remote, heavily-Sánchez indigenous districts (Manseriche/Morona/Pastaza), while the
+  // counted bulk is Barranca (the urban province seat, more Keiko) — so the province mean
+  // understates the Sánchez lead on what's left. Districts shrink toward the province trend (K0=25),
+  // exactly like Lima Metro. ~12 calls. Returns district-level [pendNet, jeeNet] override for 150700.
+  let datemDist=null;
+  const dm=(byId['150000']||[]).find(p=>p.pid==='150700'&&p.got&&p.k+p.s>0);
+  if(dm){const mks=dm.k/(dm.k+dm.s),mvp=(dm.k+dm.s)/dm.cont;
+    const dThunks=[];for(let dd=1;dd<=8;dd++)dThunks.push((function(dd){return async()=>{
+      const id='1507'+String(dd).padStart(2,'0'),f=`tipoFiltro=ubigeo_nivel_03&idAmbitoGeografico=1&idUbigeoDepartamento=150000&idUbigeoProvincia=150700&idUbigeoDistrito=${id}`;
+      const t=await jget(`${base}/resumen-general/totales?idEleccion=10&${f}`,3);if(!t||t.__e||!t.data||t.data.totalActas===0)return null;const d=t.data;
+      let k=0,s=0,got=0;if(d.enviadasJee+d.pendientesJee>0){const q=await jget(`${base}/resumen-general/participantes?idEleccion=10&${f}`,3);if(q&&q.data){k=V(q.data,8);s=V(q.data,10);got=1;}}
+      return{cont:d.contabilizadas,jee:d.enviadasJee,pend:d.pendientesJee,k,s,got};};})(dd));
+    const ds=(await pool(dThunks,16)).filter(Boolean);
+    let sp=0,sj=0,acc=0,accj=0;
+    for(const x of ds){const vv=x.k+x.s;
+      if(x.got&&vv>0){const w=x.cont/(x.cont+K0),ks=w*(x.k/vv)+(1-w)*mks,vp=w*(vv/x.cont)+(1-w)*mvp,u=vp*(2*ks-1);sp+=x.pend*u;sj+=x.jee*u;}
+      else{const u=mvp*(2*mks-1);sp+=x.pend*u;sj+=x.jee*u;}
+      acc+=x.pend;accj+=x.jee;}
+    const u=mvp*(2*mks-1);sp+=(dm.pend-acc)*u;sj+=(dm.jee-accj)*u; // remainder at province trend
+    datemDist=[sp,sj];}
+
+  // 3) shrinkage net per department (Lima-Metro and Datem-del-Marañón provinces use district overrides)
   const reg=[];
   for(const d of deps){const vv=d.k+d.s,dks=vv>0?d.k/vv:.5,dvp=d.cont>0?vv/d.cont:0;
     let sp=0,sj=0,acc=0,accj=0;const ps=byId[d.id]||[];
     for(const p of ps){const pv=p.k+p.s;
       if(p.pid==='140100'&&limaDist){sp+=limaDist[0];sj+=limaDist[1];}
+      else if(p.pid==='150700'&&datemDist){sp+=datemDist[0];sj+=datemDist[1];}
       else if(p.got&&pv>0){const w=p.cont/(p.cont+K0),ks=w*(p.k/pv)+(1-w)*dks,vp=w*(p.cont>0?pv/p.cont:dvp)+(1-w)*dvp,u=vp*(2*ks-1);sp+=p.pend*u;sj+=p.jee*u;}
       else{const u=dvp*(2*dks-1);sp+=p.pend*u;sj+=p.jee*u;}
       acc+=p.pend;accj+=p.jee;}

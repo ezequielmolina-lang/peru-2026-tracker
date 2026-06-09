@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedAt": 1781003725915,
-    "updatedAtLabel": "09-jun, 06:15 a. m. (hora Perú)",
+    "updatedAt": 1781004626624,
+    "updatedAtLabel": "09-jun, 06:30 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
@@ -43,9 +43,9 @@
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
-    "pendNet": -23063,
+    "pendNet": -25520,
     "jeeNet": 45458,
-    "final": -4077
+    "final": -6534
   },
   "extScen": {
     "low": 42122,
@@ -53,18 +53,18 @@
     "high": 80152
   },
   "finalScen": {
-    "low": 38045,
-    "central": 57060,
-    "high": 76075
+    "low": 35588,
+    "central": 54603,
+    "high": 73618
   },
   "seq": {
     "domCountedMargin": -47184,
     "extCountedMargin": 20712,
-    "hito1": -70247,
+    "hito1": -72704,
     "hito2": {
-      "low": -7413,
-      "central": 11602,
-      "high": 30617
+      "low": -9870,
+      "central": 9145,
+      "high": 28160
     }
   },
   "reg": [
@@ -245,7 +245,7 @@
       236,
       54.3,
       154,
-      -782,
+      -3239,
       477
     ],
     [
@@ -874,6 +874,11 @@
       1781003725915,
       -26472,
       57060
+    ],
+    [
+      1781004626624,
+      -26472,
+      54603
     ]
   ]
 }
