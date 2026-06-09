@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781008680211,
-    "updatedAtLabel": "09-jun, 07:38 a. m. (hora Perú)",
+    "updatedAt": 1781008920316,
+    "updatedAtLabel": "09-jun, 07:42 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.728,
-    "cont": 88803,
+    "pctActas": 95.762,
+    "cont": 88835,
     "tot": 92766,
-    "jee": 1531,
-    "pend": 2432,
-    "validos": 17779221,
-    "emitidos": 19024620,
-    "participacion": 69.622,
-    "k": 8876788,
-    "s": 8902433,
-    "kPct": 49.928,
-    "sPct": 50.072,
-    "margin": -25645
+    "jee": 1534,
+    "pend": 2397,
+    "validos": 17781630,
+    "emitidos": 19027097,
+    "participacion": 69.631,
+    "k": 8878572,
+    "s": 8903058,
+    "kPct": 49.931,
+    "sPct": 50.069,
+    "margin": -24486
   },
   "ext": {
     "tot": 2543,
-    "cont": 554,
-    "pend": 1959,
-    "jee": 30,
-    "k": 44217,
-    "s": 22678,
-    "vv": 66895,
-    "pctActas": 21.785
+    "cont": 586,
+    "pend": 1924,
+    "jee": 33,
+    "k": 46001,
+    "s": 23303,
+    "vv": 69304,
+    "pctActas": 23.044
   },
   "assume": {
-    "extLiveKs": 66.1,
-    "extLiveVpa": 121,
-    "extSampleActas": 554,
-    "extShrunkKs": 61.4,
+    "extLiveKs": 66.4,
+    "extLiveVpa": 118,
+    "extSampleActas": 586,
+    "extShrunkKs": 61,
     "extShrunkVpa": 132,
-    "extBand": 3.5,
-    "extPendValid": 258149,
+    "extBand": 3.6,
+    "extPendValid": 253896,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
     "pendNet": -25520,
     "jeeNet": 45458,
-    "final": -5707
+    "final": -4548
   },
   "extScen": {
-    "low": 40406,
-    "central": 58656,
-    "high": 76906
+    "low": 37597,
+    "central": 55767,
+    "high": 73938
   },
   "finalScen": {
-    "low": 34699,
-    "central": 52949,
-    "high": 71199
+    "low": 33049,
+    "central": 51219,
+    "high": 69390
   },
   "seq": {
     "domCountedMargin": -47184,
-    "extCountedMargin": 21539,
+    "extCountedMargin": 22698,
     "hito1": -72704,
     "hito2": {
-      "low": -10759,
-      "central": 7491,
-      "high": 25741
+      "low": -12409,
+      "central": 5761,
+      "high": 23932
     }
   },
   "reg": [
@@ -894,6 +894,11 @@
       1781008680211,
       -25645,
       52949
+    ],
+    [
+      1781008920316,
+      -24486,
+      51219
     ]
   ]
 }
