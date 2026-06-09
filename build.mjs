@@ -17,16 +17,13 @@ const NAME = ['Amazonas','Áncash','Apurímac','Arequipa','Ayacucho','Cajamarca'
   'Huancavelica','Huánuco','Ica','Junín','La Libertad','Lambayeque','Lima','Loreto',
   'Madre de Dios','Moquegua','Pasco','Piura','Puno','San Martín','Tacna','Tumbes','Ucayali','Callao'];
 
-// ---- Exterior model (LIVE-anchored) -------------------------------------------------
-// Centered on the exterior's OWN live trend (Keiko share + votes/acta). Once enough actas
-// are counted the 2021 prior is no longer used as a pull — only a light pseudocount (EXT_K0)
-// stabilizes the very-sparse phase (<~12 actas). The scenario band is a SAMPLING-ERROR band
-// around the live share that narrows as more actas report. (Re-anchored from the 2021 prior
-// once ~140 abroad actas consistently showed ~56-57% Keiko, below the 62% historical prior.)
-const EXT_PRIOR_KS  = 0.58;   // mild fallback share, only matters when exterior is near-empty
-const EXT_PRIOR_VPA = 130;    // mild fallback votes/acta for the near-empty phase
-const EXT_K0        = 12;      // small pseudocount — live dominates past ~12 counted actas
-// Province-trend shrinkage (K0=25) and JEE validation haircut are applied upstream in engine.js.
+// ---- Exterior model (COUNTRY BY COUNTRY) --------------------------------------------
+// The exterior projection is now computed UPSTREAM in engine.js: each country projects its own
+// pending actas with its OWN Keiko share + votes/acta, with shrinkage toward the continent mean
+// for thin-sample countries, and a band = ±1 s.e. propagated across countries. build.mjs just
+// reads the precomputed net (central/low/high) + projected pending volume from the payload.
+// (Replaced the old single-global-share model, which the USA's 82% inflated by ~20k.)
+// Province-trend shrinkage (K0=25) and JEE validation haircut are also applied upstream in engine.js.
 // ------------------------------------------------------------------------------------
 
 const raw = process.argv[2];
@@ -34,7 +31,7 @@ if (!raw) { console.error('Usage: node build.mjs \'<payload json>\''); process.e
 const p = JSON.parse(raw);
 
 const [ts, ncont, ntot, njee, npend, validos, emitidos, partic, nk, ns] = p.nat;
-const [etot, econt, epend, ejee, ek, es] = p.ext;
+const [etot, econt, epend, ejee, ek, es, extC, extLo, extHi, extPV, effKs] = p.ext;
 
 let pendNet = 0, jeeNet = 0;
 const reg = p.reg.map((r, i) => {
@@ -48,20 +45,15 @@ pendNet = Math.round(pendNet); jeeNet = Math.round(jeeNet);
 const margin   = nk - ns;
 const domFinal = margin + pendNet + jeeNet;
 
-// Exterior: live trend (ek/es/econt), only lightly stabilized for the near-empty phase.
-const gKs  = (ek+es) > 0 ? ek/(ek+es) : EXT_PRIOR_KS;       // live Keiko share abroad
-const gVpa = econt   > 0 ? (ek+es)/econt : EXT_PRIOR_VPA;   // live votes/acta abroad
-const w    = econt/(econt + EXT_K0);                        // weight on live data
-const shKs  = w*gKs  + (1-w)*EXT_PRIOR_KS;                  // ≈ live once econt ≫ 12
-const shVpa = w*gVpa + (1-w)*EXT_PRIOR_VPA;
-const extPendValid = Math.round(epend * shVpa);
-// Sampling-error band on the Keiko share: ~±1 s.e., narrows as more actas report.
-const extBand = Math.max(0.012, Math.min(0.06, 0.5/Math.sqrt(Math.max(econt,1))));
-const extScen = {
-  low:     Math.round(epend * shVpa * (2*(shKs - extBand) - 1)),
-  central: Math.round(epend * shVpa * (2* shKs            - 1)),
-  high:    Math.round(epend * shVpa * (2*(shKs + extBand) - 1)),
-};
+// Exterior: country-by-country projection computed upstream in engine.js (extC/extLo/extHi).
+const extScen = { low: extLo, central: extC, high: extHi };
+// Display helpers: aggregate COUNTED trend abroad vs the projected pending mix.
+const gKs   = (ek+es) > 0 ? ek/(ek+es) : 0;        // counted Keiko share abroad (headline)
+const gVpa  = econt   > 0 ? (ek+es)/econt : 0;     // counted votes/acta abroad (headline)
+const projKs  = effKs;                              // pending-weighted projected Keiko % (país-por-país)
+const projVpa = epend > 0 ? extPV/epend : 0;        // projected mean votes/acta on pending
+const extPendValid = extPV;                         // projected pending valid votes
+const extBand = extPV > 0 ? 100*(extHi-extC)/extPV/2 : 0; // band as ±pp on the share
 const finalScen = { low: domFinal+extScen.low, central: domFinal+extScen.central, high: domFinal+extScen.high };
 
 // Milestones in the order certainty actually arrives:
@@ -94,16 +86,16 @@ if (history.length > 240) history = history.slice(-240);
 const out = {
   meta: { updatedAt: ts, updatedAtLabel: label,
     source: 'ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)', idEleccion: 10,
-    method: 'Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.',
+    method: 'Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.',
     note: 'Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE.' },
   nat: { pctActas, cont:ncont, tot:ntot, jee:njee, pend:npend, validos, emitidos,
     participacion: +partic.toFixed(3), k:nk, s:ns, kPct, sPct, margin },
   ext: { tot:etot, cont:econt, pend:epend, jee:ejee, k:ek, s:es, vv:ek+es,
     pctActas: etot>0 ? +(econt/etot*100).toFixed(3) : 0 },
   assume: { extLiveKs: +(gKs*100).toFixed(1), extLiveVpa: Math.round(gVpa), extSampleActas: econt,
-    extShrunkKs: +(shKs*100).toFixed(1), extShrunkVpa: Math.round(shVpa), extBand: +(extBand*100).toFixed(1),
+    extShrunkKs: +projKs.toFixed(1), extShrunkVpa: Math.round(projVpa), extBand: +extBand.toFixed(1),
     extPendValid,
-    ref2021: 'El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional.' },
+    ref2021: 'El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)' },
   dom: { pendNet, jeeNet, final: domFinal },
   extScen, finalScen, seq,
   reg,
