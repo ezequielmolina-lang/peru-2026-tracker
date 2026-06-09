@@ -83,7 +83,7 @@
       else{const u=mvp*(2*mks-1);sp+=x.pend*u;sj+=x.jee*u;}
       acc+=x.pend;accj+=x.jee;}
     const u=mvp*(2*mks-1);sp+=(dm.pend-acc)*u;sj+=(dm.jee-accj)*u; // remainder at province trend
-    datemDist=[sp,sj];}
+    if(isFinite(sp)&&isFinite(sj))datemDist=[sp,sj];} // guard: if a district call flaked, leave datemDist null → Loreto falls back to province-level (never emit null net)
 
   // 3) shrinkage net per department (Lima-Metro and Datem-del-Marañón provinces use district overrides)
   const reg=[];

@@ -33,6 +33,17 @@ const p = JSON.parse(raw);
 const [ts, ncont, ntot, njee, npend, validos, emitidos, partic, nk, ns] = p.nat;
 const [etot, econt, epend, ejee, ek, es, extC, extLo, extHi, extPV, effKs] = p.ext;
 
+// Guard: a flaky/overloaded ONPE scrape can yield null/NaN nets for a region (e.g. a Datem
+// district call timed out). Refuse to write a corrupt data.json — abort so the loop skips this
+// cycle and the live site keeps the last good projection. (engine.js also guards datemDist.)
+for (const r of p.reg) if (!Number.isFinite(r[6]) || !Number.isFinite(r[7])) {
+  console.error('ABORT: non-finite region net (flaky scrape) — not writing data.json:', JSON.stringify(r));
+  process.exit(2);
+}
+if (![ts,ncont,nk,ns,extC,extLo,extHi].every(Number.isFinite)) {
+  console.error('ABORT: non-finite nat/ext value (flaky scrape) — not writing data.json'); process.exit(2);
+}
+
 let pendNet = 0, jeeNet = 0;
 const reg = p.reg.map((r, i) => {
   const [cont, tot, jee, pend, kSh, vpa, nP, nJ] = r;
