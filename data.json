@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780986720215,
-    "updatedAtLabel": "09-jun, 01:32 a. m. (hora Perú)",
+    "updatedAt": 1780987080198,
+    "updatedAtLabel": "09-jun, 01:38 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.393,
-    "cont": 88492,
+    "pctActas": 95.408,
+    "cont": 88506,
     "tot": 92766,
-    "jee": 1519,
-    "pend": 2755,
-    "validos": 17746401,
-    "emitidos": 18990162,
-    "participacion": 69.496,
-    "k": 8854254,
-    "s": 8892147,
-    "kPct": 49.893,
-    "sPct": 50.107,
-    "margin": -37893
+    "jee": 1520,
+    "pend": 2740,
+    "validos": 17747706,
+    "emitidos": 18991500,
+    "participacion": 69.501,
+    "k": 8855410,
+    "s": 8892296,
+    "kPct": 49.896,
+    "sPct": 50.104,
+    "margin": -36886
   },
   "ext": {
     "tot": 2543,
-    "cont": 277,
-    "pend": 2248,
-    "jee": 18,
-    "k": 22420,
-    "s": 15365,
-    "vv": 37785,
-    "pctActas": 10.893
+    "cont": 291,
+    "pend": 2233,
+    "jee": 19,
+    "k": 23576,
+    "s": 15514,
+    "vv": 39090,
+    "pctActas": 11.443
   },
   "assume": {
-    "extLiveKs": 59.3,
-    "extLiveVpa": 136,
-    "extSampleActas": 277,
-    "extShrunkKs": 59.3,
-    "extShrunkVpa": 136,
-    "extBand": 3,
-    "extPendValid": 306047,
+    "extLiveKs": 60.3,
+    "extLiveVpa": 134,
+    "extSampleActas": 291,
+    "extShrunkKs": 60.2,
+    "extShrunkVpa": 134,
+    "extBand": 2.9,
+    "extPendValid": 299576,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
     "pendNet": -23894,
     "jeeNet": 45476,
-    "final": -16311
+    "final": -15304
   },
   "extScen": {
-    "low": 38415,
-    "central": 56804,
-    "high": 75192
+    "low": 43675,
+    "central": 61236,
+    "high": 78798
   },
   "finalScen": {
-    "low": 22104,
-    "central": 40493,
-    "high": 58881
+    "low": 28371,
+    "central": 45932,
+    "high": 63494
   },
   "seq": {
     "domCountedMargin": -44948,
-    "extCountedMargin": 7055,
+    "extCountedMargin": 8062,
     "hito1": -68842,
     "hito2": {
-      "low": -23372,
-      "central": -4983,
-      "high": 13405
+      "low": -17105,
+      "central": 456,
+      "high": 18018
     }
   },
   "reg": [
@@ -789,6 +789,11 @@
       1780986720215,
       -37893,
       40493
+    ],
+    [
+      1780987080198,
+      -36886,
+      45932
     ]
   ]
 }
