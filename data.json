@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780961760177,
-    "updatedAtLabel": "08-jun, 06:36 p. m. (hora Perú)",
+    "updatedAt": 1780963080085,
+    "updatedAtLabel": "08-jun, 06:58 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 94.935,
-    "cont": 88067,
+    "pctActas": 94.936,
+    "cont": 88068,
     "tot": 92766,
-    "jee": 1526,
+    "jee": 1525,
     "pend": 3173,
-    "validos": 17694430,
-    "emitidos": 18934667,
-    "participacion": 69.293,
-    "k": 8829215,
-    "s": 8865215,
+    "validos": 17694620,
+    "emitidos": 18934871,
+    "participacion": 69.294,
+    "k": 8829292,
+    "s": 8865328,
     "kPct": 49.898,
     "sPct": 50.102,
-    "margin": -36000
+    "margin": -36036
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": -30328,
-    "jeeNet": 45247,
-    "final": -21081
+    "jeeNet": 45295,
+    "final": -21069
   },
   "extScen": {
     "low": 20037,
@@ -53,32 +53,32 @@
     "high": 68895
   },
   "finalScen": {
-    "low": -1044,
-    "central": 23385,
-    "high": 47814
+    "low": -1032,
+    "central": 23397,
+    "high": 47826
   },
   "seq": {
-    "domCountedMargin": -38992,
+    "domCountedMargin": -39028,
     "extCountedMargin": 2992,
-    "hito1": -69320,
+    "hito1": -69356,
     "hito2": {
-      "low": -46291,
-      "central": -21862,
-      "high": 2567
+      "low": -46327,
+      "central": -21898,
+      "high": 2531
     }
   },
   "reg": [
     [
       "Amazonas",
-      94.5,
-      1208,
+      94.6,
+      1209,
       1278,
-      12,
+      11,
       58,
       36.4,
       155,
       -4393,
-      -596
+      -548
     ],
     [
       "Áncash",
@@ -624,6 +624,11 @@
       1780961760177,
       -36000,
       23385
+    ],
+    [
+      1780963080085,
+      -36036,
+      23397
     ]
   ]
 }
