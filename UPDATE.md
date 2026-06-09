@@ -10,9 +10,10 @@ Project dir: `C:\Users\cosmo\Downloads\peru-2026-tracker`
    - `tabs_context_mcp` → if no ONPE tab, `tabs_create_mcp` + `navigate` there, wait ~5 s.
 
 2. **Run the engine.** Paste the entire body of `engine.js` into `javascript_tool` on that tab.
-   It computes province-level nets with shrinkage (~480 calls, ~5 s) and returns
-   `{"len":~1004, "sec":…, "s0":"<first 540 chars>"}` and stores the full payload in
-   `window.PAYLOAD`. Then make a **2nd** tiny call: `window.PAYLOAD.slice(540)` to get the tail.
+   It computes province-level nets with shrinkage, drills Lima Metro (140100) + Loreto·Datem
+   del Marañón (150700) to district level, and projects the exterior country-by-country
+   (~580 calls, ~5 s). It returns `{"len":~997, "sec":…, "s0":"<first 540 chars>"}` and stores
+   the full payload in `window.PAYLOAD`. Then make a **2nd** tiny call: `window.PAYLOAD.slice(540)` to get the tail.
    Concatenate `s0 + tail` → the full payload `{"nat":…,"ext":…,"reg":…}` (numbers only, ASCII-safe).
    - If a value is null / it returns HTML, ONPE is overloaded — wait ~20 s and re-run. The engine
      retries each call and uses a 40 s budget + concurrency pool.
@@ -35,13 +36,14 @@ Project dir: `C:\Users\cosmo\Downloads\peru-2026-tracker`
 5. Done. Do **not** redesign anything — only `data.json` changes each cycle. Keep `index.html`,
    `build.mjs`, `engine.js` stable unless explicitly asked.
 
-## Tuning the exterior assumption (optional)
+## Exterior model (no hand-tuning)
 
-The exterior is the decisive, most-uncertain block. As real exterior actas come in, you may adjust
-the constants at the top of `build.mjs`:
-- `EXT_VPA` — valid votes per acta abroad (currently 120; today's first actas run ~170).
-- `EXT_SHARE` — Keiko share low/central/high (currently 0.57 / 0.62 / 0.665).
-Editing these and re-running step 3–4 updates the projection. Note the change in the commit message.
+The exterior is the decisive, most-uncertain block, but it is **no longer hand-tuned**. It is
+projected COUNTRY BY COUNTRY inside `engine.js`: each country projects its own pending actas with
+its own Keiko share + votes/acta, shrunk toward its continent mean (`EXT_K0c=8`), and the band is
+±1 s.e. propagated across countries. `build.mjs` just reads the precomputed `ext` net (central/
+low/high) from the payload. The old `EXT_VPA` / `EXT_SHARE` constants are gone — don't look for
+them. Change this only if explicitly asked, and only by editing the exterior block in `engine.js`.
 
 ## Notes
 - ONPE department ids are NOT alphabetical (Callao = 25). The mapping lives in `build.mjs` — don't touch.
