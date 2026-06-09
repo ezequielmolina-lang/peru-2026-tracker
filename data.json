@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780971960182,
-    "updatedAtLabel": "08-jun, 09:26 p. m. (hora Perú)",
+    "updatedAt": 1780973880225,
+    "updatedAtLabel": "08-jun, 09:58 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.162,
-    "cont": 88278,
+    "pctActas": 95.181,
+    "cont": 88296,
     "tot": 92766,
-    "jee": 1516,
-    "pend": 2972,
-    "validos": 17721728,
-    "emitidos": 18963677,
-    "participacion": 69.399,
-    "k": 8840022,
-    "s": 8881706,
-    "kPct": 49.882,
-    "sPct": 50.118,
-    "margin": -41684
+    "jee": 1513,
+    "pend": 2957,
+    "validos": 17723799,
+    "emitidos": 18965892,
+    "participacion": 69.407,
+    "k": 8841324,
+    "s": 8882475,
+    "kPct": 49.884,
+    "sPct": 50.116,
+    "margin": -41151
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -23279,
-    "jeeNet": 45350,
-    "final": -19613
+    "pendNet": -23734,
+    "jeeNet": 45239,
+    "final": -19646
   },
   "extScen": {
     "low": 16629,
@@ -53,18 +53,18 @@
     "high": 60171
   },
   "finalScen": {
-    "low": -2984,
-    "central": 18787,
-    "high": 40558
+    "low": -3017,
+    "central": 18754,
+    "high": 40525
   },
   "seq": {
-    "domCountedMargin": -45015,
+    "domCountedMargin": -44482,
     "extCountedMargin": 3331,
-    "hito1": -68294,
+    "hito1": -68216,
     "hito2": {
-      "low": -48334,
-      "central": -26563,
-      "high": -4792
+      "low": -48256,
+      "central": -26485,
+      "high": -4714
     }
   },
   "reg": [
@@ -238,14 +238,14 @@
     ],
     [
       "Loreto",
-      85.2,
-      2297,
+      85.7,
+      2312,
       2697,
       29,
-      371,
+      356,
       54.4,
-      158,
-      1313,
+      157,
+      858,
       467
     ],
     [
@@ -286,15 +286,15 @@
     ],
     [
       "Piura",
-      98.7,
-      5213,
+      98.8,
+      5216,
       5281,
-      68,
+      65,
       0,
       57,
       196,
       0,
-      2242
+      2131
     ],
     [
       "Puno",
@@ -699,6 +699,11 @@
       1780971960182,
       -41684,
       18787
+    ],
+    [
+      1780973880225,
+      -41151,
+      18754
     ]
   ]
 }
