@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781041680143,
-    "updatedAtLabel": "09-jun, 04:48 p. m. (hora Perú)",
+    "updatedAt": 1781041920228,
+    "updatedAtLabel": "09-jun, 04:52 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 96.217,
-    "cont": 89257,
+    "pctActas": 96.232,
+    "cont": 89271,
     "tot": 92766,
     "jee": 1550,
-    "pend": 1959,
-    "validos": 17836318,
-    "emitidos": 19084471,
-    "participacion": 69.841,
-    "k": 8900010,
-    "s": 8936308,
-    "kPct": 49.898,
-    "sPct": 50.102,
-    "margin": -36298
+    "pend": 1945,
+    "validos": 17838594,
+    "emitidos": 19086879,
+    "participacion": 69.85,
+    "k": 8900550,
+    "s": 8938044,
+    "kPct": 49.895,
+    "sPct": 50.105,
+    "margin": -37494
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
-    "pendNet": -14523,
-    "jeeNet": 44915,
-    "final": -5906
+    "pendNet": -12899,
+    "jeeNet": 44910,
+    "final": -5483
   },
   "extScen": {
     "low": 26825,
@@ -53,18 +53,18 @@
     "high": 62205
   },
   "finalScen": {
-    "low": 20919,
-    "central": 38609,
-    "high": 56299
+    "low": 21342,
+    "central": 39032,
+    "high": 56722
   },
   "seq": {
-    "domCountedMargin": -64130,
+    "domCountedMargin": -65326,
     "extCountedMargin": 27832,
-    "hito1": -78653,
+    "hito1": -78225,
     "hito2": {
-      "low": -23996,
-      "central": -6306,
-      "high": 11384
+      "low": -23568,
+      "central": -5878,
+      "high": 11812
     }
   },
   "reg": [
@@ -142,15 +142,15 @@
     ],
     [
       "Cusco",
-      96.4,
-      3840,
+      96.7,
+      3851,
       3983,
       51,
-      92,
+      81,
       21.9,
       193,
-      -9199,
-      -4650
+      -8126,
+      -4656
     ],
     [
       "Huancavelica",
@@ -238,15 +238,15 @@
     ],
     [
       "Loreto",
-      92.7,
-      2501,
+      92.8,
+      2504,
       2697,
       32,
-      164,
-      53.8,
+      161,
+      53.9,
       153,
-      -5321,
-      384
+      -4770,
+      385
     ],
     [
       "Madre de Dios",
@@ -974,6 +974,11 @@
       1781041680143,
       -36298,
       38609
+    ],
+    [
+      1781041920228,
+      -37494,
+      39032
     ]
   ]
 }
