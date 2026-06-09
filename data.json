@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1780965960214,
-    "updatedAtLabel": "08-jun, 07:46 p. m. (hora Perú)",
+    "updatedAt": 1780966219269,
+    "updatedAtLabel": "08-jun, 07:50 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.024,
-    "cont": 88150,
+    "pctActas": 95.037,
+    "cont": 88162,
     "tot": 92766,
     "jee": 1519,
-    "pend": 3097,
-    "validos": 17705365,
-    "emitidos": 18946287,
-    "participacion": 69.336,
-    "k": 8832595,
-    "s": 8872770,
-    "kPct": 49.887,
-    "sPct": 50.113,
-    "margin": -40175
+    "pend": 3085,
+    "validos": 17706625,
+    "emitidos": 18947594,
+    "participacion": 69.341,
+    "k": 8832661,
+    "s": 8873964,
+    "kPct": 49.883,
+    "sPct": 50.117,
+    "margin": -41303
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -27263,
-    "jeeNet": 45690,
-    "final": -21748
+    "pendNet": -26266,
+    "jeeNet": 45689,
+    "final": -21880
   },
   "extScen": {
     "low": 10990,
@@ -53,32 +53,32 @@
     "high": 57477
   },
   "finalScen": {
-    "low": -10758,
-    "central": 12485,
-    "high": 35729
+    "low": -10890,
+    "central": 12353,
+    "high": 35597
   },
   "seq": {
-    "domCountedMargin": -42828,
+    "domCountedMargin": -43956,
     "extCountedMargin": 2653,
-    "hito1": -70091,
+    "hito1": -70222,
     "hito2": {
-      "low": -56448,
-      "central": -33205,
-      "high": -9961
+      "low": -56579,
+      "central": -33336,
+      "high": -10092
     }
   },
   "reg": [
     [
       "Amazonas",
-      97,
-      1240,
+      97.8,
+      1250,
       1278,
       4,
-      34,
-      36.1,
+      24,
+      35.9,
       154,
-      -2470,
-      -182
+      -1663,
+      -183
     ],
     [
       "Áncash",
@@ -118,14 +118,14 @@
     ],
     [
       "Ayacucho",
-      98.7,
-      1876,
+      98.8,
+      1878,
       1900,
       15,
-      9,
+      7,
       20.7,
-      172,
-      -847,
+      171,
+      -657,
       -1558
     ],
     [
@@ -659,6 +659,11 @@
       1780965960214,
       -40175,
       12485
+    ],
+    [
+      1780966219269,
+      -41303,
+      12353
     ]
   ]
 }
