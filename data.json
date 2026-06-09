@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1780981080102,
-    "updatedAtLabel": "08-jun, 11:58 p. m. (hora Perú)",
+    "updatedAt": 1780981320180,
+    "updatedAtLabel": "09-jun, 12:02 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE proyectadas por tendencia de PROVINCIA, con shrinkage hacia la media del departamento para provincias con pocas actas contadas. JEE con haircut ~2% (validación histórica). Exterior por referencia 2021.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 95.349,
-    "cont": 88451,
+    "pctActas": 95.352,
+    "cont": 88454,
     "tot": 92766,
     "jee": 1516,
-    "pend": 2799,
-    "validos": 17742632,
-    "emitidos": 18986219,
-    "participacion": 69.482,
-    "k": 8851453,
-    "s": 8891179,
+    "pend": 2796,
+    "validos": 17743098,
+    "emitidos": 18986730,
+    "participacion": 69.484,
+    "k": 8851632,
+    "s": 8891466,
     "kPct": 49.888,
     "sPct": 50.112,
-    "margin": -39726
+    "margin": -39834
   },
   "ext": {
     "tot": 2543,
-    "cont": 238,
-    "pend": 2290,
+    "cont": 239,
+    "pend": 2289,
     "jee": 15,
-    "k": 19652,
-    "s": 14579,
-    "vv": 34231,
-    "pctActas": 9.359
+    "k": 19798,
+    "s": 14684,
+    "vv": 34482,
+    "pctActas": 9.398
   },
   "assume": {
     "extLiveKs": 57.4,
     "extLiveVpa": 144,
-    "extSampleActas": 238,
+    "extSampleActas": 239,
     "extShrunkKs": 57.4,
-    "extShrunkVpa": 143,
+    "extShrunkVpa": 144,
     "extBand": 3.2,
-    "extPendValid": 327846,
+    "extPendValid": 328686,
     "ref2021": "El exterior se proyecta con su tendencia VIVA (no el patrón 2021). En 2021 el JNE validó casi todas las actas observadas: solo ~12 anuladas a nivel nacional."
   },
   "dom": {
-    "pendNet": -23938,
-    "jeeNet": 45477,
-    "final": -18187
+    "pendNet": -23894,
+    "jeeNet": 45476,
+    "final": -18252
   },
   "extScen": {
-    "low": 27521,
-    "central": 48772,
-    "high": 70023
+    "low": 27670,
+    "central": 48931,
+    "high": 70192
   },
   "finalScen": {
-    "low": 9334,
-    "central": 30585,
-    "high": 51836
+    "low": 9418,
+    "central": 30679,
+    "high": 51940
   },
   "seq": {
-    "domCountedMargin": -44799,
-    "extCountedMargin": 5073,
-    "hito1": -68737,
+    "domCountedMargin": -44948,
+    "extCountedMargin": 5114,
+    "hito1": -68842,
     "hito2": {
-      "low": -36143,
-      "central": -14892,
-      "high": 6359
+      "low": -36058,
+      "central": -14797,
+      "high": 6464
     }
   },
   "reg": [
@@ -191,14 +191,14 @@
     [
       "Junín",
       99.1,
-      3657,
+      3659,
       3691,
       32,
-      2,
+      0,
       45.1,
       195,
-      -44,
-      -500
+      0,
+      -501
     ],
     [
       "La Libertad",
@@ -754,6 +754,11 @@
       1780981080102,
       -39726,
       30585
+    ],
+    [
+      1780981320180,
+      -39834,
+      30679
     ]
   ]
 }
