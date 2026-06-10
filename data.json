@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781050560313,
-    "updatedAtLabel": "09-jun, 07:16 p. m. (hora Perú)",
+    "updatedAt": 1781058120079,
+    "updatedAtLabel": "09-jun, 09:22 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 96.406,
-    "cont": 89432,
+    "pctActas": 96.477,
+    "cont": 89498,
     "tot": 92766,
-    "jee": 1544,
-    "pend": 1790,
-    "validos": 17857620,
-    "emitidos": 19106872,
-    "participacion": 69.923,
-    "k": 8908095,
-    "s": 8949525,
-    "kPct": 49.884,
-    "sPct": 50.116,
-    "margin": -41430
+    "jee": 1545,
+    "pend": 1723,
+    "validos": 17866359,
+    "emitidos": 19116086,
+    "participacion": 69.957,
+    "k": 8912806,
+    "s": 8953553,
+    "kPct": 49.886,
+    "sPct": 50.114,
+    "margin": -40747
   },
   "ext": {
     "tot": 2543,
-    "cont": 869,
-    "pend": 1624,
+    "cont": 936,
+    "pend": 1557,
     "jee": 50,
-    "k": 63762,
-    "s": 34901,
-    "vv": 98663,
-    "pctActas": 34.172
+    "k": 68606,
+    "s": 39015,
+    "vv": 107621,
+    "pctActas": 36.807
   },
   "assume": {
-    "extLiveKs": 64.6,
-    "extLiveVpa": 114,
-    "extSampleActas": 869,
+    "extLiveKs": 63.7,
+    "extLiveVpa": 115,
+    "extSampleActas": 936,
     "extShrunkKs": 59.9,
-    "extShrunkVpa": 138,
-    "extBand": 3.9,
-    "extPendValid": 224919,
+    "extShrunkVpa": 137,
+    "extBand": 3.3,
+    "extPendValid": 213452,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
     "pendNet": -8871,
-    "jeeNet": 44989,
-    "final": -5312
+    "jeeNet": 45030,
+    "final": -4588
   },
   "extScen": {
-    "low": 26903,
-    "central": 44361,
-    "high": 61819
+    "low": 28113,
+    "central": 42165,
+    "high": 56217
   },
   "finalScen": {
-    "low": 21591,
-    "central": 39049,
-    "high": 56507
+    "low": 23525,
+    "central": 37577,
+    "high": 51629
   },
   "seq": {
-    "domCountedMargin": -70291,
-    "extCountedMargin": 28861,
-    "hito1": -79162,
+    "domCountedMargin": -70338,
+    "extCountedMargin": 29591,
+    "hito1": -79209,
     "hito2": {
-      "low": -23398,
-      "central": -5940,
-      "high": 11518
+      "low": -21505,
+      "central": -7453,
+      "high": 6599
     }
   },
   "reg": [
@@ -203,14 +203,14 @@
     [
       "La Libertad",
       99.3,
-      5266,
+      5265,
       5302,
-      36,
+      37,
       0,
       57.5,
       198,
       0,
-      1566
+      1607
     ],
     [
       "Lambayeque",
@@ -1024,6 +1024,11 @@
       1781050560313,
       -41430,
       39049
+    ],
+    [
+      1781058120079,
+      -40747,
+      37577
     ]
   ]
 }
