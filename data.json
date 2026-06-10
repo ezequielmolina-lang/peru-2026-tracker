@@ -1,7 +1,7 @@
 {
   "meta": {
-    "updatedAt": 1781110224969,
-    "updatedAtLabel": "10-jun, 11:50 a. m. (hora Perú)",
+    "updatedAt": 1781110525720,
+    "updatedAtLabel": "10-jun, 11:55 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
@@ -1102,6 +1102,11 @@
     ],
     [
       1781110224969,
+      -4818,
+      44077
+    ],
+    [
+      1781110525720,
       -4818,
       44077
     ]
