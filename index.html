@@ -313,7 +313,7 @@ function render(d){
   dl.innerHTML = `
     <div class="row"><span>Doméstico contado · ${n.pctActas.toFixed(1)}% (sin JEE, sin exterior)</span><span class="v ${sq.domCountedMargin>=0?'netK':'netS'}">${marginPhrase(sq.domCountedMargin)}</span></div>
     <div class="row"><span>+ Pendiente doméstico (provincial)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
-    <div class="row mid"><span>① Doméstico 100% · <b>sin JEE</b>${wn('se sabrá hoy')}</span><span class="v ${sq.hito1>=0?'netK':'netS'}">${marginPhrase(sq.hito1)}</span></div>
+    <div class="row mid"><span>① Doméstico 100% · <b>sin JEE</b></span><span class="v ${sq.hito1>=0?'netK':'netS'}">${marginPhrase(sq.hito1)}</span></div>
     <div class="row"><span>+ Exterior <b>ya contado</b> (${fmt(e.cont)} actas · real)</span><span class="v ${sq.extCountedMargin>=0?'netK':'netS'}">${marginPhrase(sq.extCountedMargin)}</span></div>
     <div class="row"><span>+ Exterior <b>por entrar</b> (proyección · central)</span><span class="v ${es.central>=0?'netK':'netS'}">${marginPhrase(es.central)}</span></div>
     <div class="row mid"><span>② Con <b>extranjeros</b>${wn('horas–días')}</span><span class="v ${sq.hito2.central>=0?'netK':'netS'}">${marginPhrase(sq.hito2.central)}</span></div>
