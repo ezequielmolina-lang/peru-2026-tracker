@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781216418890,
-    "updatedAtLabel": "11-jun, 05:20 p. m. (hora Perú)",
+    "updatedAt": 1781217626937,
+    "updatedAtLabel": "11-jun, 05:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.243,
-    "cont": 91136,
+    "pctActas": 98.248,
+    "cont": 91141,
     "tot": 92766,
-    "jee": 1621,
+    "jee": 1616,
     "pend": 9,
-    "validos": 18068002,
-    "emitidos": 19331364,
-    "participacion": 70.745,
-    "k": 9034379,
-    "s": 9033623,
+    "validos": 18068881,
+    "emitidos": 19332299,
+    "participacion": 70.748,
+    "k": 9034738,
+    "s": 9034143,
     "kPct": 50.002,
     "sPct": 49.998,
-    "margin": 756
+    "margin": 595
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 265,
-    "jeeNet": 44081,
-    "final": 45102
+    "jeeNet": 44158,
+    "final": 45018
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 45102,
-    "central": 45102,
-    "high": 45102
+    "low": 45018,
+    "central": 45018,
+    "high": 45018
   },
   "seq": {
-    "domCountedMargin": -77341,
+    "domCountedMargin": -77502,
     "extCountedMargin": 78097,
-    "hito1": -77076,
+    "hito1": -77237,
     "hito2": {
-      "low": 1021,
-      "central": 1021,
-      "high": 1021
+      "low": 860,
+      "central": 860,
+      "high": 860
     }
   },
   "reg": [
@@ -190,15 +190,15 @@
     ],
     [
       "Junín",
-      99.1,
-      3659,
+      99.3,
+      3664,
       3691,
-      32,
+      27,
       0,
       45.1,
       195,
       0,
-      -501
+      -424
     ],
     [
       "La Libertad",
@@ -1284,6 +1284,11 @@
       1781216418890,
       756,
       45102
+    ],
+    [
+      1781217626937,
+      595,
+      45018
     ]
   ]
 }
