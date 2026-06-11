@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781194920071,
-    "updatedAtLabel": "11-jun, 11:22 a. m. (hora Perú)",
+    "updatedAt": 1781196025936,
+    "updatedAtLabel": "11-jun, 11:40 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.222,
-    "cont": 91117,
+    "pctActas": 98.223,
+    "cont": 91118,
     "tot": 92766,
     "jee": 1635,
-    "pend": 14,
-    "validos": 18065054,
-    "emitidos": 19328186,
-    "participacion": 70.733,
-    "k": 9032838,
-    "s": 9032216,
+    "pend": 13,
+    "validos": 18065129,
+    "emitidos": 19328274,
+    "participacion": 70.734,
+    "k": 9032899,
+    "s": 9032230,
     "kPct": 50.002,
     "sPct": 49.998,
-    "margin": 622
+    "margin": 669
   },
   "ext": {
     "tot": 2543,
@@ -43,9 +43,9 @@
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
-    "pendNet": 116,
-    "jeeNet": 44622,
-    "final": 45360
+    "pendNet": 119,
+    "jeeNet": 44624,
+    "final": 45412
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 45360,
-    "central": 45360,
-    "high": 45360
+    "low": 45412,
+    "central": 45412,
+    "high": 45412
   },
   "seq": {
-    "domCountedMargin": -77475,
+    "domCountedMargin": -77428,
     "extCountedMargin": 78097,
-    "hito1": -77359,
+    "hito1": -77309,
     "hito2": {
-      "low": 738,
-      "central": 738,
-      "high": 738
+      "low": 788,
+      "central": 788,
+      "high": 788
     }
   },
   "reg": [
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      97.6,
-      1527,
+      97.7,
+      1528,
       1564,
       36,
-      1,
+      0,
       52.6,
       174,
-      -3,
-      484
+      0,
+      486
     ]
   ],
   "history": [
@@ -1239,6 +1239,11 @@
       1781194920071,
       622,
       45360
+    ],
+    [
+      1781196025936,
+      669,
+      45412
     ]
   ]
 }
