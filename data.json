@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781215225591,
-    "updatedAtLabel": "11-jun, 05:00 p. m. (hora Perú)",
+    "updatedAt": 1781216418890,
+    "updatedAtLabel": "11-jun, 05:20 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.242,
-    "cont": 91135,
+    "pctActas": 98.243,
+    "cont": 91136,
     "tot": 92766,
-    "jee": 1622,
+    "jee": 1621,
     "pend": 9,
-    "validos": 18067790,
-    "emitidos": 19331132,
-    "participacion": 70.744,
-    "k": 9034239,
-    "s": 9033551,
+    "validos": 18068002,
+    "emitidos": 19331364,
+    "participacion": 70.745,
+    "k": 9034379,
+    "s": 9033623,
     "kPct": 50.002,
     "sPct": 49.998,
-    "margin": 688
+    "margin": 756
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 265,
-    "jeeNet": 44157,
-    "final": 45110
+    "jeeNet": 44081,
+    "final": 45102
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 45110,
-    "central": 45110,
-    "high": 45110
+    "low": 45102,
+    "central": 45102,
+    "high": 45102
   },
   "seq": {
-    "domCountedMargin": -77409,
+    "domCountedMargin": -77341,
     "extCountedMargin": 78097,
-    "hito1": -77144,
+    "hito1": -77076,
     "hito2": {
-      "low": 953,
-      "central": 953,
-      "high": 953
+      "low": 1021,
+      "central": 1021,
+      "high": 1021
     }
   },
   "reg": [
@@ -227,14 +227,14 @@
     [
       "Lima",
       96.9,
-      28339,
+      28340,
       29247,
-      908,
+      907,
       0,
       63.5,
       219,
       0,
-      54643
+      54567
     ],
     [
       "Loreto",
@@ -1279,6 +1279,11 @@
       1781215225591,
       688,
       45110
+    ],
+    [
+      1781216418890,
+      756,
+      45102
     ]
   ]
 }
