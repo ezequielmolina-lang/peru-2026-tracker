@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781137226848,
-    "updatedAtLabel": "10-jun, 07:20 p. m. (hora Perú)",
+    "updatedAt": 1781145018800,
+    "updatedAtLabel": "10-jun, 09:30 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 97.982,
-    "cont": 90894,
+    "pctActas": 97.981,
+    "cont": 90893,
     "tot": 92766,
-    "jee": 1618,
+    "jee": 1619,
     "pend": 254,
-    "validos": 18035099,
-    "emitidos": 19295521,
-    "participacion": 70.614,
-    "k": 9014171,
-    "s": 9020928,
+    "validos": 18034904,
+    "emitidos": 19295298,
+    "participacion": 70.613,
+    "k": 9014101,
+    "s": 9020803,
     "kPct": 49.981,
     "sPct": 50.019,
-    "margin": -6757
+    "margin": -6702
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 19,
-    "jeeNet": 44680,
-    "final": 37942
+    "jeeNet": 44619,
+    "final": 37936
   },
   "extScen": {
     "low": 2743,
@@ -53,18 +53,18 @@
     "high": 13095
   },
   "finalScen": {
-    "low": 40685,
-    "central": 45861,
-    "high": 51037
+    "low": 40679,
+    "central": 45855,
+    "high": 51031
   },
   "seq": {
-    "domCountedMargin": -77501,
+    "domCountedMargin": -77446,
     "extCountedMargin": 70744,
-    "hito1": -77482,
+    "hito1": -77427,
     "hito2": {
-      "low": -3995,
-      "central": 1181,
-      "high": 6357
+      "low": -3940,
+      "central": 1236,
+      "high": 6412
     }
   },
   "reg": [
@@ -143,14 +143,14 @@
     [
       "Cusco",
       98.6,
-      3929,
+      3928,
       3983,
-      54,
+      55,
       0,
       21.9,
       192,
       0,
-      -4910
+      -4971
     ],
     [
       "Huancavelica",
@@ -1209,6 +1209,11 @@
       1781137226848,
       -6757,
       45861
+    ],
+    [
+      1781145018800,
+      -6702,
+      45855
     ]
   ]
 }
