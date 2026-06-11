@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781212818891,
-    "updatedAtLabel": "11-jun, 04:20 p. m. (hora Perú)",
+    "updatedAt": 1781215225591,
+    "updatedAtLabel": "11-jun, 05:00 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.241,
-    "cont": 91134,
+    "pctActas": 98.242,
+    "cont": 91135,
     "tot": 92766,
-    "jee": 1623,
+    "jee": 1622,
     "pend": 9,
-    "validos": 18067562,
-    "emitidos": 19330887,
-    "participacion": 70.743,
-    "k": 9034073,
-    "s": 9033489,
+    "validos": 18067790,
+    "emitidos": 19331132,
+    "participacion": 70.744,
+    "k": 9034239,
+    "s": 9033551,
     "kPct": 50.002,
     "sPct": 49.998,
-    "margin": 584
+    "margin": 688
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 265,
-    "jeeNet": 44211,
-    "final": 45060
+    "jeeNet": 44157,
+    "final": 45110
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 45060,
-    "central": 45060,
-    "high": 45060
+    "low": 45110,
+    "central": 45110,
+    "high": 45110
   },
   "seq": {
-    "domCountedMargin": -77513,
+    "domCountedMargin": -77409,
     "extCountedMargin": 78097,
-    "hito1": -77248,
+    "hito1": -77144,
     "hito2": {
-      "low": 849,
-      "central": 849,
-      "high": 849
+      "low": 953,
+      "central": 953,
+      "high": 953
     }
   },
   "reg": [
@@ -203,14 +203,14 @@
     [
       "La Libertad",
       99.3,
-      5265,
+      5266,
       5302,
-      37,
+      36,
       0,
       57.5,
       198,
       0,
-      1607
+      1553
     ],
     [
       "Lambayeque",
@@ -352,7 +352,7 @@
       61,
       0,
       65.6,
-      213,
+      212,
       0,
       3960
     ],
@@ -1274,6 +1274,11 @@
       1781212818891,
       584,
       45060
+    ],
+    [
+      1781215225591,
+      688,
+      45110
     ]
   ]
 }
