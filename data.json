@@ -1,70 +1,70 @@
 {
   "meta": {
-    "updatedAt": 1781136120358,
-    "updatedAtLabel": "10-jun, 07:02 p. m. (hora Perú)",
+    "updatedAt": 1781136720091,
+    "updatedAtLabel": "10-jun, 07:12 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 97.967,
-    "cont": 90880,
+    "pctActas": 97.98,
+    "cont": 90892,
     "tot": 92766,
-    "jee": 1616,
-    "pend": 270,
-    "validos": 18033267,
-    "emitidos": 19293564,
-    "participacion": 70.607,
-    "k": 9013175,
-    "s": 9020092,
+    "jee": 1619,
+    "pend": 255,
+    "validos": 18034708,
+    "emitidos": 19295109,
+    "participacion": 70.612,
+    "k": 9013923,
+    "s": 9020785,
     "kPct": 49.981,
     "sPct": 50.019,
-    "margin": -6917
+    "margin": -6862
   },
   "ext": {
     "tot": 2543,
-    "cont": 2173,
-    "pend": 249,
-    "jee": 121,
-    "k": 165050,
-    "s": 94386,
-    "vv": 259436,
-    "pctActas": 85.45
+    "cont": 2185,
+    "pend": 234,
+    "jee": 124,
+    "k": 165798,
+    "s": 95079,
+    "vv": 260877,
+    "pctActas": 85.922
   },
   "assume": {
     "extLiveKs": 63.6,
     "extLiveVpa": 119,
-    "extSampleActas": 2173,
-    "extShrunkKs": 59.3,
-    "extShrunkVpa": 174,
-    "extBand": 6,
-    "extPendValid": 43303,
+    "extSampleActas": 2185,
+    "extShrunkKs": 59.6,
+    "extShrunkVpa": 176,
+    "extBand": 6.3,
+    "extPendValid": 41215,
     "ref2021": "El exterior se proyecta PAÍS POR PAÍS: cada país aporta sus actas pendientes con su propia tendencia (Keiko %) y sus propios votos por acta, con shrinkage hacia la media del continente donde hay pocas actas. (Ya no se usa una sola tasa global, que el 82% de EE.UU. inflaba.)"
   },
   "dom": {
     "pendNet": 19,
     "jeeNet": 44756,
-    "final": 37858
+    "final": 37913
   },
   "extScen": {
-    "low": 2881,
-    "central": 8082,
-    "high": 13282
+    "low": 2750,
+    "central": 7926,
+    "high": 13101
   },
   "finalScen": {
-    "low": 40739,
-    "central": 45940,
-    "high": 51140
+    "low": 40663,
+    "central": 45839,
+    "high": 51014
   },
   "seq": {
     "domCountedMargin": -77581,
-    "extCountedMargin": 70664,
+    "extCountedMargin": 70719,
     "hito1": -77562,
     "hito2": {
-      "low": -4017,
-      "central": 1184,
-      "high": 6384
+      "low": -4093,
+      "central": 1083,
+      "high": 6258
     }
   },
   "reg": [
@@ -1199,6 +1199,11 @@
       1781136120358,
       -6917,
       45940
+    ],
+    [
+      1781136720091,
+      -6862,
+      45839
     ]
   ]
 }
