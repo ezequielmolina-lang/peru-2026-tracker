@@ -266,7 +266,7 @@ function render(d){
   // stamp
   let lima='';
   try{ lima = new Date(n && d.meta.updatedAt).toLocaleString('es-PE',{timeZone:'America/Lima',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',hour12:true}); }catch(_){ lima=d.meta.updatedAtLabel; }
-  el('stamp').innerHTML = `Última lectura ONPE: <b>${d.meta.updatedAtLabel||lima}</b> · fuente: portal oficial ONPE · esta página se recarga sola.`;
+  el('stamp').innerHTML = `Última lectura ONPE: <b>${d.meta.updatedAtLabel||lima}</b> · fuente: portal oficial ONPE · esta página se recarga sola. · <a href="analisis/" style="color:inherit">análisis: ¿cómo le fue al modelo? →</a>`;
 
   // headline now
   el('pctActas').textContent = n.pctActas.toFixed(1);

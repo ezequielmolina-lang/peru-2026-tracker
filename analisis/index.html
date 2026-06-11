@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perú 2026 · ¿Cómo le fue al modelo? — Evaluación de la proyección</title>
+<meta name="description" content="Evaluación de la proyección del tracker de la segunda vuelta Perú 2026: lo verificable, lo que falló y lo que falta. Conteo ordinario cerrado en Keiko +561; JEE pendiente.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{ --paper:#FBF7EE; --ink:#1F1D17; --muted:#5C574A; --soft:#8A8474; --line:#E3DCC9; --line2:#EFE9D8; --keiko:#e0611f; --keikoD:#B0490F; --sanchez:#16695a; --sanchezD:#0E5A47; --bad:#993C1D; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Hanken Grotesk',sans-serif; }
+  .wrap{ max-width:880px; margin:0 auto; padding:2.6rem 1.4rem 3rem; }
+  .kicker{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; color:var(--soft); }
+  h1{ font-family:Fraunces,serif; font-weight:600; font-size:clamp(26px,4.6vw,34px); line-height:1.15; margin:.5rem 0 .4rem; }
+  h2{ font-family:Fraunces,serif; font-weight:600; font-size:20px; margin:1.2rem 0 .5rem; }
+  p{ font-size:14.5px; color:#3D392E; line-height:1.65; margin:0 0 .7rem; text-align:justify; hyphens:auto; }
+  .lede{ color:var(--muted); margin-bottom:1.4rem; }
+  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:1.4rem; }
+  .card{ border:1px solid var(--line); border-radius:6px; padding:.8rem .9rem; }
+  .card .lab{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; color:var(--soft); }
+  .card .num{ font-family:Fraunces,serif; font-size:25px; font-weight:600; }
+  .card .sub{ font-size:11.5px; color:var(--muted); }
+  .chartlab{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.1em; color:var(--soft); margin-bottom:6px; }
+  .chartbox{ position:relative; width:100%; height:340px; margin-bottom:1.6rem; }
+  table{ width:100%; border-collapse:collapse; font-size:13px; margin-bottom:.8rem; }
+  th{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.08em; color:var(--soft); text-align:left; font-weight:500; padding:6px 8px; border-bottom:1px solid var(--line); }
+  td{ padding:6px 8px; border-bottom:1px solid var(--line2); vertical-align:top; }
+  td.r{ text-align:right; font-family:'IBM Plex Mono',monospace; white-space:nowrap; }
+  td.muted{ color:var(--muted); }
+  td.just{ color:var(--muted); text-align:justify; hyphens:auto; }
+  .foot{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--soft); line-height:1.6; text-align:justify; margin-top:1rem; }
+  a{ color:var(--keikoD); }
+  .back{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; text-decoration:none; }
+  em{ font-style:italic; } .b{ font-weight:500; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p style="margin:0 0 1.2rem; text-align:left;"><a class="back" href="../">← volver al tracker en vivo</a></p>
+  <div class="kicker">EVALUACIÓN DEL MODELO · CONTEO ORDINARIO CERRADO · JEE PENDIENTE · 11 JUN 2026</div>
+  <h1>¿Cómo le fue al modelo?<br>Lo verificable, lo que falló y lo que falta.</h1>
+  <p class="lede">El conteo ordinario está prácticamente cerrado (98.2% contabilizado; quedan 20 actas) y terminó en Keiko +561. Eso permite evaluar una parte de la proyección — no toda: las 1,635 actas observadas que revisará el JNE siguen abiertas, y son la mayor parte del margen proyectado. Esta página separa una cosa de la otra.</p>
+
+  <div class="cards">
+    <div class="card"><div class="lab">ERROR DEL MARGEN · DÍA 1</div><div class="num" style="color:var(--bad);">±19.3k</div><div class="sub">el modelo inicial osciló K+11k ↔ K+76k</div></div>
+    <div class="card"><div class="lab">ERROR DEL MARGEN · DÍA 3</div><div class="num">±0.9k</div><div class="sub">sobre el conteo realizado (K+561)</div></div>
+    <div class="card"><div class="lab">SIN RESOLVER · JEE</div><div class="num">1,635</div><div class="sub">actas observadas — ahí vive casi todo el margen proyectado</div></div>
+  </div>
+
+  <div class="chartlab">PROYECCIÓN DEL TRACKER VS CONTEO OFICIAL · 8–10 JUN · MILES DE VOTOS</div>
+  <div class="chartbox">
+    <canvas id="pgc" role="img" aria-label="La proyección (naranja) se mantuvo sobre el cero entre K+11k y K+76k convergiendo a K+45k, con fuerte volatilidad el día 1; el conteo oficial (verde punteado) estuvo bajo cero el 97% del tiempo llegando a Sánchez +44.5k, con titulares de prensa anotados">Proyección vs conteo, con la volatilidad del día 1 a la vista.</canvas>
+  </div>
+
+  <h2>Qué se puede evaluar hoy — y qué no</h2>
+  <p><span class="b">Verificable:</span> el margen del conteo ordinario (terminó K+561), el voto del exterior (terminó 63.4% Keiko; el modelo país-por-país proyectaba 59-65%) y las llamadas geográficas (las últimas actas de Loreto rindieron −1,279 contra −1,385 proyectado). <span class="b">No verificable todavía:</span> el bloque JEE — y hay que decirlo sin rodeos: el margen final proyectado (K+45,273) descansa casi por completo en ese bloque. Si el JNE sorprende, la proyección se equivoca.</p>
+
+  <h2>Lo que falló</h2>
+  <p>El primer día el modelo fue malo: arrancó sobreestimando en ~26k (K+71k con 93.8% escrutado) y pasó la noche oscilando entre K+11k y K+76k — no porque llegara información nueva de esa magnitud, sino porque el modelo del exterior extrapolaba muestras minúsculas (primero actas poco-fujimoristas, después EE.UU. al 82%). Además, lo rural pendiente rindió ~30k más para Sánchez que la tendencia provincial: el shrinkage suavizaba justo los bolsones más extremos. Corregido el exterior (modelo país-por-país, madrugada del 9), el día 2 el central llegó a predecir que <em>Sánchez ganaba el conteo</em> por ~7k — erró el lado de un empate. La banda ±1 s.e. cubrió el valor realizado el 63% del tiempo, contra 68% nominal: levemente angosta.</p>
+
+  <h2>Lo que funcionó</h2>
+  <p>La estructura de la respuesta — el <em>porqué</em> — fue correcta desde el inicio y estable: lo que faltaba contar era de Sánchez, pero el exterior y las actas observadas (concentradas en Lima) apuntaban al otro lado y pesaban más. Por eso la proyección nunca cruzó el cero pese a que el conteo visible estuvo del lado de Sánchez el 97% del tiempo. Y tras el fix del día 2, la convergencia fue limpia: del K+54.6k al K+45.3k sin un solo salto de método, con error final de 0.9k sobre el conteo.</p>
+
+  <h2>Por qué el estimado es K+45,273 — y de qué depende</h2>
+  <p>El número no es misterioso; es una suma corta:</p>
+  <table>
+    <tr><td>Conteo ordinario (realizado, 98.2%)</td><td class="r">K +561</td></tr>
+    <tr><td>~20 actas pendientes (rurales, proyectadas)</td><td class="r">≈ +0.1k</td></tr>
+    <tr><td>914 actas JEE de Lima Metro · distrito a distrito, 63.5% K</td><td class="r">≈ +54.7k</td></tr>
+    <tr><td>721 actas JEE del resto del país (sierra sur incluida)</td><td class="r">≈ −10.1k</td></tr>
+    <tr><td>Haircut por anulaciones del JNE (~2%, base 2021)</td><td class="r">≈ −0.9k</td></tr>
+    <tr><td class="b" style="border-bottom:none;">Estimado del conteo definitivo</td><td class="r b" style="border-bottom:none;">K +45,273</td></tr>
+  </table>
+  <p>Los supuestos que lo sostienen — y que pueden romperlo: <span class="b">(1)</span> que las actas observadas voten como el distrito del que vienen (la observación es administrativa: firmas faltantes, datos ilegibles — no debería correlacionar con el voto, pero es un supuesto); <span class="b">(2)</span> que el JNE valide ~98% como en 2021 — cada punto adicional de anulación mueve el margen ~±0.5k, y una anulación selectiva lo movería mucho más; <span class="b">(3)</span> que ONPE no reclasifique más actas contadas hacia el JEE (ya pasó una vez con un acta de Cusco). Por eso lo honesto es leer el estimado como <em>«K+40k a K+50k si el JNE se comporta como en 2021»</em>, no como un número exacto.</p>
+
+  <h2>Bondad de ajuste — sobre lo verificable</h2>
+  <table>
+    <tr><th>ESTADÍSTICO</th><th>MODELO</th><th>REFERENCIAS</th><th>LECTURA</th></tr>
+    <tr><td>Brier — ganador del conteo (resultó K+561)</td><td class="b">0.294</td><td class="muted">0.25 = declarar empate · prensa 0.977 · c. rápido Ipsos 0.527</td><td class="just">mediocre en absoluto — el conteo era una moneda y el día 1 el modelo estuvo confiado en direcciones equivocadas; mejor que las alternativas, peor que la humildad</td></tr>
+    <tr><td>U₂ de Theil vs «el conteo de ahora es el resultado»</td><td class="b">0.60</td><td class="muted">&lt;1 = agrega información</td><td class="just">0.74 día 1 → 0.45 día 2 → 0.10 día 3: el valor agregado creció al corregirse el método</td></tr>
+    <tr><td>RMSE del margen, último día</td><td class="b">1,309</td><td class="muted">naive 13,200</td><td class="just">0.007 pp sobre 18M de válidos</td></tr>
+    <tr><td>Cobertura de la banda ±1 s.e.</td><td class="b">63%</td><td class="muted">nominal 68%</td><td class="just">levemente angosta — la banda solo modelaba el exterior, no el pendiente doméstico</td></tr>
+    <tr><td style="border-bottom:none;">Brier — ganadora de la elección</td><td class="b" style="border-bottom:none;">pendiente</td><td class="muted" style="border-bottom:none;">—</td><td class="just" style="border-bottom:none;">no evaluable hasta que el JNE resuelva; si confirma, daría 0.008 — si no, el modelo habrá fallado donde más confiaba</td></tr>
+  </table>
+
+  <div class="foot">naive = tomar el conteo del momento como resultado final (la lectura implícita de los titulares). 172 cortes ONPE, 8-jun 12:02 → 10-jun 23:02. boca de urna y conteo rápido: Ipsos, 7-jun. esta página se actualizará cuando el JNE resuelva las actas observadas. metodología y datos: <a href="https://github.com/ezequielmolina-lang/peru-2026-tracker">github.com/ezequielmolina-lang/peru-2026-tracker</a>.</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const HRS=[0,0.14,0.33,0.93,1.1,1.33,1.5,1.6,1.67,1.77,1.83,1.93,2,2.07,2.17,2.27,2.33,2.43,2.5,2.57,2.67,2.77,2.83,2.93,3,3.1,3.17,3.27,3.33,3.43,3.5,3.6,3.67,3.77,3.83,3.93,4,4.07,4.17,4.23,4.33,4.4,4.5,4.6,4.67,4.77,5.1,6.33,6.4,6.5,6.57,6.93,7.1,7.17,7.27,7.33,7.5,7.73,7.81,8.17,8.6,8.67,8.73,9.1,9.17,9.4,9.93,10,10.17,10.43,10.67,10.9,11,11.43,11.57,11.64,11.93,12,13,13.1,13.17,13.27,13.43,13.5,13.6,13.67,13.77,13.83,13.9,14,14.1,14.17,14.33,14.73,15.23,15.57,15.67,15.77,15.83,16.39,18.22,18.47,19.07,19.5,19.6,19.67,19.77,20,20.1,20.17,20.5,20.77,23.17,26.4,26.5,27.47,27.93,28,28.43,28.67,28.77,28.83,28.93,29.67,30.4,30.57,30.73,30.83,31,31.17,31.23,33.33,34.33,35.31,36.33,42.31,43.83,44.17,44.5,45.14,45.57,45.83,46.17,46.5,46.83,47,47.81,47.89,48,48.5,49.14,50,50.07,50.39,50.83,51,51.31,51.83,52.07,52.64,53,53.14,53.47,53.64,54.83,55,55.17,55.31,57.47,58.5,58.67,59];
+const PRJ=[71,70.9,70.8,69.4,67.4,75.9,75.2,75.1,74.9,74.6,73.8,73.7,74.1,70.7,70.1,70.6,70.1,69.6,69.2,70.6,60.1,50.2,49.7,49.4,53.8,54,53.8,54.3,53.4,53.3,53.5,52.8,52.7,52.6,51.8,51.2,50.8,52.5,51.3,51.7,51.3,51.3,50.9,50.7,49.7,49.7,33.9,24.8,23.9,23.4,23.4,23.4,21,20.4,14.7,12.4,12.4,12.5,12.4,12.2,12.4,11.1,12.1,15.4,17.7,18.8,18.8,18.7,18.8,18.7,18.5,23.4,23.9,24.1,29.9,30.5,30.6,30.7,33.4,33.6,36,36.5,39,40.5,45.9,54.3,60.6,65.2,68.3,74.6,75.1,75.7,75.8,75,75,75.1,74.5,74.8,75.1,75.4,57.1,54.6,55.9,54.7,52.9,51.2,51.3,50.6,50.1,50.4,50.8,50.8,41.6,40.7,40.6,40.5,39.3,38.7,38.6,38.2,38.6,39,38.2,38.4,37.9,37.9,38.1,38,37.8,38.8,39,37.6,37.8,36.9,40.4,45,45.2,45.3,44.9,44.7,44.6,44.2,43,44.4,44.4,44.2,44.1,44.1,44,43.8,43.6,44.7,44.7,45.2,45.3,45.1,45.1,45.5,46.2,46.1,45.9,45.8,45.8,45.8,46.1,45.9,45.8,45.9,45.9,45.8,45.4,45.3];
+const MAR=[4,3.8,2.9,-2.9,-4.4,-9.6,-11,-11.3,-11.7,-12.9,-15.7,-15.9,-15.5,-15,-14.8,-14.4,-14,-14.3,-15,-14.5,-15.2,-15.8,-15.8,-16.6,-15.7,-16,-16.2,-16.3,-18.1,-18.7,-19.3,-21.5,-22.9,-23,-24.1,-25.7,-26.5,-26.9,-27,-27.2,-27.5,-27.5,-27.9,-29.1,-30.2,-30.3,-30.5,-35.7,-35.8,-35.8,-36,-36,-36.3,-36.3,-37,-37.2,-38.2,-40.2,-41.3,-42.1,-42.9,-44.5,-43.5,-42.7,-42.4,-41.7,-41.2,-40.9,-40.8,-41,-41.3,-40.7,-40.6,-40.4,-39.6,-39.5,-39.7,-39.8,-39.3,-39.2,-38.7,-38.6,-38.1,-37.9,-36.9,-35.2,-33.7,-32.6,-31,-28.1,-27.9,-27.6,-28.5,-29.4,-29.6,-29.3,-28.5,-27.5,-26.8,-26.6,-26.5,-26.5,-26.3,-26.2,-25.6,-24.5,-23.7,-23.7,-23.8,-23.6,-23.4,-23.3,-20.4,-20.3,-20.1,-20.4,-23.5,-25.6,-32.9,-35.6,-36.3,-37.5,-42.1,-42.2,-43.2,-43.3,-43.1,-42.7,-42.1,-41.8,-41.4,-40.7,-39.5,-38.9,-31.4,-26.8,-25.6,-24.1,-19.9,-19.8,-19.1,-16.7,-11.7,-8.3,-5.5,-4.9,-4.8,-4.8,-5,-5.8,-6,-7.3,-7.3,-8.5,-9,-9.2,-9.3,-9.2,-9.1,-9.4,-9.6,-9.7,-9.7,-9.8,-8,-6.9,-6.9,-6.8,-6.7,-2.6,0.5,0.7];
+const pts=(ys)=>HRS.map((x,i)=>({x,y:ys[i]}));
+const ANN=[
+ {x:0.4,y:71,t:'1er push: K+71k (error: +26k)',c:'#993C1D',dx:6,dy:-8},
+ {x:8.67,y:-44.5,t:'Prensa: «Sánchez lidera por el voto rural»',c:'#0E5A47',dx:6,dy:16},
+ {x:14.6,y:65.2,t:'pico artificial del modelo v1',c:'#993C1D',dx:8,dy:-6},
+ {x:53.3,y:-9.7,t:'El Peruano: «Sánchez 50.03%»',c:'#0E5A47',dx:-4,dy:22,anchor:'end'},
+ {x:58.67,y:0.5,t:'flip: K+466',c:'#B0490F',dx:-6,dy:-12,anchor:'end'}
+];
+const annPlugin={id:'ann',afterDatasetsDraw(ch){const {ctx,scales:{x,y}}=ch;ctx.save();ctx.font="11px 'IBM Plex Mono',monospace";
+ for(const a of ANN){const px=x.getPixelForValue(a.x),py=y.getPixelForValue(a.y);
+  ctx.fillStyle=a.c;ctx.beginPath();ctx.arc(px,py,3.5,0,7);ctx.fill();
+  ctx.textAlign=a.anchor||'left';ctx.fillText(a.t,px+a.dx,py+a.dy);}
+ ctx.restore();}};
+new Chart(document.getElementById('pgc'),{type:'line',plugins:[annPlugin],data:{datasets:[
+ {label:'Proyección final del tracker',data:pts(PRJ),borderColor:'#e0611f',borderWidth:2.5,pointRadius:0,tension:.15},
+ {label:'Conteo oficial ONPE',data:pts(MAR),borderColor:'#16695a',borderWidth:1.8,borderDash:[5,3],pointRadius:0,tension:.15},
+ {label:'Empate',data:[{x:0,y:0},{x:60,y:0}],borderColor:'#8A8474',borderWidth:1.2,pointRadius:0}
+]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'nearest',intersect:false},
+ plugins:{legend:{display:false},tooltip:{filter:(it)=>it.datasetIndex<2,callbacks:{title:(it)=>{const hh=it[0].parsed.x;const d0=new Date(Date.UTC(2026,5,8,17,2)+hh*3600000);return new Intl.DateTimeFormat('es-PE',{timeZone:'America/Lima',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',hour12:false}).format(d0);},label:(it)=>it.dataset.label+': '+(it.parsed.y>=0?'K+':'S+')+Math.abs(it.parsed.y).toFixed(1)+'k'}}},
+ scales:{x:{type:'linear',min:0,max:60,ticks:{stepSize:12,color:'#8A8474',font:{family:"'IBM Plex Mono',monospace",size:10.5},callback:(v)=>{const d0=new Date(Date.UTC(2026,5,8,17,2)+v*3600000);return new Intl.DateTimeFormat('es-PE',{timeZone:'America/Lima',day:'2-digit',hour:'2-digit',hour12:false}).format(d0).replace(',','·');}},grid:{color:'rgba(0,0,0,0.05)'}},
+ y:{min:-52,max:82,ticks:{color:'#8A8474',font:{family:"'IBM Plex Mono',monospace",size:10.5},callback:(v)=>(v>=0?'K+':'S+')+Math.abs(v)+'k'},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+</script>
+</body>
+</html>
