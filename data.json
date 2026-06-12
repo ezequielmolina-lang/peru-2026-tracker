@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781282418476,
-    "updatedAtLabel": "12-jun, 11:40 a. m. (hora Perú)",
+    "updatedAt": 1781286019129,
+    "updatedAtLabel": "12-jun, 12:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.269,
-    "cont": 91160,
+    "pctActas": 98.271,
+    "cont": 91162,
     "tot": 92766,
-    "jee": 1597,
+    "jee": 1595,
     "pend": 9,
-    "validos": 18072808,
-    "emitidos": 19336514,
-    "participacion": 70.764,
-    "k": 9037236,
-    "s": 9035572,
-    "kPct": 50.005,
-    "sPct": 49.995,
-    "margin": 1664
+    "validos": 18073276,
+    "emitidos": 19337026,
+    "participacion": 70.766,
+    "k": 9037446,
+    "s": 9035830,
+    "kPct": 50.004,
+    "sPct": 49.996,
+    "margin": 1616
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 265,
-    "jeeNet": 43054,
-    "final": 44983
+    "jeeNet": 43088,
+    "final": 44969
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 44983,
-    "central": 44983,
-    "high": 44983
+    "low": 44969,
+    "central": 44969,
+    "high": 44969
   },
   "seq": {
-    "domCountedMargin": -76433,
+    "domCountedMargin": -76481,
     "extCountedMargin": 78097,
-    "hito1": -76168,
+    "hito1": -76216,
     "hito2": {
-      "low": 1929,
-      "central": 1929,
-      "high": 1929
+      "low": 1881,
+      "central": 1881,
+      "high": 1881
     }
   },
   "reg": [
@@ -130,15 +130,15 @@
     ],
     [
       "Cajamarca",
-      99.4,
-      4215,
+      99.5,
+      4217,
       4240,
-      25,
+      23,
       0,
       33.2,
       175,
       0,
-      -978
+      -944
     ],
     [
       "Cusco",
@@ -1324,6 +1324,11 @@
       1781282418476,
       1664,
       44983
+    ],
+    [
+      1781286019129,
+      1616,
+      44969
     ]
   ]
 }
