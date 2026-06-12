@@ -157,7 +157,7 @@
   </div>
 
   <h1>Perú 2026 · Segunda vuelta<br><span class="q">proyección en vivo al 100% del conteo</span></h1>
-  <p class="sub">Keiko Fujimori (Fuerza Popular) vs. Roberto Sánchez (Juntos por el Perú). El conteo ordinario se proyecta al 100% sumando, <b>por provincia</b>, las <b>actas pendientes</b> y las <b>actas para envío al JEE</b> con la <b>misma tendencia</b> que las ya contabilizadas ahí (con <i>shrinkage</i> hacia el departamento donde hay pocas actas), más el <b>voto del exterior</b> (casi todo por entrar).</p>
+  <p class="sub">Keiko Fujimori (Fuerza Popular) vs. Roberto Sánchez (Juntos por el Perú). El conteo ordinario se proyecta al 100% sumando, <b>por provincia</b>, las <b>actas pendientes</b> y las <b>actas para envío al JEE</b> con la <b>misma tendencia</b> que las ya contabilizadas ahí (con <i>shrinkage</i> hacia el departamento donde hay pocas actas), más el <b>voto del exterior</b> <span id="extClause">(casi todo por entrar)</span>.</p>
   <div class="stamp" id="stamp">Cargando datos…</div>
 
   <div class="err" id="err"></div>
@@ -173,7 +173,7 @@
       <div class="marg" id="margNow">—</div>
     </div>
     <div class="proj">
-      <div class="lab">Proyección final (conteo ordinario) · rango</div>
+      <div class="lab" id="projLab">Proyección final (conteo ordinario) · rango</div>
       <div class="big" id="projBig">—</div>
       <div class="rbar" id="rbar"></div>
       <div class="central" id="projCentral">—</div>
@@ -195,19 +195,19 @@
       </section>
 
       <section>
-        <h2>Cómo se sabrá el resultado · en orden</h2>
+        <h2 id="h2seq">Cómo se sabrá el resultado · en orden</h2>
         <div class="ledger" id="ledger"></div>
         <div class="scen" id="scen"></div>
         <p class="small" id="scenNote" style="margin-top:8px"></p>
       </section>
 
       <section>
-        <h2>Un factor decisivo · voto del exterior</h2>
+        <h2 id="h2ext">Un factor decisivo · voto del exterior</h2>
         <div class="ext" id="extBox"></div>
       </section>
 
       <section>
-        <h2>El otro factor decisivo · actas al JEE</h2>
+        <h2 id="h2jee">El otro factor decisivo · actas al JEE</h2>
         <div class="jee" id="jeeBox"></div>
       </section>
     </div>
@@ -263,6 +263,19 @@ function render(d){
       hito2:{low:h1+ecm+es.low, central:h1+ecm+es.central, high:h1+ecm+es.high}}; })();
   const wn = t => `<span style="font-family:'IBM Plex Mono',monospace;font-size:.55rem;letter-spacing:.04em;color:var(--muted);text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:1px 5px;margin-left:7px;white-space:nowrap">${t}</span>`;
 
+  // ── Situación actual: ¿el conteo ordinario ya está cerrado? ──────────────
+  const extReal = e.k - e.s;                               // resultado REAL del exterior (ya contado)
+  const extKsReal = (e.k+e.s)>0 ? 100*e.k/(e.k+e.s) : 0;   // % Keiko real del exterior
+  const extDone = e.pend===0 && e.cont>0;                  // exterior 100% contado
+  const domLeft = Math.max(0, n.pend - e.pend);            // actas domésticas aún pendientes
+  const ordEndgame = extDone && domLeft < 60;              // conteo ordinario esencialmente completo
+  if(ordEndgame){
+    el('extClause') && (el('extClause').textContent='(ya 100% contado)');
+    el('h2seq') && (el('h2seq').textContent='Cómo quedó el conteo · paso a paso');
+    el('h2ext') && (el('h2ext').textContent='Voto del exterior · 100% contado');
+    el('h2jee') && (el('h2jee').textContent='Lo único que falta · actas al JEE');
+  }
+
   // stamp
   let lima='';
   try{ lima = new Date(n && d.meta.updatedAt).toLocaleString('es-PE',{timeZone:'America/Lima',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit',hour12:true}); }catch(_){ lima=d.meta.updatedAtLabel; }
@@ -270,34 +283,49 @@ function render(d){
 
   // headline now
   el('pctActas').textContent = n.pctActas.toFixed(1);
-  el('kPct').textContent = n.kPct.toFixed(2)+'%';
-  el('sPct').textContent = n.sPct.toFixed(2)+'%';
+  const pctDec = (Math.abs(n.kPct - n.sPct) < 0.1) ? 3 : 2;   // más decimales cuando está muy reñido — para ver quién lidera
+  el('kPct').textContent = n.kPct.toFixed(pctDec)+'%';
+  el('sPct').textContent = n.sPct.toFixed(pctDec)+'%';
   el('kVot').textContent = fmt(n.k)+' votos';
   el('sVot').textContent = fmt(n.s)+' votos';
   const kw = n.kPct, sw=n.sPct;
   el('midbar').innerHTML = `<i style="width:${kw}%;background:var(--keiko)"></i><i style="width:${sw}%;background:var(--sanchez)"></i>`;
-  el('margNow').innerHTML = `Ahora mismo: <b class="${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</b> con ${n.pctActas.toFixed(1)}% de actas. Falta el exterior (${e.pctActas.toFixed(1)}% contado).`;
+  el('margNow').innerHTML = ordEndgame
+    ? `Ahora mismo: <b class="${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</b> con ${n.pctActas.toFixed(1)}% de actas. <b>Exterior 100% contado.</b> Solo faltan <b>${fmt(n.jee)} actas al JEE</b>${domLeft>0?` y ${fmt(domLeft)} domésticas`:''}.`
+    : `Ahora mismo: <b class="${n.margin>=0?'netK':'netS'}">${marginPhrase(n.margin)}</b> con ${n.pctActas.toFixed(1)}% de actas. Falta el exterior (${e.pctActas.toFixed(1)}% contado).`;
 
-  // projection headline — LEAD WITH THE RANGE (the lead is knife-edge)
+  // projection headline
   const lo=fs.low, hi=fs.high, cen=fs.central;
   const crosses = (lo>0)!==(hi>0);
-  el('projBig').innerHTML = crosses
-    ? `En el filo <small>— puede ganar cualquiera</small>`
-    : `${cen>0?'Keiko':'Sánchez'} favorito <small>· margen fino</small>`;
-  const range = (hi-lo)||1;
-  const zP = Math.max(0,Math.min(100,(0-lo)/range*100));
-  const cP = Math.max(0,Math.min(100,(cen-lo)/range*100));
-  el('rbar').innerHTML =
-    `<div class="track"><i class="sSide" style="left:0;width:${zP.toFixed(1)}%"></i>`+
-    `<i class="kSide" style="left:${zP.toFixed(1)}%;right:0"></i>`+
-    `<div class="zero" style="left:${zP.toFixed(1)}%"></div>`+
-    `<div class="cdot" style="left:${cP.toFixed(1)}%;background:${cen>0?'var(--keiko)':'var(--sanchez)'}"></div></div>`+
-    `<div class="ends"><span class="lo">${marginPhrase(lo)}</span><span class="hi">${marginPhrase(hi)}</span></div>`;
-  el('projCentral').innerHTML = `Punto central: <b class="${cen>=0?'netK':'netS'}">${marginPhrase(cen)}</b> — exterior proyectado <b>país por país</b> + JEE. El <b>rango</b> es la incertidumbre del <b>exterior</b>; el <b>JEE</b> lo puede mover aparte (ver abajo).`;
   const wf=el('winflag');
-  wf.textContent = (sq.hito2.central<0 && cen>0)
-    ? 'doméstico+exterior: Sánchez · lo da vuelta el JEE'
-    : (crosses ? 'cruza el 0 · demasiado reñido' : `favorito: ${cen>0?'Keiko':'Sánchez'} · margen fino`);
+  if(ordEndgame){
+    el('projLab') && (el('projLab').textContent='Proyección final · al validarse el JEE');
+    el('projBig').innerHTML = `${cen>0?'Keiko':'Sánchez'} +${fmt(Math.abs(cen))} <small>proyectado · cuando el JEE termine</small>`;
+    const pCont=Math.min(100,100*n.cont/n.tot);
+    el('rbar').innerHTML =
+      `<div class="track"><i style="left:0;width:${pCont.toFixed(2)}%;background:#c9bca2"></i>`+
+      `<i style="left:${pCont.toFixed(2)}%;right:0;background:#e8debf"></i></div>`+
+      `<div class="ends"><span>conteo ordinario ${n.pctActas.toFixed(1)}%</span><span class="hi">faltan ${fmt(n.jee)} actas · JEE</span></div>`;
+    el('projCentral').innerHTML = `Conteo ordinario <b>esencialmente cerrado</b> (${n.pctActas.toFixed(1)}%): Keiko lidera por <b class="netK">+${fmt(n.margin)}</b>. Las <b>${fmt(n.jee)} actas al JEE</b> que faltan proyectan <b class="netK">+${fmt(dom.jeeNet)}</b> netos para Keiko ⇒ final <b class="netK">${marginPhrase(cen)}</b>.`;
+    wf.textContent = 'Keiko gana el conteo · el JEE fija el margen final';
+  }else{
+    el('projBig').innerHTML = crosses
+      ? `En el filo <small>— puede ganar cualquiera</small>`
+      : `${cen>0?'Keiko':'Sánchez'} favorito <small>· margen fino</small>`;
+    const range = (hi-lo)||1;
+    const zP = Math.max(0,Math.min(100,(0-lo)/range*100));
+    const cP = Math.max(0,Math.min(100,(cen-lo)/range*100));
+    el('rbar').innerHTML =
+      `<div class="track"><i class="sSide" style="left:0;width:${zP.toFixed(1)}%"></i>`+
+      `<i class="kSide" style="left:${zP.toFixed(1)}%;right:0"></i>`+
+      `<div class="zero" style="left:${zP.toFixed(1)}%"></div>`+
+      `<div class="cdot" style="left:${cP.toFixed(1)}%;background:${cen>0?'var(--keiko)':'var(--sanchez)'}"></div></div>`+
+      `<div class="ends"><span class="lo">${marginPhrase(lo)}</span><span class="hi">${marginPhrase(hi)}</span></div>`;
+    el('projCentral').innerHTML = `Punto central: <b class="${cen>=0?'netK':'netS'}">${marginPhrase(cen)}</b> — exterior proyectado <b>país por país</b> + JEE. El <b>rango</b> es la incertidumbre del <b>exterior</b>; el <b>JEE</b> lo puede mover aparte (ver abajo).`;
+    wf.textContent = (sq.hito2.central<0 && cen>0)
+      ? 'doméstico+exterior: Sánchez · lo da vuelta el JEE'
+      : (crosses ? 'cruza el 0 · demasiado reñido' : `favorito: ${cen>0?'Keiko':'Sánchez'} · margen fino`);
+  }
   wf.style.background = cen>0?'var(--keiko-soft)':'var(--sanchez-soft)';
   wf.style.color = cen>0?'var(--keiko)':'var(--sanchez)';
 
@@ -310,7 +338,13 @@ function render(d){
 
   // ledger
   const dl = el('ledger');
-  dl.innerHTML = `
+  dl.innerHTML = ordEndgame ? `
+    <div class="row"><span>Doméstico · ${n.pctActas.toFixed(1)}% (sin JEE, sin exterior)</span><span class="v ${sq.domCountedMargin>=0?'netK':'netS'}">${marginPhrase(sq.domCountedMargin)}</span></div>
+    <div class="row"><span>+ Pendiente doméstico (${fmt(domLeft)} actas)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${dom.pendNet?marginPhrase(dom.pendNet):'≈ 0'}</span></div>
+    <div class="row"><span>+ Exterior · <b>100% contado</b> (${fmt(e.cont)} actas · real)</span><span class="v ${extReal>=0?'netK':'netS'}">${marginPhrase(extReal)}</span></div>
+    <div class="row mid"><span>② Conteo ordinario al 100% · <b>sin JEE</b>${wn('listo')}</span><span class="v ${sq.hito2.central>=0?'netK':'netS'}">${marginPhrase(sq.hito2.central)}</span></div>
+    <div class="row"><span>+ Actas observadas · <b>JEE</b> (${fmt(n.jee)})<span class="tag k">~99% validadas '21</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
+    <div class="total"><span>③ Final · <b>con JEE</b>${wn('días · JNE')}</span><span class="v ${fs.central>=0?'netK':'netS'}">${marginPhrase(fs.central)}</span></div>` : `
     <div class="row"><span>Doméstico contado · ${n.pctActas.toFixed(1)}% (sin JEE, sin exterior)</span><span class="v ${sq.domCountedMargin>=0?'netK':'netS'}">${marginPhrase(sq.domCountedMargin)}</span></div>
     <div class="row"><span>+ Pendiente doméstico (provincial)</span><span class="v ${dom.pendNet>=0?'netK':'netS'}">${marginPhrase(dom.pendNet)}</span></div>
     <div class="row mid"><span>① Doméstico 100% · <b>sin JEE</b></span><span class="v ${sq.hito1>=0?'netK':'netS'}">${marginPhrase(sq.hito1)}</span></div>
@@ -320,19 +354,35 @@ function render(d){
     <div class="row"><span>+ Actas observadas · <b>JEE</b><span class="tag k">~99% validadas '21</span></span><span class="v ${dom.jeeNet>=0?'netK':'netS'}">${marginPhrase(dom.jeeNet)}</span></div>
     <div class="total"><span>③ Final · <b>con JEE</b>${wn('semanas · JNE')}</span><span class="v ${fs.central>=0?'netK':'netS'}">${marginPhrase(fs.central)}</span></div>`;
 
-  // scenarios
-  el('scen').innerHTML = ['low','central','high'].map((k,i)=>{
-    const v=fs[k]; const b=a.extBand||4;
-    const lbl=[`Bajo · ${(a.extShrunkKs-b).toFixed(0)}% K`,`Central · ${a.extShrunkKs.toFixed(0)}% K proy.`,`Alto · ${(a.extShrunkKs+b).toFixed(0)}% K`][i];
-    return `<div class="s"><div class="h">${lbl}</div><div class="r ${v>=0?'netK':'netS'}">${marginPhrase(v)}</div></div>`;
-  }).join('');
-  el('scenNote').innerHTML = `El rango de arriba es por el exterior (decisivo, ${e.pctActas.toFixed(1)}% contado). Clave del <b>orden</b>: en el escenario <b>bajo</b>, tras los extranjeros aún ${sq.hito2.low>=0?'gana Keiko apenas':'<b>seguiría Sánchez</b>'} (${marginPhrase(sq.hito2.low)}); recién las actas del JEE —que el JNE resuelve en semanas— ${sq.hito2.low<0?'darían vuelta el resultado a Keiko':'amplían su ventaja'}. La banda (±${(a.extBand||4)}pp) refleja el error de muestreo país por país —más ancha porque las pendientes están poco muestreadas— y se angosta conforme cada país reporta.`;
+  // scenarios / progression
+  if(ordEndgame){
+    el('scen').innerHTML = [
+      {h:'Conteo hoy', v:n.margin},
+      {h:'+ JEE proyectado', v:dom.jeeNet, plus:true},
+      {h:'Final proyectado', v:cen}
+    ].map(x=>`<div class="s"><div class="h">${x.h}</div><div class="r ${x.v>=0?'netK':'netS'}">${x.plus?((x.v>=0?'+':'−')+fmt(Math.abs(x.v))):marginPhrase(x.v)}</div></div>`).join('');
+    el('scenNote').innerHTML = `El rango por el exterior <b>se cerró</b>: el voto del exterior está <b>100% contado</b> (Keiko +${fmt(extReal)}, ${extKsReal.toFixed(1)}% Keiko · <b>ya no entran más votos</b>). La única incertidumbre que queda es el <b>JEE</b> — ${fmt(n.jee)} actas observadas que el JNE valida en los próximos días (ver abajo).`;
+  }else{
+    el('scen').innerHTML = ['low','central','high'].map((k,i)=>{
+      const v=fs[k]; const b=a.extBand||4;
+      const lbl=[`Bajo · ${(a.extShrunkKs-b).toFixed(0)}% K`,`Central · ${a.extShrunkKs.toFixed(0)}% K proy.`,`Alto · ${(a.extShrunkKs+b).toFixed(0)}% K`][i];
+      return `<div class="s"><div class="h">${lbl}</div><div class="r ${v>=0?'netK':'netS'}">${marginPhrase(v)}</div></div>`;
+    }).join('');
+    el('scenNote').innerHTML = `El rango de arriba es por el exterior (decisivo, ${e.pctActas.toFixed(1)}% contado). Clave del <b>orden</b>: en el escenario <b>bajo</b>, tras los extranjeros aún ${sq.hito2.low>=0?'gana Keiko apenas':'<b>seguiría Sánchez</b>'} (${marginPhrase(sq.hito2.low)}); recién las actas del JEE —que el JNE resuelve en semanas— ${sq.hito2.low<0?'darían vuelta el resultado a Keiko':'amplían su ventaja'}. La banda (±${(a.extBand||4)}pp) refleja el error de muestreo país por país —más ancha porque las pendientes están poco muestreadas— y se angosta conforme cada país reporta.`;
+  }
 
-  // exterior box — country-by-country projection
-  el('extBox').innerHTML = `
-    <div class="big">${marginPhrase(es.central)}</div>
-    <p class="small" style="margin-top:4px">Neto central del exterior para Keiko, proyectado <b>país por país</b>. <b>${fmt(e.tot)} actas</b> en total, hoy <b>${e.pctActas.toFixed(1)}%</b> contadas (${fmt(e.cont)} actas): Keiko ${fmt(e.k)} – Sánchez ${fmt(e.s)} (<b>${a.extLiveKs}% Keiko</b> contado, ${a.extLiveVpa} válidos/acta).</p>
-    <p class="small"><b>Cada país aporta sus actas pendientes con su propia tendencia y votos/acta</b>, con shrinkage hacia su continente donde hay pocas actas. Las pendientes se concentran en países con mezcla <b>menos pro-Keiko</b> que EE.UU. (que domina lo ya contado), así que la cuota efectiva proyectada es <b>${a.extShrunkKs}% Keiko</b> (≈${a.extShrunkVpa} válidos/acta ⇒ ~${fmt(a.extPendValid)} por entrar), no el ${a.extLiveKs}% global. Banda ±${(a.extBand||4)}pp (error de muestreo, por país).</p>`;
+  // exterior box
+  if(extDone){
+    el('extBox').innerHTML = `
+      <div class="big">Keiko +${fmt(extReal)}</div>
+      <p class="small" style="margin-top:4px"><b>Exterior 100% contado · resultado final.</b> ${fmt(e.cont)} de ${fmt(e.tot)} actas procesadas (las otras ${fmt(e.tot-e.cont)} fueron al JEE). Keiko <b>${fmt(e.k)}</b> – Sánchez <b>${fmt(e.s)}</b> = <b>${extKsReal.toFixed(1)}% Keiko</b>. <b>Ya no entran más votos del exterior.</b></p>
+      <p class="small">Este bloque dejó de ser una proyección: es un hecho. Aportó <b class="netK">+${fmt(extReal)}</b> a Keiko y fue lo que <b>dio vuelta el conteo</b> — en lo doméstico el margen iba para Sánchez (${marginPhrase(sq.domCountedMargin)}).</p>`;
+  }else{
+    el('extBox').innerHTML = `
+      <div class="big">${marginPhrase(es.central)}</div>
+      <p class="small" style="margin-top:4px">Neto central del exterior para Keiko, proyectado <b>país por país</b>. <b>${fmt(e.tot)} actas</b> en total, hoy <b>${e.pctActas.toFixed(1)}%</b> contadas (${fmt(e.cont)} actas): Keiko ${fmt(e.k)} – Sánchez ${fmt(e.s)} (<b>${a.extLiveKs}% Keiko</b> contado, ${a.extLiveVpa} válidos/acta).</p>
+      <p class="small"><b>Cada país aporta sus actas pendientes con su propia tendencia y votos/acta</b>, con shrinkage hacia su continente donde hay pocas actas. Las pendientes se concentran en países con mezcla <b>menos pro-Keiko</b> que EE.UU. (que domina lo ya contado), así que la cuota efectiva proyectada es <b>${a.extShrunkKs}% Keiko</b> (≈${a.extShrunkVpa} válidos/acta ⇒ ~${fmt(a.extPendValid)} por entrar), no el ${a.extLiveKs}% global. Banda ±${(a.extBand||4)}pp (error de muestreo, por país).</p>`;
+  }
 
   // JEE box + sensitivity — el JEE es ahora el tramo decisivo que aún no se resuelve
   const jn = dom.jeeNet;                  // neto del JEE (Keiko si >0)
@@ -364,7 +414,10 @@ function render(d){
     const nPc = nP>0?'netK':(nP<0?'netS':''); const nJc = nJ>0?'netK':(nJ<0?'netS':'');
     return `<tr class="${cls}"><td>${name}</td><td class="num">${pct.toFixed(1)}</td><td class="num">${split}</td><td class="num">${jee}</td><td class="num">${pend?fmt(pend):'—'}</td><td class="num ${nPc}">${nP?sgn(nP):'—'}</td><td class="num ${nJc}">${nJ?sgn(nJ):'—'}</td></tr>`;
   }).join('');
-  el('regNote').innerHTML = `Quedan ~${fmt(n.pend - e.pend)} actas domésticas pendientes (sobre todo Loreto, Cusco, Ayacucho, Amazonas) y ${fmt(n.jee)} actas al JEE — de ellas <b>924 en Lima</b>, que por sí solas mueven ${sgn(d.reg.find(r=>r[0]==='Lima')[9])} a Keiko si se resuelven con la tendencia limeña.`;
+  const limaJ = d.reg.find(r=>r[0]==='Lima')||[];
+  el('regNote').innerHTML = ordEndgame
+    ? `Pendiente doméstico: solo <b>${fmt(domLeft)} actas</b> (Loreto). El resto es el <b>JEE</b>: ${fmt(n.jee)} actas observadas, <b>${fmt(limaJ[4]||0)} de Lima</b>, cuyo neto (${sgn(limaJ[9]||0)}) usa la tendencia limeña por distrito. Es lo único que falta para el conteo definitivo.`
+    : `Quedan ~${fmt(n.pend - e.pend)} actas domésticas pendientes (sobre todo Loreto, Cusco, Ayacucho, Amazonas) y ${fmt(n.jee)} actas al JEE — de ellas <b>${fmt(limaJ[4]||0)} en Lima</b>, que por sí solas mueven ${sgn(limaJ[9]||0)} a Keiko si se resuelven con la tendencia limeña.`;
 
   // assumptions
   el('assumeList').innerHTML = [
