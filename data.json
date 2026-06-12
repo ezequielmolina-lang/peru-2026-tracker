@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781293225945,
-    "updatedAtLabel": "12-jun, 02:40 p. m. (hora Perú)",
+    "updatedAt": 1781307326676,
+    "updatedAtLabel": "12-jun, 06:35 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.273,
-    "cont": 91164,
+    "pctActas": 98.304,
+    "cont": 91193,
     "tot": 92766,
-    "jee": 1593,
+    "jee": 1564,
     "pend": 9,
-    "validos": 18073749,
-    "emitidos": 19337538,
-    "participacion": 70.768,
-    "k": 9037650,
-    "s": 9036099,
-    "kPct": 50.004,
-    "sPct": 49.996,
-    "margin": 1551
+    "validos": 18079926,
+    "emitidos": 19344070,
+    "participacion": 70.791,
+    "k": 9041771,
+    "s": 9038155,
+    "kPct": 50.01,
+    "sPct": 49.99,
+    "margin": 3616
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 265,
-    "jeeNet": 43088,
-    "final": 44904
+    "jeeNet": 41241,
+    "final": 45122
   },
   "extScen": {
     "low": 0,
@@ -53,32 +53,32 @@
     "high": 0
   },
   "finalScen": {
-    "low": 44904,
-    "central": 44904,
-    "high": 44904
+    "low": 45122,
+    "central": 45122,
+    "high": 45122
   },
   "seq": {
-    "domCountedMargin": -76481,
+    "domCountedMargin": -74416,
     "extCountedMargin": 78032,
-    "hito1": -76216,
+    "hito1": -74151,
     "hito2": {
-      "low": 1816,
-      "central": 1816,
-      "high": 1816
+      "low": 3881,
+      "central": 3881,
+      "high": 3881
     }
   },
   "reg": [
     [
       "Amazonas",
       99.8,
-      1275,
+      1276,
       1278,
-      3,
+      2,
       0,
       35.5,
       153,
       0,
-      -130
+      -86
     ],
     [
       "Áncash",
@@ -178,27 +178,27 @@
     ],
     [
       "Ica",
-      99.1,
-      2421,
+      99.4,
+      2428,
       2443,
-      22,
+      15,
       0,
       51.9,
       223,
       0,
-      230
+      222
     ],
     [
       "Junín",
-      99.3,
-      3664,
+      99.4,
+      3669,
       3691,
-      27,
+      22,
       0,
       45.1,
       195,
       0,
-      -424
+      -317
     ],
     [
       "La Libertad",
@@ -226,15 +226,15 @@
     ],
     [
       "Lima",
-      96.9,
-      28344,
+      97,
+      28361,
       29247,
-      903,
+      886,
       0,
       63.5,
       219,
       0,
-      54318
+      52312
     ],
     [
       "Loreto",
@@ -274,15 +274,15 @@
     ],
     [
       "Pasco",
-      98.3,
-      788,
+      98.1,
+      787,
       802,
-      14,
+      15,
       0,
       39.2,
       164,
       0,
-      -438
+      -422
     ],
     [
       "Piura",
@@ -1334,6 +1334,11 @@
       1781293225945,
       1551,
       44904
+    ],
+    [
+      1781307326676,
+      3616,
+      45122
     ]
   ]
 }
