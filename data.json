@@ -1,41 +1,41 @@
 {
   "meta": {
-    "updatedAt": 1781286019129,
-    "updatedAtLabel": "12-jun, 12:40 p. m. (hora Perú)",
+    "updatedAt": 1781293225945,
+    "updatedAtLabel": "12-jun, 02:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.271,
-    "cont": 91162,
+    "pctActas": 98.273,
+    "cont": 91164,
     "tot": 92766,
-    "jee": 1595,
+    "jee": 1593,
     "pend": 9,
-    "validos": 18073276,
-    "emitidos": 19337026,
-    "participacion": 70.766,
-    "k": 9037446,
-    "s": 9035830,
+    "validos": 18073749,
+    "emitidos": 19337538,
+    "participacion": 70.768,
+    "k": 9037650,
+    "s": 9036099,
     "kPct": 50.004,
     "sPct": 49.996,
-    "margin": 1616
+    "margin": 1551
   },
   "ext": {
     "tot": 2543,
-    "cont": 2403,
+    "cont": 2405,
     "pend": 0,
-    "jee": 140,
-    "k": 184435,
-    "s": 106338,
-    "vv": 290773,
-    "pctActas": 94.495
+    "jee": 138,
+    "k": 184639,
+    "s": 106607,
+    "vv": 291246,
+    "pctActas": 94.573
   },
   "assume": {
     "extLiveKs": 63.4,
     "extLiveVpa": 121,
-    "extSampleActas": 2403,
+    "extSampleActas": 2405,
     "extShrunkKs": 0,
     "extShrunkVpa": 0,
     "extBand": 0,
@@ -45,7 +45,7 @@
   "dom": {
     "pendNet": 265,
     "jeeNet": 43088,
-    "final": 44969
+    "final": 44904
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 44969,
-    "central": 44969,
-    "high": 44969
+    "low": 44904,
+    "central": 44904,
+    "high": 44904
   },
   "seq": {
     "domCountedMargin": -76481,
-    "extCountedMargin": 78097,
+    "extCountedMargin": 78032,
     "hito1": -76216,
     "hito2": {
-      "low": 1881,
-      "central": 1881,
-      "high": 1881
+      "low": 1816,
+      "central": 1816,
+      "high": 1816
     }
   },
   "reg": [
@@ -1329,6 +1329,11 @@
       1781286019129,
       1616,
       44969
+    ],
+    [
+      1781293225945,
+      1551,
+      44904
     ]
   ]
 }
