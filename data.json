@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781318125226,
-    "updatedAtLabel": "12-jun, 09:35 p. m. (hora Perú)",
+    "updatedAt": 1781328918595,
+    "updatedAtLabel": "13-jun, 12:35 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.323,
-    "cont": 91210,
+    "pctActas": 98.327,
+    "cont": 91214,
     "tot": 92766,
-    "jee": 1556,
+    "jee": 1552,
     "pend": 0,
-    "validos": 18082458,
-    "emitidos": 19346781,
-    "participacion": 70.801,
-    "k": 9043384,
-    "s": 9039074,
+    "validos": 18083349,
+    "emitidos": 19347720,
+    "participacion": 70.805,
+    "k": 9043934,
+    "s": 9039415,
     "kPct": 50.012,
     "sPct": 49.988,
-    "margin": 4310
+    "margin": 4519
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 40743,
-    "final": 45053
+    "jeeNet": 40482,
+    "final": 45001
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 45053,
-    "central": 45053,
-    "high": 45053
+    "low": 45001,
+    "central": 45001,
+    "high": 45001
   },
   "seq": {
-    "domCountedMargin": -73722,
+    "domCountedMargin": -73513,
     "extCountedMargin": 78032,
-    "hito1": -73722,
+    "hito1": -73513,
     "hito2": {
-      "low": 4310,
-      "central": 4310,
-      "high": 4310
+      "low": 4519,
+      "central": 4519,
+      "high": 4519
     }
   },
   "reg": [
@@ -346,15 +346,15 @@
     ],
     [
       "Ucayali",
-      98.2,
-      2847,
+      98.4,
+      2851,
       2898,
-      51,
+      47,
       0,
       65.6,
       212,
       0,
-      3308
+      3047
     ],
     [
       "Callao",
@@ -1344,6 +1344,11 @@
       1781318125226,
       4310,
       45053
+    ],
+    [
+      1781328918595,
+      4519,
+      45001
     ]
   ]
 }
