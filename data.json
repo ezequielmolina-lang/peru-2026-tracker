@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781588426803,
-    "updatedAtLabel": "16-jun, 12:40 a. m. (hora Perú)",
+    "updatedAt": 1781631618467,
+    "updatedAtLabel": "16-jun, 12:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.033,
-    "cont": 91869,
+    "pctActas": 99.082,
+    "cont": 91914,
     "tot": 92766,
-    "jee": 897,
+    "jee": 852,
     "pend": 0,
-    "validos": 18213693,
-    "emitidos": 19487161,
-    "participacion": 71.315,
-    "k": 9123301,
-    "s": 9090392,
-    "kPct": 50.09,
-    "sPct": 49.91,
-    "margin": 32909
+    "validos": 18223108,
+    "emitidos": 19497165,
+    "participacion": 71.352,
+    "k": 9129316,
+    "s": 9093792,
+    "kPct": 50.097,
+    "sPct": 49.903,
+    "margin": 35524
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 14655,
-    "final": 47564
+    "jeeNet": 12272,
+    "final": 47796
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 47564,
-    "central": 47564,
-    "high": 47564
+    "low": 47796,
+    "central": 47796,
+    "high": 47796
   },
   "seq": {
-    "domCountedMargin": -46870,
+    "domCountedMargin": -44255,
     "extCountedMargin": 79779,
-    "hito1": -46870,
+    "hito1": -44255,
     "hito2": {
-      "low": 32909,
-      "central": 32909,
-      "high": 32909
+      "low": 35524,
+      "central": 35524,
+      "high": 35524
     }
   },
   "reg": [
@@ -178,15 +178,15 @@
     ],
     [
       "Ica",
-      99.4,
-      2428,
+      99.3,
+      2427,
       2443,
-      15,
+      16,
       0,
       51.9,
       223,
       0,
-      222
+      232
     ],
     [
       "Junín",
@@ -202,15 +202,15 @@
     ],
     [
       "La Libertad",
-      99.8,
-      5293,
+      99.9,
+      5295,
       5302,
-      9,
+      7,
       0,
       57.6,
       198,
       0,
-      348
+      205
     ],
     [
       "Lambayeque",
@@ -226,15 +226,15 @@
     ],
     [
       "Lima",
-      98.2,
-      28732,
+      98.3,
+      28756,
       29247,
-      515,
+      491,
       0,
       63.6,
       219,
       0,
-      23603
+      21611
     ],
     [
       "Loreto",
@@ -250,15 +250,15 @@
     ],
     [
       "Madre de Dios",
-      99.2,
-      503,
+      99.6,
+      505,
       507,
-      4,
+      2,
       0,
       30.8,
       188,
       0,
-      -284
+      -142
     ],
     [
       "Moquegua",
@@ -287,14 +287,14 @@
     [
       "Piura",
       99.3,
-      5243,
+      5246,
       5281,
-      38,
+      35,
       0,
       57,
       196,
       0,
-      1458
+      1336
     ],
     [
       "Puno",
@@ -346,27 +346,27 @@
     ],
     [
       "Ucayali",
-      99.2,
-      2876,
+      99.3,
+      2878,
       2898,
-      22,
+      20,
       0,
       65.6,
       212,
       0,
-      1428
+      1297
     ],
     [
       "Callao",
-      97.7,
-      1528,
+      98.5,
+      1541,
       1564,
-      36,
+      23,
       0,
       52.6,
       174,
       0,
-      486
+      339
     ]
   ],
   "history": [
@@ -1364,6 +1364,11 @@
       1781588426803,
       32909,
       47564
+    ],
+    [
+      1781631618467,
+      35524,
+      47796
     ]
   ]
 }
