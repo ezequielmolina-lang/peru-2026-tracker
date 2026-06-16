@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781570760102,
-    "updatedAtLabel": "15-jun, 07:46 p. m. (hora Perú)",
+    "updatedAt": 1781574120070,
+    "updatedAtLabel": "15-jun, 08:42 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 98.954,
-    "cont": 91796,
+    "pctActas": 98.975,
+    "cont": 91815,
     "tot": 92766,
-    "jee": 970,
+    "jee": 951,
     "pend": 0,
-    "validos": 18197698,
-    "emitidos": 19470098,
-    "participacion": 71.253,
-    "k": 9112912,
-    "s": 9084786,
-    "kPct": 50.077,
-    "sPct": 49.923,
-    "margin": 28126
+    "validos": 18201855,
+    "emitidos": 19474513,
+    "participacion": 71.269,
+    "k": 9115467,
+    "s": 9086388,
+    "kPct": 50.08,
+    "sPct": 49.92,
+    "margin": 29079
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 19280,
-    "final": 47406
+    "jeeNet": 18489,
+    "final": 47568
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 47406,
-    "central": 47406,
-    "high": 47406
+    "low": 47568,
+    "central": 47568,
+    "high": 47568
   },
   "seq": {
-    "domCountedMargin": -51653,
+    "domCountedMargin": -50700,
     "extCountedMargin": 79779,
-    "hito1": -51653,
+    "hito1": -50700,
     "hito2": {
-      "low": 28126,
-      "central": 28126,
-      "high": 28126
+      "low": 29079,
+      "central": 29079,
+      "high": 29079
     }
   },
   "reg": [
@@ -83,14 +83,14 @@
     [
       "Áncash",
       99.3,
-      3447,
+      3448,
       3472,
-      25,
+      24,
       0,
       43.4,
       180,
       0,
-      -634
+      -611
     ],
     [
       "Apurímac",
@@ -226,27 +226,27 @@
     ],
     [
       "Lima",
-      98,
-      28662,
+      98.1,
+      28678,
       29247,
-      585,
+      569,
       0,
       63.6,
       219,
       0,
-      28234
+      27437
     ],
     [
       "Loreto",
-      99.9,
-      2694,
+      100,
+      2696,
       2697,
-      3,
+      1,
       0,
       53,
       150,
       0,
-      26
+      9
     ],
     [
       "Madre de Dios",
@@ -1354,6 +1354,11 @@
       1781570760102,
       28126,
       47406
+    ],
+    [
+      1781574120070,
+      29079,
+      47568
     ]
   ]
 }
