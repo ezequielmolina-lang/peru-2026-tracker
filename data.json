@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781631618467,
-    "updatedAtLabel": "16-jun, 12:40 p. m. (hora Perú)",
+    "updatedAt": 1781646025734,
+    "updatedAtLabel": "16-jun, 04:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.082,
-    "cont": 91914,
+    "pctActas": 99.089,
+    "cont": 91921,
     "tot": 92766,
-    "jee": 852,
+    "jee": 845,
     "pend": 0,
-    "validos": 18223108,
-    "emitidos": 19497165,
-    "participacion": 71.352,
-    "k": 9129316,
-    "s": 9093792,
-    "kPct": 50.097,
-    "sPct": 49.903,
-    "margin": 35524
+    "validos": 18224612,
+    "emitidos": 19498834,
+    "participacion": 71.358,
+    "k": 9130182,
+    "s": 9094430,
+    "kPct": 50.098,
+    "sPct": 49.902,
+    "margin": 35752
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 12272,
-    "final": 47796
+    "jeeNet": 11971,
+    "final": 47723
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 47796,
-    "central": 47796,
-    "high": 47796
+    "low": 47723,
+    "central": 47723,
+    "high": 47723
   },
   "seq": {
-    "domCountedMargin": -44255,
+    "domCountedMargin": -44027,
     "extCountedMargin": 79779,
-    "hito1": -44255,
+    "hito1": -44027,
     "hito2": {
-      "low": 35524,
-      "central": 35524,
-      "high": 35524
+      "low": 35752,
+      "central": 35752,
+      "high": 35752
     }
   },
   "reg": [
@@ -214,15 +214,15 @@
     ],
     [
       "Lambayeque",
-      99.7,
-      3580,
+      99.9,
+      3587,
       3590,
-      10,
+      3,
       0,
       58.8,
       207,
       0,
-      409
+      108
     ],
     [
       "Lima",
@@ -1369,6 +1369,11 @@
       1781631618467,
       35524,
       47796
+    ],
+    [
+      1781646025734,
+      35752,
+      47723
     ]
   ]
 }
