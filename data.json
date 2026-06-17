@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1781718120085,
-    "updatedAtLabel": "17-jun, 12:42 p. m. (hora Perú)",
+    "updatedAt": 1781732425759,
+    "updatedAtLabel": "17-jun, 04:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.19,
-    "cont": 92015,
+    "pctActas": 99.218,
+    "cont": 92041,
     "tot": 92766,
-    "jee": 751,
+    "jee": 725,
     "pend": 0,
-    "validos": 18243930,
-    "emitidos": 19519601,
-    "participacion": 71.434,
-    "k": 9140385,
-    "s": 9103545,
-    "kPct": 50.101,
-    "sPct": 49.899,
-    "margin": 36840
+    "validos": 18248929,
+    "emitidos": 19524937,
+    "participacion": 71.453,
+    "k": 9142416,
+    "s": 9106513,
+    "kPct": 50.098,
+    "sPct": 49.902,
+    "margin": 35903
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 10924,
-    "final": 47764
+    "jeeNet": 11243,
+    "final": 47146
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 47764,
-    "central": 47764,
-    "high": 47764
+    "low": 47146,
+    "central": 47146,
+    "high": 47146
   },
   "seq": {
-    "domCountedMargin": -42939,
+    "domCountedMargin": -43876,
     "extCountedMargin": 79779,
-    "hito1": -42939,
+    "hito1": -43876,
     "hito2": {
-      "low": 36840,
-      "central": 36840,
-      "high": 36840
+      "low": 35903,
+      "central": 35903,
+      "high": 35903
     }
   },
   "reg": [
@@ -83,26 +83,26 @@
     [
       "Áncash",
       99.7,
-      3462,
+      3463,
       3472,
-      10,
+      9,
       0,
       43.4,
       180,
       0,
-      -455
+      -418
     ],
     [
       "Apurímac",
-      99.5,
-      1311,
+      100,
       1317,
-      6,
+      1317,
       0,
-      18.9,
+      0,
+      18.8,
       175,
       0,
-      -642
+      0
     ],
     [
       "Arequipa",
@@ -143,14 +143,14 @@
     [
       "Cusco",
       98.7,
-      3930,
+      3933,
       3983,
-      53,
+      50,
       0,
       21.9,
       192,
       0,
-      -4688
+      -4336
     ],
     [
       "Huancavelica",
@@ -166,27 +166,27 @@
     ],
     [
       "Huánuco",
-      99.6,
-      2331,
+      99.7,
+      2333,
       2341,
-      10,
+      8,
       0,
       35.8,
       168,
       0,
-      -411
+      -255
     ],
     [
       "Ica",
-      99.3,
-      2427,
+      99.5,
+      2431,
       2443,
-      16,
+      12,
       0,
       51.9,
       223,
       0,
-      232
+      169
     ],
     [
       "Junín",
@@ -227,38 +227,38 @@
     [
       "Lima",
       98.5,
-      28808,
+      28814,
       29247,
-      439,
+      433,
       0,
       63.6,
       219,
       0,
-      19027
+      18519
     ],
     [
       "Loreto",
       100,
-      2696,
       2697,
-      1,
+      2697,
+      0,
       0,
       53,
       150,
       0,
-      9
+      0
     ],
     [
       "Madre de Dios",
-      99.6,
-      505,
+      99.8,
+      506,
       507,
-      2,
+      1,
       0,
       30.8,
       188,
       0,
-      -142
+      -71
     ],
     [
       "Moquegua",
@@ -274,15 +274,15 @@
     ],
     [
       "Pasco",
-      99,
-      794,
+      99.1,
+      795,
       802,
-      8,
+      7,
       0,
       39.1,
       164,
       0,
-      56
+      -246
     ],
     [
       "Piura",
@@ -334,15 +334,15 @@
     ],
     [
       "Tumbes",
-      99.7,
-      630,
+      99.8,
+      631,
       632,
-      2,
+      1,
       0,
-      64.3,
+      64.4,
       202,
       0,
-      114
+      57
     ],
     [
       "Ucayali",
@@ -1389,6 +1389,11 @@
       1781718120085,
       36840,
       47764
+    ],
+    [
+      1781732425759,
+      35903,
+      47146
     ]
   ]
 }
