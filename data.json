@@ -1,41 +1,41 @@
 {
   "meta": {
-    "updatedAt": 1781732425759,
-    "updatedAtLabel": "17-jun, 04:40 p. m. (hora Perú)",
+    "updatedAt": 1781746818074,
+    "updatedAtLabel": "17-jun, 08:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.218,
-    "cont": 92041,
+    "pctActas": 99.383,
+    "cont": 92194,
     "tot": 92766,
-    "jee": 725,
+    "jee": 572,
     "pend": 0,
-    "validos": 18248929,
-    "emitidos": 19524937,
-    "participacion": 71.453,
-    "k": 9142416,
-    "s": 9106513,
-    "kPct": 50.098,
-    "sPct": 49.902,
-    "margin": 35903
+    "validos": 18276147,
+    "emitidos": 19553984,
+    "participacion": 71.56,
+    "k": 9157631,
+    "s": 9118516,
+    "kPct": 50.107,
+    "sPct": 49.893,
+    "margin": 39115
   },
   "ext": {
     "tot": 2543,
-    "cont": 2475,
+    "cont": 2532,
     "pend": 0,
-    "jee": 68,
-    "k": 190033,
-    "s": 110254,
-    "vv": 300287,
-    "pctActas": 97.326
+    "jee": 11,
+    "k": 194521,
+    "s": 113272,
+    "vv": 307793,
+    "pctActas": 99.567
   },
   "assume": {
-    "extLiveKs": 63.3,
-    "extLiveVpa": 121,
-    "extSampleActas": 2475,
+    "extLiveKs": 63.2,
+    "extLiveVpa": 122,
+    "extSampleActas": 2532,
     "extShrunkKs": 0,
     "extShrunkVpa": 0,
     "extBand": 0,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 11243,
-    "final": 47146
+    "jeeNet": 9208,
+    "final": 48323
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 47146,
-    "central": 47146,
-    "high": 47146
+    "low": 48323,
+    "central": 48323,
+    "high": 48323
   },
   "seq": {
-    "domCountedMargin": -43876,
-    "extCountedMargin": 79779,
-    "hito1": -43876,
+    "domCountedMargin": -42134,
+    "extCountedMargin": 81249,
+    "hito1": -42134,
     "hito2": {
-      "low": 35903,
-      "central": 35903,
-      "high": 35903
+      "low": 39115,
+      "central": 39115,
+      "high": 39115
     }
   },
   "reg": [
@@ -118,15 +118,15 @@
     ],
     [
       "Ayacucho",
-      99.7,
-      1894,
+      100,
       1900,
-      6,
+      1900,
+      0,
       0,
       20.7,
-      171,
+      172,
       0,
-      -591
+      0
     ],
     [
       "Cajamarca",
@@ -142,27 +142,27 @@
     ],
     [
       "Cusco",
-      98.7,
-      3933,
+      99.1,
+      3947,
       3983,
-      50,
+      36,
       0,
-      21.9,
+      21.8,
       192,
       0,
-      -4336
+      -2905
     ],
     [
       "Huancavelica",
-      99.3,
-      1264,
+      99.5,
+      1267,
       1273,
-      9,
+      6,
       0,
       18.6,
       156,
       0,
-      -856
+      -578
     ],
     [
       "Huánuco",
@@ -178,15 +178,15 @@
     ],
     [
       "Ica",
-      99.5,
-      2431,
+      100,
+      2442,
       2443,
-      12,
+      1,
       0,
       51.9,
       223,
       0,
-      169
+      8
     ],
     [
       "Junín",
@@ -226,15 +226,15 @@
     ],
     [
       "Lima",
-      98.5,
-      28814,
+      98.7,
+      28863,
       29247,
-      433,
+      384,
       0,
       63.6,
       219,
       0,
-      18519
+      15070
     ],
     [
       "Loreto",
@@ -286,15 +286,15 @@
     ],
     [
       "Piura",
-      99.3,
-      5246,
+      99.4,
+      5251,
       5281,
-      35,
+      30,
       0,
       57,
       196,
       0,
-      1336
+      1130
     ],
     [
       "Puno",
@@ -346,15 +346,15 @@
     ],
     [
       "Ucayali",
-      99.5,
-      2883,
+      99.8,
+      2891,
       2898,
-      15,
+      7,
       0,
       65.6,
       212,
       0,
-      974
+      455
     ],
     [
       "Callao",
@@ -1394,6 +1394,11 @@
       1781732425759,
       35903,
       47146
+    ],
+    [
+      1781746818074,
+      39115,
+      48323
     ]
   ]
 }
