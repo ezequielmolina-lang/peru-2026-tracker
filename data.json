@@ -1,41 +1,41 @@
 {
   "meta": {
-    "updatedAt": 1781818920075,
-    "updatedAtLabel": "18-jun, 04:42 p. m. (hora Perú)",
+    "updatedAt": 1781882760090,
+    "updatedAtLabel": "19-jun, 10:26 a. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.42,
-    "cont": 92228,
+    "pctActas": 99.506,
+    "cont": 92308,
     "tot": 92766,
-    "jee": 538,
+    "jee": 458,
     "pend": 0,
-    "validos": 18283512,
-    "emitidos": 19561861,
-    "participacion": 71.588,
-    "k": 9162057,
-    "s": 9121455,
-    "kPct": 50.111,
-    "sPct": 49.889,
-    "margin": 40602
+    "validos": 18300917,
+    "emitidos": 19580418,
+    "participacion": 71.656,
+    "k": 9172509,
+    "s": 9128408,
+    "kPct": 50.12,
+    "sPct": 49.88,
+    "margin": 44101
   },
   "ext": {
     "tot": 2543,
-    "cont": 2532,
+    "cont": 2534,
     "pend": 0,
-    "jee": 11,
-    "k": 194521,
-    "s": 113272,
-    "vv": 307793,
-    "pctActas": 99.567
+    "jee": 9,
+    "k": 194625,
+    "s": 113307,
+    "vv": 307932,
+    "pctActas": 99.646
   },
   "assume": {
     "extLiveKs": 63.2,
     "extLiveVpa": 122,
-    "extSampleActas": 2532,
+    "extSampleActas": 2534,
     "extShrunkKs": 0,
     "extShrunkVpa": 0,
     "extBand": 0,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 7839,
-    "final": 48441
+    "jeeNet": 4430,
+    "final": 48531
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 48441,
-    "central": 48441,
-    "high": 48441
+    "low": 48531,
+    "central": 48531,
+    "high": 48531
   },
   "seq": {
-    "domCountedMargin": -40647,
-    "extCountedMargin": 81249,
-    "hito1": -40647,
+    "domCountedMargin": -37217,
+    "extCountedMargin": 81318,
+    "hito1": -37217,
     "hito2": {
-      "low": 40602,
-      "central": 40602,
-      "high": 40602
+      "low": 44101,
+      "central": 44101,
+      "high": 44101
     }
   },
   "reg": [
@@ -214,27 +214,27 @@
     ],
     [
       "Lambayeque",
-      99.9,
-      3587,
+      100,
       3590,
-      3,
+      3590,
+      0,
       0,
       58.8,
       207,
       0,
-      108
+      0
     ],
     [
       "Lima",
-      98.8,
-      28892,
+      99,
+      28967,
       29247,
-      355,
+      280,
       0,
       63.6,
       219,
       0,
-      13401
+      10100
     ],
     [
       "Loreto",
@@ -1409,6 +1409,11 @@
       1781818920075,
       40602,
       48441
+    ],
+    [
+      1781882760090,
+      44101,
+      48531
     ]
   ]
 }
