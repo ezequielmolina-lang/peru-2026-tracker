@@ -1,41 +1,41 @@
 {
   "meta": {
-    "updatedAt": 1781882760090,
-    "updatedAtLabel": "19-jun, 10:26 a. m. (hora Perú)",
+    "updatedAt": 1782003918670,
+    "updatedAtLabel": "20-jun, 08:05 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.506,
-    "cont": 92308,
+    "pctActas": 99.688,
+    "cont": 92477,
     "tot": 92766,
-    "jee": 458,
+    "jee": 289,
     "pend": 0,
-    "validos": 18300917,
-    "emitidos": 19580418,
-    "participacion": 71.656,
-    "k": 9172509,
-    "s": 9128408,
-    "kPct": 50.12,
-    "sPct": 49.88,
-    "margin": 44101
+    "validos": 18336120,
+    "emitidos": 19617920,
+    "participacion": 71.794,
+    "k": 9188410,
+    "s": 9147710,
+    "kPct": 50.111,
+    "sPct": 49.889,
+    "margin": 40700
   },
   "ext": {
     "tot": 2543,
-    "cont": 2534,
+    "cont": 2536,
     "pend": 0,
-    "jee": 9,
-    "k": 194625,
-    "s": 113307,
-    "vv": 307932,
-    "pctActas": 99.646
+    "jee": 7,
+    "k": 194781,
+    "s": 113388,
+    "vv": 308169,
+    "pctActas": 99.725
   },
   "assume": {
     "extLiveKs": 63.2,
     "extLiveVpa": 122,
-    "extSampleActas": 2534,
+    "extSampleActas": 2536,
     "extShrunkKs": 0,
     "extShrunkVpa": 0,
     "extBand": 0,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 4430,
-    "final": 48531
+    "jeeNet": 7197,
+    "final": 47897
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 48531,
-    "central": 48531,
-    "high": 48531
+    "low": 47897,
+    "central": 47897,
+    "high": 47897
   },
   "seq": {
-    "domCountedMargin": -37217,
-    "extCountedMargin": 81318,
-    "hito1": -37217,
+    "domCountedMargin": -40693,
+    "extCountedMargin": 81393,
+    "hito1": -40693,
     "hito2": {
-      "low": 44101,
-      "central": 44101,
-      "high": 44101
+      "low": 40700,
+      "central": 40700,
+      "high": 40700
     }
   },
   "reg": [
@@ -82,15 +82,15 @@
     ],
     [
       "Áncash",
-      99.7,
-      3463,
+      100,
+      3471,
       3472,
-      9,
+      1,
       0,
       43.4,
       180,
       0,
-      -418
+      -23
     ],
     [
       "Apurímac",
@@ -106,15 +106,15 @@
     ],
     [
       "Arequipa",
-      99.7,
-      4201,
+      100,
       4215,
-      14,
+      4215,
+      0,
       0,
       36.4,
       218,
       0,
-      -831
+      0
     ],
     [
       "Ayacucho",
@@ -142,15 +142,15 @@
     ],
     [
       "Cusco",
-      99.2,
-      3950,
+      100,
+      3982,
       3983,
-      33,
+      1,
       0,
-      21.8,
+      21.9,
       192,
       0,
-      -2475
+      -106
     ],
     [
       "Huancavelica",
@@ -167,14 +167,14 @@
     [
       "Huánuco",
       99.7,
-      2333,
+      2334,
       2341,
-      8,
+      7,
       0,
       35.8,
       168,
       0,
-      -255
+      -327
     ],
     [
       "Ica",
@@ -226,15 +226,15 @@
     ],
     [
       "Lima",
-      99,
-      28967,
+      99.3,
+      29032,
       29247,
-      280,
+      215,
       0,
       63.6,
       219,
       0,
-      10100
+      7263
     ],
     [
       "Loreto",
@@ -274,63 +274,63 @@
     ],
     [
       "Pasco",
-      99.1,
-      795,
+      99.9,
+      801,
       802,
-      7,
+      1,
       0,
-      39.1,
+      39.3,
       164,
       0,
-      -246
+      -35
     ],
     [
       "Piura",
-      99.4,
-      5251,
+      99.5,
+      5255,
       5281,
-      30,
+      26,
       0,
       57,
       196,
       0,
-      1130
+      1075
     ],
     [
       "Puno",
-      99.6,
-      3385,
+      99.9,
+      3394,
       3397,
-      12,
+      3,
       0,
       13.6,
       209,
       0,
-      -1764
+      -447
     ],
     [
       "San Martín",
-      99.8,
-      2528,
+      100,
       2534,
-      6,
+      2534,
+      0,
       0,
       45.4,
       191,
       0,
-      -104
+      0
     ],
     [
       "Tacna",
-      99,
-      1031,
+      100,
       1041,
-      10,
+      1041,
       0,
-      28.6,
+      0,
+      28.7,
       222,
       0,
-      -901
+      0
     ],
     [
       "Tumbes",
@@ -346,27 +346,27 @@
     ],
     [
       "Ucayali",
-      99.8,
-      2893,
+      99.9,
+      2896,
       2898,
-      5,
+      2,
       0,
       65.6,
       212,
       0,
-      325
+      130
     ],
     [
       "Callao",
-      98.8,
-      1545,
+      99.4,
+      1554,
       1564,
-      19,
+      10,
       0,
       52.6,
       174,
       0,
-      248
+      46
     ]
   ],
   "history": [
@@ -1414,6 +1414,11 @@
       1781882760090,
       44101,
       48531
+    ],
+    [
+      1782003918670,
+      40700,
+      47897
     ]
   ]
 }
