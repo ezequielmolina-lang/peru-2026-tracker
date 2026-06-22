@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1782106818962,
-    "updatedAtLabel": "22-jun, 12:40 a. m. (hora Perú)",
+    "updatedAt": 1782150120073,
+    "updatedAtLabel": "22-jun, 12:42 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.691,
-    "cont": 92479,
+    "pctActas": 99.697,
+    "cont": 92485,
     "tot": 92766,
-    "jee": 287,
+    "jee": 281,
     "pend": 0,
-    "validos": 18336590,
-    "emitidos": 19618424,
-    "participacion": 71.795,
-    "k": 9188704,
-    "s": 9147886,
-    "kPct": 50.111,
-    "sPct": 49.889,
-    "margin": 40818
+    "validos": 18337866,
+    "emitidos": 19619775,
+    "participacion": 71.8,
+    "k": 9189128,
+    "s": 9148738,
+    "kPct": 50.11,
+    "sPct": 49.89,
+    "margin": 40390
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 7123,
-    "final": 47941
+    "jeeNet": 7478,
+    "final": 47868
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 47941,
-    "central": 47941,
-    "high": 47941
+    "low": 47868,
+    "central": 47868,
+    "high": 47868
   },
   "seq": {
-    "domCountedMargin": -40575,
+    "domCountedMargin": -41003,
     "extCountedMargin": 81393,
-    "hito1": -40575,
+    "hito1": -41003,
     "hito2": {
-      "low": 40818,
-      "central": 40818,
-      "high": 40818
+      "low": 40390,
+      "central": 40390,
+      "high": 40390
     }
   },
   "reg": [
@@ -179,14 +179,14 @@
     [
       "Ica",
       100,
-      2442,
       2443,
-      1,
+      2443,
+      0,
       0,
       51.9,
       223,
       0,
-      8
+      0
     ],
     [
       "Junín",
@@ -203,14 +203,14 @@
     [
       "La Libertad",
       99.9,
-      5295,
+      5296,
       5302,
-      7,
+      6,
       0,
       57.6,
       198,
       0,
-      205
+      176
     ],
     [
       "Lambayeque",
@@ -227,14 +227,14 @@
     [
       "Lima",
       99.3,
-      29034,
+      29035,
       29247,
-      213,
+      212,
       0,
       63.6,
       219,
       0,
-      7189
+      7134
     ],
     [
       "Loreto",
@@ -298,15 +298,15 @@
     ],
     [
       "Puno",
-      99.9,
-      3394,
+      100,
       3397,
-      3,
+      3397,
+      0,
       0,
       13.6,
       209,
       0,
-      -447
+      0
     ],
     [
       "San Martín",
@@ -1424,6 +1424,11 @@
       1782106818962,
       40818,
       47941
+    ],
+    [
+      1782150120073,
+      40390,
+      47868
     ]
   ]
 }
