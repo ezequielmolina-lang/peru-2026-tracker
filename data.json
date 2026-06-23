@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1782164425718,
-    "updatedAtLabel": "22-jun, 04:40 p. m. (hora Perú)",
+    "updatedAt": 1782178818570,
+    "updatedAtLabel": "22-jun, 08:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.706,
-    "cont": 92493,
+    "pctActas": 99.716,
+    "cont": 92503,
     "tot": 92766,
-    "jee": 273,
+    "jee": 263,
     "pend": 0,
-    "validos": 18339097,
-    "emitidos": 19621088,
-    "participacion": 71.805,
-    "k": 9189673,
-    "s": 9149424,
-    "kPct": 50.11,
-    "sPct": 49.89,
-    "margin": 40249
+    "validos": 18341178,
+    "emitidos": 19623319,
+    "participacion": 71.813,
+    "k": 9190889,
+    "s": 9150289,
+    "kPct": 50.111,
+    "sPct": 49.889,
+    "margin": 40600
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 7988,
-    "final": 48237
+    "jeeNet": 7765,
+    "final": 48365
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 48237,
-    "central": 48237,
-    "high": 48237
+    "low": 48365,
+    "central": 48365,
+    "high": 48365
   },
   "seq": {
-    "domCountedMargin": -41144,
+    "domCountedMargin": -40793,
     "extCountedMargin": 81393,
-    "hito1": -41144,
+    "hito1": -40793,
     "hito2": {
-      "low": 40249,
-      "central": 40249,
-      "high": 40249
+      "low": 40600,
+      "central": 40600,
+      "high": 40600
     }
   },
   "reg": [
@@ -202,15 +202,15 @@
     ],
     [
       "La Libertad",
-      99.9,
-      5296,
+      100,
       5302,
-      6,
+      5302,
+      0,
       0,
       57.6,
       198,
       0,
-      176
+      0
     ],
     [
       "Lambayeque",
@@ -227,14 +227,14 @@
     [
       "Lima",
       99.3,
-      29036,
+      29039,
       29247,
-      211,
+      208,
       0,
       63.6,
       219,
       0,
-      7118
+      7000
     ],
     [
       "Loreto",
@@ -250,15 +250,15 @@
     ],
     [
       "Madre de Dios",
-      99.8,
-      506,
+      100,
       507,
-      1,
+      507,
+      0,
       0,
       30.8,
       188,
       0,
-      -71
+      0
     ],
     [
       "Moquegua",
@@ -1434,6 +1434,11 @@
       1782164425718,
       40249,
       48237
+    ],
+    [
+      1782178818570,
+      40600,
+      48365
     ]
   ]
 }
