@@ -1,26 +1,26 @@
 {
   "meta": {
-    "updatedAt": 1782178818570,
-    "updatedAtLabel": "22-jun, 08:40 p. m. (hora Perú)",
+    "updatedAt": 1782236418721,
+    "updatedAtLabel": "23-jun, 12:40 p. m. (hora Perú)",
     "source": "ONPE — resultadosegundavuelta.onpe.gob.pe (presentacion-backend)",
     "idEleccion": 10,
     "method": "Pendientes y actas-al-JEE por tendencia de PROVINCIA (shrinkage hacia el departamento). Exterior proyectado PAÍS POR PAÍS (tendencia y votos/acta de cada país, shrinkage hacia el continente). JEE con haircut ~2%.",
     "note": "Proyección del conteo ordinario. No es el resultado legal: la proclamación es del JNE."
   },
   "nat": {
-    "pctActas": 99.716,
-    "cont": 92503,
+    "pctActas": 99.727,
+    "cont": 92513,
     "tot": 92766,
-    "jee": 263,
+    "jee": 253,
     "pend": 0,
-    "validos": 18341178,
-    "emitidos": 19623319,
-    "participacion": 71.813,
-    "k": 9190889,
-    "s": 9150289,
+    "validos": 18342759,
+    "emitidos": 19625054,
+    "participacion": 71.82,
+    "k": 9191676,
+    "s": 9151083,
     "kPct": 50.111,
     "sPct": 49.889,
-    "margin": 40600
+    "margin": 40593
   },
   "ext": {
     "tot": 2543,
@@ -44,8 +44,8 @@
   },
   "dom": {
     "pendNet": 0,
-    "jeeNet": 7765,
-    "final": 48365
+    "jeeNet": 7792,
+    "final": 48385
   },
   "extScen": {
     "low": 0,
@@ -53,18 +53,18 @@
     "high": 0
   },
   "finalScen": {
-    "low": 48365,
-    "central": 48365,
-    "high": 48365
+    "low": 48385,
+    "central": 48385,
+    "high": 48385
   },
   "seq": {
-    "domCountedMargin": -40793,
+    "domCountedMargin": -40800,
     "extCountedMargin": 81393,
-    "hito1": -40793,
+    "hito1": -40800,
     "hito2": {
-      "low": 40600,
-      "central": 40600,
-      "high": 40600
+      "low": 40593,
+      "central": 40593,
+      "high": 40593
     }
   },
   "reg": [
@@ -143,14 +143,14 @@
     [
       "Cusco",
       100,
-      3982,
       3983,
-      1,
+      3983,
+      0,
       0,
       21.9,
       192,
       0,
-      -106
+      0
     ],
     [
       "Huancavelica",
@@ -227,14 +227,14 @@
     [
       "Lima",
       99.3,
-      29039,
+      29042,
       29247,
-      208,
+      205,
       0,
       63.6,
       219,
       0,
-      7000
+      6932
     ],
     [
       "Loreto",
@@ -358,15 +358,15 @@
     ],
     [
       "Callao",
-      99.4,
-      1554,
+      99.7,
+      1560,
       1564,
-      10,
+      4,
       0,
       52.6,
       174,
       0,
-      46
+      35
     ]
   ],
   "history": [
@@ -1439,6 +1439,11 @@
       1782178818570,
       40600,
       48365
+    ],
+    [
+      1782236418721,
+      40593,
+      48385
     ]
   ]
 }
